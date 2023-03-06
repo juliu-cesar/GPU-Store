@@ -35,22 +35,6 @@ export const StyledHeader = styled.header`
       margin: 0px 10px;
       font-size: 19px;
       font-weight: 500;
-      ::after{
-        content: "";
-        position: absolute;
-        background-color: ${({ theme }) => theme.text_color};
-        bottom: 0px;
-        left: 50%;
-        width: 0px;
-        height: 2px;
-        transition: all .15s ease-in-out;
-      }
-      :hover{
-        ::after{
-          width: 100%;
-          left: calc(50% - 100% / 2);
-        }
-      }
     }
     display: flex;
     flex-direction: row;

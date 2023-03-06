@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { StyledHover } from "../components/StyledHover";
 import Cart from "./components/Cart";
 import { StyledHeader } from "./components/StyledHeader";
 
@@ -14,7 +15,7 @@ export default function Header({cartType}: Props) {
           <h3 className="Store">Store</h3>
         </div>
         <div className="right">
-          <Link href={"/"}>Produtos</Link>
+          <Link href={"/"}><StyledHover>Produtos</StyledHover></Link>
           <Cart type={cartType} />
         </div>
       </div>

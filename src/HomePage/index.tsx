@@ -5,7 +5,7 @@ export default function HomePage(){
 
     return(
         <StyledHome>
-          <Header cartType={0}/>
+          <Header cartType={1}/>
         </StyledHome>
     )
 }
