@@ -11,7 +11,7 @@ export const CSSReset = createGlobalStyle`
 		background-color: ${({ theme }) => theme.background_base};
 		color: ${({ theme }) => theme.text_color};
     font-family: 'Montserrat', sans-serif;
-    width: 99vw;
+    width: 100vw;
     overflow-x: hidden;
   }
   .icon{
