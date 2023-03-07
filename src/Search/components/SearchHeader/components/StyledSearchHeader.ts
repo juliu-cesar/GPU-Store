@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledSearchHeader = styled.div`
   width: 100%;
   height: 65px;
-  margin-top: 25px;
+  margin-top: 15px;
   border-bottom: 2px solid ${({ theme }) => theme.text_color};
   justify-content: space-around;
   .order {

@@ -15,6 +15,6 @@ export const StyledSearch = styled.div`
     width: 100%;
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 15px;
   }
 `
