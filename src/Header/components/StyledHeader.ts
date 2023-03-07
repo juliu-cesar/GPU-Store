@@ -3,7 +3,9 @@ import styled from "styled-components";
 export const StyledHeader = styled.header`
   width: 100%;
   height: 70px;
-  .container {
+  display: flex;
+  justify-content: center;
+  .container_header {
     width: 100%;
     max-width: 1600px;
     height: 100%;

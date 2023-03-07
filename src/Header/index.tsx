@@ -9,13 +9,13 @@ interface Props{
 export default function Header({cartType}: Props) {
   return (
     <StyledHeader>
-      <div className="container">
+      <div className="container_header">
         <div className="Logo">
           <h3 className="GPU">GPU</h3>
           <h3 className="Store">Store</h3>
         </div>
         <div className="right">
-          <Link href={"/"}><StyledHover>Produtos</StyledHover></Link>
+          <Link href={"/produtos"}><StyledHover>Produtos</StyledHover></Link>
           <Cart type={cartType} />
         </div>
       </div>

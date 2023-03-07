@@ -6,6 +6,7 @@ const theme = {
     color1: "#00D6E6",
 
     background_base: "#101010",
+    semi_black: "#333",
     gray: "#7e7e7e",
     off_white: "#c9c9c9",
     text_color: "#fff",

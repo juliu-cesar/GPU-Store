@@ -1,10 +1,7 @@
-import Head from 'next/head'
-import { Inter } from 'next/font/google'
-import HomePage from '@/src/HomePage'
+import Search from "@/src/Search";
+import Head from "next/head";
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function Home() {
+export default function Produtos() {
   return (
     <>
       <Head>
@@ -12,7 +9,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/img/icons/logo-icon.ico" />
       </Head>
-      <HomePage />
+      <Search />
     </>
-  )
+  );
 }
