@@ -4,7 +4,9 @@ export default function ProductList(){
 
   return(
     <StyledProductL>
-      <h1>Hello World</h1>
+      <div className="container_product">
+        <h1>Hello World</h1>
+      </div>
     </StyledProductL>
   )
 }

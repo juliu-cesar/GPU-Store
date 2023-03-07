@@ -54,13 +54,13 @@ export default function Filter() {
             />
           </StyledSlider>
         </div>
-        {filters.map((e) => {
+        {filters.map((e, i) => {
           return (
-            <div className="container_options flex_column">
+            <div className="container_options flex_column" key={i}>
               <h3>{e.title}</h3>
-              {e.options.map((e) => {
+              {e.options.map((e, index) => {
                 return (
-                  <div className="frame_options">
+                  <div className="frame_options" key={index}>
                     <label htmlFor={e.id}>
                       <input type="checkbox" name={e.id} id={e.id} />
                       <span className="checkbox"></span>

@@ -13,7 +13,7 @@ export default function Search(){
         <div id="Search_container">
           <SearchHeader />
         </div>
-        <div className="flex_row">
+        <div id="filter_products">
           <Filter />
           <ProductList />
         </div>

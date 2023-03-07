@@ -9,6 +9,12 @@ export const StyledSearch = styled.div`
   }
   #Search_container{
     width: 100%;
-    padding-left: 250px;
+    padding-left: 280px;
+  }
+  #filter_products{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
   }
 `

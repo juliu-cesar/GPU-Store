@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const StyledFilter = styled.div`
-  margin-top: 20px;
+  margin-top: 40px;
   .container_filter {
     border-right: 2px solid ${({ theme }) => theme.text_color};
     padding: 5px 10px;
-    width: 245px;
+    width: 235px;
   }
   h3 {
     margin: 10px 0;
