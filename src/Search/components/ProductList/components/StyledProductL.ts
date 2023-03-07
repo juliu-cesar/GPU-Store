@@ -17,15 +17,19 @@ export const StyledProductL = styled.div`
     :hover .frame_content h4 {
       text-decoration: underline;
     }
+    a{
+      color: ${({ theme }) => theme.text_color};
+    }
   }
   .frame_img {
     background-color: ${({ theme }) => theme.text_color};
     width: 100%;
     height: 170px;
     margin-bottom: 10px;
+    display: flex;
+    align-items: center;
     img {
       width: 100%;
-      max-width: 300px;
     }
   }
   .frame_content {
