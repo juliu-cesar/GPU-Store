@@ -9,6 +9,6 @@ export const StyledSearch = styled.div`
   }
   #Search_container{
     width: 100%;
-    padding-left: 180px;
+    padding-left: 250px;
   }
 `

@@ -37,6 +37,15 @@ export const CSSReset = createGlobalStyle`
     align-items: center;
     justify-content: space-between;
   }
+  .flex_column{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: space-between; */
+  }
+  .ant-tooltip {
+    display: none;
+  }
   @media (max-width: 600px) {
   }
 `;

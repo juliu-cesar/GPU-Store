@@ -3,7 +3,7 @@ import { ThemeProvider } from "styled-components";
 import { CSSReset } from "../styles/CSSReset";
 
 const theme = {
-    color1: "#00D6E6",
+    color1: "#00d6e6",
 
     background_base: "#101010",
     semi_black: "#333",
