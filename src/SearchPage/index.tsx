@@ -4,7 +4,7 @@ import ProductList from "./components/ProductList";
 import SearchHeader from "./components/SearchHeader";
 import { StyledSearch } from "./components/StyledSearch";
 
-export default function Search(){
+export default function SearchPage(){
 
   return(
     <StyledSearch>

@@ -1,4 +1,4 @@
-import Search from "@/src/Search";
+import SearchPage from "@/src/SearchPage";
 import Head from "next/head";
 
 export default function Produtos() {
@@ -9,7 +9,7 @@ export default function Produtos() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/img/icons/logo-icon.ico" />
       </Head>
-      <Search />
+      <SearchPage />
     </>
   );
 }

@@ -1,16 +1,17 @@
+import ProductPage from "@/src/ProductPage";
+import Head from "next/head";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 
 export default function Params() {
-  const [param, setParam] = useState<string | string[] | undefined>("");
   const router = useRouter();
-
-  useEffect(() => {
-    setParam(router.query.params);
-  }, [router.query]);
   return (
     <>
-      <h1>Parâmetro recebido: {param}</h1>
+      <Head>
+        <title>GPU Store</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/img/icons/logo-icon.ico" />
+      </Head>
+      <ProductPage router={router} />
     </>
   );
 }

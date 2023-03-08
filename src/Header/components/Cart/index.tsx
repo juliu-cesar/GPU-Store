@@ -37,7 +37,7 @@ export default function Cart({ type }: Props) {
         {type == 1 && <h3>Carrinho</h3>}
         <div>
           <img
-            src="img/icons/cart-icon.png"
+            src="../img/icons/cart-icon.png"
             alt="ícone carrinho de compras"
             style={{ width: "18px" }}
           />{" "}

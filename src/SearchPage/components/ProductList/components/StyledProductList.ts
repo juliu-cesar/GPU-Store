@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledProductL = styled.div`
+export const StyledProductList = styled.div`
   width: 100%;
   margin-top: 15px;
   margin-right: 20px;
