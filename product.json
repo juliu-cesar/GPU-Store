@@ -1,5 +1,13 @@
 {
   "plnubpj8sk": {
+    "imgList": [
+      "http://localhost:3000/img/nvidia/rtx-4080.png",
+      "http://localhost:3000/img/nvidia/rtx-4080-2.png",
+      "http://localhost:3000/img/nvidia/rtx-4080.png",
+      "http://localhost:3000/img/nvidia/rtx-4080-2.png",
+      "http://localhost:3000/img/nvidia/rtx-4080.png",
+      "http://localhost:3000/img/nvidia/rtx-4080-2.png"
+    ],
     "title": "RTX 4080 16GB founders edition",
     "subtitleList": [
       "NVIDIA Dlss 3",
@@ -7,7 +15,7 @@
       "Arquitetura NVIDIA Ada Lovelace",
       "NVIDIA Studio"
     ],
-    "price": "9699,99",
+    "price": 9699.99,
     "description": [
       {
         "class": "left",
