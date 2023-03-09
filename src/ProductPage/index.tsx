@@ -5,6 +5,7 @@ import Header from "../Header";
 import product from "@/product.json"
 import { IProduct } from "./components/IProduct";
 import CarouselProduct from "./components/CarouselProduct";
+import ProductInfo from "./components/ProductInfo";
 
 interface Props{
   router: NextRouter;
@@ -22,7 +23,7 @@ export default function ProductPage({router}: Props){
       <div className="Container_productPage">
         <div className="container_price">
           <CarouselProduct imgList={Product?.imgList} />
-          <div className="frame_price"></div>
+          <ProductInfo textList={Product?.textList} />
         </div>
         <div className="container_description">
 

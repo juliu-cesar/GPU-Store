@@ -1,8 +1,10 @@
 export interface IProduct {
   imgList: string[];
-  title: string;
-  subtitleList: string[];
-  price: number;
+  textList: {
+    title: string;
+    subtitleList: string[];
+    price: number;
+  };
   description: {
     class: string;
     infoTitle?: string;

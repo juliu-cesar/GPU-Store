@@ -44,25 +44,28 @@ export const StyledCrProduct = styled.div<{
     }
   }
   .container_cards {
-    width: 85px;
+    width: 70px;
+    min-width: 70px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     transition: all 0.35s;
     .frame_carousel_card {
       position: relative;
       width: 100%;
       height: 275px;
-      padding: 5px;
       border-radius: 5px;
       overflow: hidden;
     }
     .carousel_card {
       position: absolute;
       top: 0px;
+      width: 70px;
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 10px;
       transition: all .3s;
     }

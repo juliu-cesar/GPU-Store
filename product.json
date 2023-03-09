@@ -10,14 +10,16 @@
       "http://localhost:3000/img/nvidia/rtx-4080.png",
       "http://localhost:3000/img/nvidia/rtx-4080-2.png"
     ],
-    "title": "RTX 4080 16GB founders edition",
-    "subtitleList": [
-      "NVIDIA Dlss 3",
-      "Ray tracing",
-      "Arquitetura NVIDIA Ada Lovelace",
-      "NVIDIA Studio"
-    ],
-    "price": 9699.99,
+    "textList": {
+      "title": "RTX 4080 16GB founders edition",
+      "subtitleList": [
+        "NVIDIA Dlss 3",
+        "Ray tracing",
+        "Arquitetura NVIDIA Ada Lovelace",
+        "NVIDIA Studio"
+      ],
+      "price": 9699.99
+    },
     "description": [
       {
         "class": "left",
