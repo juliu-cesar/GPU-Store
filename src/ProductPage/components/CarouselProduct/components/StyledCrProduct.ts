@@ -3,16 +3,32 @@ import styled from "styled-components";
 export const StyledCrProduct = styled.div<{
   imgNum: number;
 }>`
-  /* height: 370px; */
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 10px;
   .frame_carousel_img{
     position: relative;
     background-color: ${({ theme }) => theme.text_color};
     width: 100%;
+    height: 320px;
     border-radius: 15px;    
     overflow: hidden;
+    .prev_img, .next_img{
+      cursor: pointer;
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      width: 35px;
+      height: 100%;
+      transition: all .3s;
+      :hover{
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+    .next_img{
+      right: 0;
+    }
   }
   .carousel_img {
     position: absolute;
@@ -22,7 +38,7 @@ export const StyledCrProduct = styled.div<{
     display: flex;
     flex-direction: row;
     align-items: center;
-    transition: all .3s;
+    transition: all .4s ease-in-out;
     img {
       width: calc(100% / ${({ imgNum }) => imgNum});
     }
