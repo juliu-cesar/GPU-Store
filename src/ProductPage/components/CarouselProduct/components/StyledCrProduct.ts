@@ -3,87 +3,86 @@ import styled from "styled-components";
 export const StyledCrProduct = styled.div<{
   imgNum: number;
 }>`
-  position: relative;
-  background-color: ${({ theme }) => theme.text_color};
-  width: 100%;
-  height: 370px;
-  border-radius: 15px;
-  overflow: hidden;
+  /* height: 370px; */
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  .frame_carousel_img{
+    position: relative;
+    background-color: ${({ theme }) => theme.text_color};
+    width: 100%;
+    border-radius: 15px;    
+    overflow: hidden;
+  }
   .carousel_img {
     position: absolute;
-    top: calc(50% - 100% / 2.5);
+    top:10%;
+    left: 0;
     width: calc(100% * ${({ imgNum }) => imgNum});
     display: flex;
     flex-direction: row;
     align-items: center;
+    transition: all .3s;
     img {
       width: calc(100% / ${({ imgNum }) => imgNum});
     }
   }
-  .frame_cards {
-    position: absolute;
-    background-color: rgba(70,70,70,0.7);
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 10px 5px;
-    opacity: .6;
+  .container_cards {
+    width: 85px;
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 5px;
-    transition: opacity .2s;
-    :hover{
-      opacity: 1;
-    }
-    .frame_carousel_card{
-      overflow: hidden;
+    gap: 10px;
+    transition: all 0.35s;
+    .frame_carousel_card {
+      position: relative;
       width: 100%;
-      max-width: 300px;
+      height: 275px;
+      padding: 5px;
+      border-radius: 5px;
+      overflow: hidden;
     }
     .carousel_card {
-      width: calc(25% * ${({ imgNum }) => imgNum});
+      position: absolute;
+      top: 0px;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       gap: 10px;
-      span {
-        cursor: pointer;
-        background-color: rgba(255,255,255,.5);
-        border-radius: 10px;
-        width: 25%;
-        padding: 3px;
-        transition: background-color .25s;
-        :hover{
-          background-color: rgba(255,255,255,1);
-        }
-        img {
-          width: 100%;
-        }
+      transition: all .3s;
+    }
+    button {
+      background-color: ${({ theme }) => theme.text_color};
+      width: 60px;
+      height: 60px;
+      padding: 3px;
+      border: unset;
+      border-radius: 10px;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      img {
+        width: 100%;
       }
     }
   }
   .arrow_back,
   .arrow_front {
     cursor: pointer;
-    background-color: rgba(255,255,255,.6);
+    background-color: ${({ theme }) => theme.text_color};
     width: 40px;
     min-width: 40px;
     height: 40px;
+    min-height: 40px;
     padding-left: 7px;
     border-radius: 50%;
     display: flex;
     align-items: center;
-    transition: background-color .25s;
-    :hover{
-      background-color: rgba(255,255,255,1);
-    }
+    transform: rotate(90deg);
     img {
-      /* width: 35px; */
       width: 90%;
     }
   }
   .arrow_back {
-    transform: rotate(180deg);
+    transform: rotate(-90deg);
   }
 `;
