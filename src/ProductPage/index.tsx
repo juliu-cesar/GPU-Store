@@ -26,7 +26,7 @@ export default function ProductPage({router}: Props){
           <ProductPrice textList={Product?.textList} />
         </div>
         <div className="container_description">
-          <ProductDescription />
+          <ProductDescription description={Product?.description} />
         </div>
         <div className="container_table">
 

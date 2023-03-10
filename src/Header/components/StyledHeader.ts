@@ -8,7 +8,7 @@ export const StyledHeader = styled.header`
   justify-content: center;
   .container_header {
     width: 100%;
-    max-width: 1600px;
+    max-width: 1450px;
     height: 100%;
     padding: 0 15px;
     display: flex;

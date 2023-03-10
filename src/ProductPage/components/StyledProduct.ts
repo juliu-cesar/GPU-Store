@@ -5,7 +5,7 @@ export const StyledProduct = styled.div`
   .container_price {
     background-color: ${({ theme }) => theme.background_base};
     width: 100%;
-    max-width: 1400px;
+    max-width: 1300px;
     padding: 10px 16px;
     margin: auto;
     display: grid;

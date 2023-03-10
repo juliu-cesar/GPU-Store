@@ -43,12 +43,15 @@ export const StyledProductPrice = styled.div`
     flex-direction: row;
     justify-content: space-around;
     gap: 10px;
-    .buy {
-      background-color: ${({ theme }) => theme.color1};
+    button{
       width: 150px;
       height: 44px;
-      border: unset;
       border-radius: 22px;
+      transition: all .2s ease-out;
+    }
+    .buy {
+      background-color: ${({ theme }) => theme.color1};
+      border: unset;
       font-size: 19px;
       font-weight: 600;
       :hover {
@@ -58,10 +61,7 @@ export const StyledProductPrice = styled.div`
     .add_cart {
       background-color: unset;
       color: ${({ theme }) => theme.text_color};
-      width: 150px;
-      height: 44px;
       border: 2px solid ${({ theme }) => theme.text_color};
-      border-radius: 22px;
       font-size: 19px;
       font-weight: 600;
       :hover {
