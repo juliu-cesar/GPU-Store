@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { StyledProductInfo } from "./components/StyledProductInfo";
+import { StyledProductPrice } from "./components/StyledProductPrice";
 
 interface Props {
   textList:
@@ -10,7 +10,7 @@ interface Props {
       }
     | undefined;
 }
-export default function ProductInfo({ textList }: Props) {
+export default function ProductPrice({ textList }: Props) {
   const [cash_price, setCash_price] = useState("");
   const [installment_price, setInstallment_price] = useState("");
 
@@ -19,7 +19,7 @@ export default function ProductInfo({ textList }: Props) {
     setInstallment_price(((textList?.price || 0) / 12).toFixed(2).replace(".", ","))
   }, [textList?.price]);
   return (
-    <StyledProductInfo>
+    <StyledProductPrice>
       <div className="frame_title">
         <h2>{textList?.title}</h2>
         <ul>
@@ -42,6 +42,6 @@ export default function ProductInfo({ textList }: Props) {
         <button className="buy">Comprar</button>
         <button className="add_cart">+ carrinho</button>
       </div>
-    </StyledProductInfo>
+    </StyledProductPrice>
   );
 }

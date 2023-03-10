@@ -11,8 +11,10 @@ export const StyledCrProduct = styled.div<{
     position: relative;
     background-color: ${({ theme }) => theme.text_color};
     width: 100%;
-    height: 320px;
-    border-radius: 15px;    
+    height: 450px;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
     overflow: hidden;
     .prev_img, .next_img{
       cursor: pointer;
@@ -30,11 +32,13 @@ export const StyledCrProduct = styled.div<{
       right: 0;
     }
   }
+  .teste_frame{
+    position: relative;
+    width: 100%;
+  }
   .carousel_img {
-    position: absolute;
-    top:10%;
-    left: 0;
     width: calc(100% * ${({ imgNum }) => imgNum});
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -104,4 +108,25 @@ export const StyledCrProduct = styled.div<{
   .arrow_back {
     transform: rotate(-90deg);
   }
+  @media (max-width: 920px) {
+    .frame_carousel_img{
+      height: 330px;
+    }
+  }
+  @media (max-width: 770px) {
+    .container_cards{
+      display: none;
+    }
+    .frame_carousel_img{
+      height: 310px;
+    }
+  }  
+  @media (max-width: 670px) {
+    .container_cards{
+      display: flex;
+    }
+    .frame_carousel_img{
+      height: 350px;
+    }
+  }  
 `;

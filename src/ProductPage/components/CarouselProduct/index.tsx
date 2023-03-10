@@ -14,22 +14,29 @@ export default function CarouselProduct({
 
     if (num == imgList!.length || num < 0) return;
     setImageSelect(num);
-    carousel_img.style.left = `calc(-100% * ${num})`;
+    carousel_img.style.transform = `translateX(calc((-100% / ${
+      imgList!.length
+    }) * ${num}))`;
   }
   function prevNextCard(num: number) {
-    if(num < 0 || num > imgList!.length - 4)return
-      selectCard(num);
-      setCardSelect(num);
+    if (num < 0 || num > imgList!.length - 4) return;
+    selectCard(num);
+    setCardSelect(num);
   }
   function selectCard(index: number) {
-    const carousel_card = document.querySelector(".carousel_card") as HTMLElement;
+    const carousel_card = document.querySelector(
+      ".carousel_card"
+    ) as HTMLElement;
 
     carousel_card.style.top = `${-70 * index}px`;
   }
   return (
     <StyledCrProduct imgNum={imgList?.length || 1}>
       <div className="container_cards">
-        <div className="arrow_back" onClick={() => prevNextCard(cardSelect -1)}>
+        <div
+          className="arrow_back"
+          onClick={() => prevNextCard(cardSelect - 1)}
+        >
           <img src="../img/icons/svg/arrow-bold.svg" />
         </div>
         <div className="frame_carousel_card">
@@ -44,7 +51,10 @@ export default function CarouselProduct({
               })}
           </div>
         </div>
-        <div className="arrow_front" onClick={() => prevNextCard(cardSelect +1)}>
+        <div
+          className="arrow_front"
+          onClick={() => prevNextCard(cardSelect + 1)}
+        >
           <img src="../img/icons/svg/arrow-bold.svg" />
         </div>
       </div>
@@ -53,11 +63,13 @@ export default function CarouselProduct({
           className="prev_img"
           onClick={() => selectImage(imageSelect - 1)}
         ></span>
-        <div className="carousel_img">
-          {imgList &&
-            imgList.map((e, i) => {
-              return <img src={e} alt="imagem produto" key={i} />;
-            })}
+        <div className="teste_frame">
+          <div className="carousel_img">
+            {imgList &&
+              imgList.map((e, i) => {
+                return <img src={e} alt="imagem produto" key={i} />;
+              })}
+          </div>
         </div>
         <span
           className="next_img"

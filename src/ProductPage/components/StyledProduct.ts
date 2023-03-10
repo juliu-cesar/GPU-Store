@@ -13,4 +13,11 @@ export const StyledProduct = styled.div`
     grid-template-columns: 1.3fr 1fr;
     gap: 15px;
   }
+  @media (max-width: 670px) {
+    .container_price{
+      display: flex;
+      flex-direction: column;
+      padding: 10px 20px;
+    }
+  }
 `
