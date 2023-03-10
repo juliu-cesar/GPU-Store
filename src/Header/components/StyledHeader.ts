@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
+  background-color: ${({ theme }) => theme.background_base};
   width: 100%;
   height: 70px;
   display: flex;

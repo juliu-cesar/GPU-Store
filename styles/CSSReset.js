@@ -8,7 +8,7 @@ export const CSSReset = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-		background-color: ${({ theme }) => theme.background_base};
+		background-color: ${({ theme }) => theme.body};
 		color: ${({ theme }) => theme.text_color};
     font-family: 'Montserrat', sans-serif;
     width: 99vw;

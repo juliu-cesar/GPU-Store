@@ -5,7 +5,8 @@ import { CSSReset } from "../styles/CSSReset";
 const theme = {
     color1: "#00d6e6",
 
-    background_base: "#101010",
+    body: "#000",
+    background_base: "#151515",
     semi_black: "#333",
     gray: "#7e7e7e",
     off_white: "#c9c9c9",

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { StyledCrProduct } from "./components/StyledCrProduct";
 
-export default function CarouselProduct({
+export default function ProductCarousel({
   imgList,
 }: {
   imgList: string[] | undefined;
