@@ -15,7 +15,7 @@ export interface IProduct {
   info_table: {
     th: string[];
     td: string[];
-  };
+  }[];
   package_content: string[];
   rating: number;
 }

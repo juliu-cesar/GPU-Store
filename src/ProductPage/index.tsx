@@ -7,6 +7,7 @@ import { IProduct } from "./components/IProduct";
 import ProductCarousel from "./components/ProductCarousel";
 import ProductPrice from "./components/ProductPrice";
 import ProductDescription from "./components/ProductDescription";
+import ProductTable from "./components/ProductTable";
 
 interface Props{
   router: NextRouter;
@@ -29,7 +30,7 @@ export default function ProductPage({router}: Props){
           <ProductDescription description={Product?.description} />
         </div>
         <div className="container_table">
-
+          <ProductTable infoTable={Product?.info_table} packageContent={Product?.package_content} />
         </div>
         <div className="container_rating">
 

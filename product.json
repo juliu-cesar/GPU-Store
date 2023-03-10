@@ -47,32 +47,48 @@
         "imgUrl": "http://localhost:3000/img/nvidia/rtx-4080-info-4.png"
       }
     ],
-    "info_table": {
-      "th": [
-        "GPU",
-        "NVIDIA CUDA Cores",
-        "Boost Clock (GHz)",
-        "Tamanho da Memória",
-        "Tipo de Memória",
-        "PCI",
-        "Resolução Máxima do Monitor",
-        "Entradas",
-        "Fonte de alimentação",
-        "Conectores de Energia"
-      ],
-      "td": [
-        "NVIDIA GeForce RTX 4080",
-        "9728 Unidades",
-        "2,52",
-        "16GB",
-        "GDDR6X",
-        "PCI Express 4.0",
-        "4K a 240Hz ou 8K a 60Hz com DSC",
-        "3 x DisplayPort 1.4a </br>1 x HDMI 2.1",
-        "750W",
-        "1x 16 pinos"
-      ]
-    },
+    "info_table": [
+      {
+        "th": ["GPU"],
+        "td": ["NVIDIA GeForce RTX 4080"]
+      },
+      {
+        "th": ["NVIDIA CUDA Cores"],
+        "td": ["9728 Unidades"]
+      },
+      {
+        "th": ["Boost Clock (GHz)"],
+        "td": ["2,52"]
+      },
+      {
+        "th": ["Tamanho da Memória"],
+        "td": ["16GB"]
+      },
+      {
+        "th": ["Tipo de Memória"],
+        "td": ["GDDR6X"]
+      },
+      {
+        "th": ["PCI"],
+        "td": ["PCI Express 4.0"]
+      },
+      {
+        "th": ["Resolução Máxima do Monitor"],
+        "td": ["4K a 240Hz ou 8K a 60Hz com DSC"]
+      },
+      {
+        "th": ["Entradas"],
+        "td": ["3 x DisplayPort 1.4a <br> 1 x HDMI 2.1"]
+      },
+      {
+        "th": ["Fonte de alimentação"],
+        "td": ["750W"]
+      },
+      {
+        "th": ["Conectores de Energia"],
+        "td": ["1x 16 pinos"]
+      }
+    ],
     "package_content": [
       "1x Placa de Vídeo",
       "1x Suporte",

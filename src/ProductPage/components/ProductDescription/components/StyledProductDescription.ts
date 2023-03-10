@@ -3,27 +3,6 @@ import styled from "styled-components";
 export const StyledProductDescription = styled.div`
   position: relative;
   width: 100%;
-  .container_description {
-    background-color: ${({ theme }) => theme.background_base};
-    width: 100%;
-    height: 300px;
-    max-width: 1300px;
-    padding-top: 30px;
-    margin: auto;
-    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.25);
-  }
-  .header {
-    background-color: ${({ theme }) => theme.text_color};
-    color: ${({ theme }) => theme.background_base};
-    width: 100%;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    h1 {
-      font-size: 27px;
-    }
-  }
   .frame_description {
     width: 100%;
     padding: 30px 20px;
@@ -73,18 +52,7 @@ export const StyledProductDescription = styled.div`
       width: 100%;
       border-radius: 10px;
     }
-  }
-
-  .background_bar {
-    position: absolute;
-    z-index: -10;
-    background-color: ${({ theme }) => theme.text_color};
-    filter: blur(2px);
-    top: 10px;
-    left: 0;
-    width: 100vw;
-    height: 120px;
-  }
+  }  
   @media (max-width: 770px) {
     .description_card {
       h3 {

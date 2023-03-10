@@ -1,3 +1,5 @@
+import HeaderProductPage from "../HeaderProductPage";
+import ProductInfoLayout from "../ProductInfoLayout";
 import { StyledProductDescription } from "./components/StyledProductDescription";
 
 interface Props {
@@ -14,11 +16,10 @@ interface Props {
 export default function ProductDescription({ description }: Props) {
   return (
     <StyledProductDescription>
-      <span className="background_bar"></span>
-      <div className="container_description">
-        <div className="header">
+      <ProductInfoLayout>
+        <HeaderProductPage>
           <h1>Detalhes do produto</h1>
-        </div>
+        </HeaderProductPage>
         <div className="frame_description">
           {description &&
             description.map((el, i) => {
@@ -34,7 +35,7 @@ export default function ProductDescription({ description }: Props) {
               );
             })}
         </div>
-      </div>
+      </ProductInfoLayout>
     </StyledProductDescription>
   );
 }
