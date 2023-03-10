@@ -24,9 +24,11 @@ export default function ProductDescription({ description }: Props) {
             description.map((el, i) => {
               return (
                 <div className={el.class} key={i}>
-                  {el.infoTitle && <h3>{el.infoTitle}</h3>}
-                  {el.infoSubtitle && <h4>{el.infoSubtitle}</h4>}
-                  {el.text && <p>{el.text}</p>}
+                  <div className="text_description">
+                    {el.infoTitle && <h3>{el.infoTitle}</h3>}
+                    {el.infoSubtitle && <h4>{el.infoSubtitle}</h4>}
+                    {el.text && <p>{el.text}</p>}
+                  </div>
                   {el.imgUrl && <img src={el.imgUrl} alt="imagem descrição" />}
                 </div>
               );
