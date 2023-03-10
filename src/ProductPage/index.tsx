@@ -8,6 +8,8 @@ import ProductCarousel from "./components/ProductCarousel";
 import ProductPrice from "./components/ProductPrice";
 import ProductDescription from "./components/ProductDescription";
 import ProductTable from "./components/ProductTable";
+import ProductRating from "./components/ProductRating";
+import Footer from "../Footer";
 
 interface Props{
   router: NextRouter;
@@ -33,8 +35,9 @@ export default function ProductPage({router}: Props){
           <ProductTable infoTable={Product?.info_table} packageContent={Product?.package_content} />
         </div>
         <div className="container_rating">
-
+          <ProductRating rate={Product?.rating} />
         </div>
+        <Footer />
     </StyledProduct>
   )
 }

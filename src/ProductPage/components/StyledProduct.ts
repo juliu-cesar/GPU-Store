@@ -13,9 +13,6 @@ export const StyledProduct = styled.div`
     align-items: center;
     gap: 15px;
   }
-  .container_description {
-    width: 100%;
-  }
   @media (max-width: 670px) {
     .container_price {
       display: flex;
