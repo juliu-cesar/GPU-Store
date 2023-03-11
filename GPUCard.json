@@ -4,61 +4,81 @@
       "title": "RTX 4080 16GB founders edition",
       "img": "img/nvidia/rtx-4080.png",
       "price": "9699,99",
-      "id": "plnubpj8sk"
+      "id": "plnubpj8sk",
+      "rating": 4.5,
+      "relevance": 8.2
     },
     {
       "title": "RTX 4080 16GB founders edition",
       "img": "img/nvidia/rtx-4080.png",
       "price": "9699,99",
-      "id": "plnubpj8sk"
+      "id": "plnubpj8sk",
+      "rating": 4.7,
+      "relevance": 8
     },
     {
       "title": "RTX 4080 16GB founders edition",
       "img": "img/nvidia/rtx-4080.png",
       "price": "9699,99",
-      "id": "plnubpj8sk"
+      "id": "plnubpj8sk",
+      "rating": 4,
+      "relevance": 7.9
     },
     {
       "title": "RTX 4080 16GB founders edition",
       "img": "img/nvidia/rtx-4080.png",
       "price": "9699,99",
-      "id": "plnubpj8sk"
+      "id": "plnubpj8sk",
+      "rating": 4.4,
+      "relevance": 9.2
     },
     {
       "title": "RTX 4080 16GB founders edition",
       "img": "img/nvidia/rtx-4080.png",
       "price": "9699,99",
-      "id": "plnubpj8sk"
+      "id": "plnubpj8sk",
+      "rating": 3.9,
+      "relevance": 6
     },
     {
       "title": "RTX 4080 16GB founders edition",
       "img": "img/nvidia/rtx-4080.png",
       "price": "9699,99",
-      "id": "plnubpj8sk"
+      "id": "plnubpj8sk",
+      "rating": 4.2,
+      "relevance": 7.5
     },
     {
       "title": "RTX 4080 16GB founders edition",
       "img": "img/nvidia/rtx-4080.png",
       "price": "9699,99",
-      "id": "plnubpj8sk"
+      "id": "plnubpj8sk",
+      "rating": 4.9,
+      "relevance": 8
     },
     {
       "title": "RTX 4080 16GB founders edition",
       "img": "img/nvidia/rtx-4080.png",
       "price": "9699,99",
-      "id": "plnubpj8sk"
+      "id": "plnubpj8sk",
+      "rating": 4.6,
+      "relevance": 9.2
     },
     {
       "title": "RTX 4080 16GB founders edition",
       "img": "img/nvidia/rtx-4080.png",
       "price": "9699,99",
-      "id": "plnubpj8sk"
+      "id": "plnubpj8sk",
+      "rating": 4.5,
+      "relevance": 7.8
     },
     {
       "title": "RTX 4080 16GB founders edition",
       "img": "img/nvidia/rtx-4080.png",
       "price": "9699,99",
-      "id": "plnubpj8sk"
+      "id": "plnubpj8sk",
+      "rating": 4.1,
+      "relevance": 6.8
     }
   ]
 }

@@ -6,11 +6,15 @@ export default function CarouselHome() {
   const [SelectCard, setSelectCard] = useState(0);
 
   useEffect(() => {
-    setTimeout(() => {
+    let time: NodeJS.Timeout | null = setTimeout(() => {
       let num = SelectCard == 0 ? 1 : 0;
       toggleCard(num);
       setSelectCard(num);
     }, 8000);
+    return () => {
+      clearTimeout(time!);
+      time = null;
+    };
   }, [SelectCard]);
 
   function toggleCard(num: number) {
