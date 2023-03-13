@@ -55,10 +55,12 @@ export const StyledBoardsByBrand = styled.div`
   }
   .frame_boards {
     width: 45%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    gap: 15px;
+    section:first-child{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 15px;
+    }
   }
   .cardGpu {
     cursor: pointer;

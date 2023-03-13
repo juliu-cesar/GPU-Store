@@ -4,8 +4,8 @@ export const StyledFilter = styled.div`
   margin-top: 40px;
   .container_filter {
     border-right: 2px solid ${({ theme }) => theme.text_color};
-    padding: 5px 10px;
     width: 235px;
+    padding: 5px 10px;
   }
   h3 {
     margin: 10px 0;
@@ -49,6 +49,11 @@ export const StyledFilter = styled.div`
     }
     input:checked ~ .checkbox:after {
       opacity: 1;
+    }
+  }
+  @media (max-width: 670px) {
+    .container_filter{
+      width: 190px;
     }
   }
 `;

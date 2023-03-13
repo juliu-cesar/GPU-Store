@@ -10,9 +10,7 @@ export default function SearchPage(){
     <StyledSearch>
       <Header cartType={0}/>
       <div className="container">
-        <div id="Search_container">
           <SearchHeader />
-        </div>
         <div id="filter_products">
           <Filter />
           <ProductList />

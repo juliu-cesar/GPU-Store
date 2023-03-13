@@ -31,8 +31,8 @@ export default function ProductTable({ infoTable, packageContent }: Props) {
                       {el.td.map((e, i) => {
                         let stringI: any = [e];
                         if (e.includes("<br>")) {
-                          stringI = e.split(" ").map((e) => {
-                            return e == "<br>" ? <br /> : e;
+                          stringI = e.split(" ").map((e, i) => {
+                            return e == "<br>" ? <br key={i} /> : e;
                           });
                         }
                         return <td key={i}>{stringI}</td>;

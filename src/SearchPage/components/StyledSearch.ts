@@ -7,10 +7,6 @@ export const StyledSearch = styled.div`
     max-width: 1500px;
     margin: auto;
   }
-  #Search_container{
-    width: 100%;
-    padding-left: 280px;
-  }
   #filter_products{
     width: 100%;
     display: flex;
