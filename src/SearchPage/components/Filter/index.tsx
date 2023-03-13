@@ -31,9 +31,15 @@ const filters = [
 
 export default function Filter() {
   const [price, setPrice] = useState([0, 15000]);
+  const [showFilterSection, setShowFilterSection] = useState(false);
 
   function setSlider(num: number[]) {
     setPrice([num[0], num[1]]);
+  }
+  function openFilterSection(boo: boolean) {
+    const section = document.querySelector(".container_filter") as HTMLElement;
+    section.style.left = boo ? "5px" : "-195px";
+    setShowFilterSection(boo);
   }
   return (
     <StyledFilter>
@@ -72,7 +78,17 @@ export default function Filter() {
             </div>
           );
         })}
+        <button
+          className="small_screen"
+          onClick={() => openFilterSection(true)}
+        >
+          <img
+            src="img/icons/svg/filter-slider.svg"
+            alt="ícone abrir seção filtro"
+          />
+        </button>
       </div>
+      {showFilterSection && <span className="filterSection_cover" onClick={()=>openFilterSection(false)}></span>}
     </StyledFilter>
   );
 }

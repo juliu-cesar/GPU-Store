@@ -26,6 +26,11 @@ export const StyledProductList = styled.div`
   }
   @media (max-width: 600px) {
     .container_product section:first-child {
+      padding-left: 20px;
+    }
+  }
+  @media (max-width: 470px) {
+    .container_product section:first-child {
       grid-template-columns: auto;
     }
   }

@@ -19,6 +19,8 @@ export const StyledSearchHeader = styled.div`
     }
   }
   .dropdown {
+    position: relative;
+    cursor: pointer;
     background-color: ${({ theme }) => theme.semi_black};
     width: 200px;
     height: 40px;
@@ -28,6 +30,39 @@ export const StyledSearchHeader = styled.div`
       font-size: 15px;
       font-weight: 600;
     }
+  }
+  .dropdown_menu {
+    position: absolute;
+    z-index: 100;
+    background-color: ${({ theme }) => theme.semi_black};
+    top: -50px;
+    left: 0;
+    width: 200px;
+    height: 170px;
+    padding: 10px;
+    border-radius: 2px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    animation: 0.25s normal showDropdown;
+    .dropdown_item {
+      cursor: pointer;
+      padding: 7px;
+      border-bottom: 1px solid ${({ theme }) => theme.gray};
+      font-size: 17px;
+      font-weight: 500;
+      transition: all 0.15s;
+      :hover {
+        border-color: ${({ theme }) => theme.text_color};
+      }
+    }
+  }
+  .dropdown_cover {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
   }
   .search {
     position: relative;
@@ -59,6 +94,14 @@ export const StyledSearchHeader = styled.div`
       justify-content: center;
     }
   }
+  @keyframes showDropdown {
+    0% {
+      height: 0px;
+    }
+    100% {
+      height: 170px;
+    }
+  }
   @media (max-width: 970px) {
     .order h3 {
       display: none;
@@ -73,9 +116,9 @@ export const StyledSearchHeader = styled.div`
       }
     }
     .search {
-    padding: 5px;
-    margin-right: 15px;
-  }
+      padding: 5px;
+      margin-right: 15px;
+    }
   }
   @media (max-width: 540px) {
     padding-left: unset;
