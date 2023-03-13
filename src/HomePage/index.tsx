@@ -1,5 +1,6 @@
 import Footer from "../Footer";
 import Header from "../Header";
+import BoardsByBrand from "./components/BoardsByBrand";
 import CarouselHome from "./components/CarouselHome";
 import SearchedBoards from "./components/SearchedBoards";
 import SecurityBanner from "./components/SecurityBanner";
@@ -13,7 +14,7 @@ export default function HomePage(){
           <CarouselHome />
           <SearchedBoards />
           <SecurityBanner />
-          
+          <BoardsByBrand />
           <Footer />
         </StyledHome>
     )

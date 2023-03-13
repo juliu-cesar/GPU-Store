@@ -1,26 +1,33 @@
-import { StyledSearchedBoards } from "./components/StyledSearchedBoards";
-import GPUCard from "@/GPUCard.json";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { TGpuCard } from "../TGpuCard";
+import { StyledBoardsByBrand } from "./components/StyledBoardsByBrand";
+import GPUCard from "@/GPUCard.json";
+import Link from "next/link";
 
-export default function SearchedBoards() {
-  const [fourCards, setFourCards] = useState<TGpuCard | undefined>(undefined);
+export default function BoardsByBrand(){
+  const [brandCard, setBrandCard] = useState<TGpuCard | undefined>(undefined);
 
   useEffect(() => {
     let newArr = GPUCard.gpuList
       .map((e) => e)
+      .filter(e=>e.brand == "amd")
       .sort((a, b) => b.relevance - a.relevance)
-      .slice(0, 4);
-    setFourCards(newArr);
+      .slice(0, 2);
+      setBrandCard(newArr);
   }, []);
-
-  return (
-    <StyledSearchedBoards>
-      <div className="container_Searched">
-        <h4>As placas mais procuradas:</h4>
+  return(
+    <StyledBoardsByBrand>
+      <div className="container_brand">
+        <div className="banner_brand">
+          <div className="frame_amd">
+            <img src="img/amd/amd-logo.svg" alt="logo AMD" />
+          </div>
+          <div className="frame_nvidia">
+            <img src="img/nvidia/nvidia-logo.svg" alt="logo NVIDIA" />
+          </div>
+        </div>
         <div className="frame_boards">
-          {fourCards && fourCards.map((e, i) => {
+        {brandCard && brandCard.map((e, i) => {
             const price = Number(e.price.replace(",", "."));
             const cashPrice = (price * 0.9).toFixed(2);
             const installmentPrice = (price / 12).toFixed(2);
@@ -55,7 +62,10 @@ export default function SearchedBoards() {
             );
           })}
         </div>
+
+
+
       </div>
-    </StyledSearchedBoards>
-  );
+    </StyledBoardsByBrand>
+  )
 }

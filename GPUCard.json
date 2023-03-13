@@ -6,6 +6,7 @@
       "price": "9699,99",
       "id": "plnubpj8sk",
       "rating": 4.5,
+      "brand": "nvidia",
       "relevance": 8.2
     },
     {
@@ -14,6 +15,7 @@
       "price": "9699,99",
       "id": "plnubpj8sk",
       "rating": 4.7,
+      "brand": "nvidia",
       "relevance": 8
     },
     {
@@ -22,14 +24,16 @@
       "price": "9699,99",
       "id": "plnubpj8sk",
       "rating": 4,
+      "brand": "nvidia",
       "relevance": 7.9
     },
     {
-      "title": "RTX 4080 16GB founders edition",
-      "img": "img/nvidia/rtx-4080.png",
-      "price": "9699,99",
-      "id": "plnubpj8sk",
+      "title": "RX 6900 XT 16GB",
+      "img": "img/amd/rx-6000xt.png",
+      "price": "5598,90",
+      "id": "z3w9thi0rp",
       "rating": 4.4,
+      "brand": "amd",
       "relevance": 9.2
     },
     {
@@ -38,6 +42,7 @@
       "price": "9699,99",
       "id": "plnubpj8sk",
       "rating": 3.9,
+      "brand": "nvidia",
       "relevance": 6
     },
     {
@@ -46,6 +51,7 @@
       "price": "9699,99",
       "id": "plnubpj8sk",
       "rating": 4.2,
+      "brand": "nvidia",
       "relevance": 7.5
     },
     {
@@ -54,6 +60,7 @@
       "price": "9699,99",
       "id": "plnubpj8sk",
       "rating": 4.9,
+      "brand": "nvidia",
       "relevance": 8
     },
     {
@@ -62,6 +69,7 @@
       "price": "9699,99",
       "id": "plnubpj8sk",
       "rating": 4.6,
+      "brand": "nvidia",
       "relevance": 9.2
     },
     {
@@ -70,14 +78,16 @@
       "price": "9699,99",
       "id": "plnubpj8sk",
       "rating": 4.5,
+      "brand": "nvidia",
       "relevance": 7.8
     },
     {
-      "title": "RTX 4080 16GB founders edition",
-      "img": "img/nvidia/rtx-4080.png",
-      "price": "9699,99",
-      "id": "plnubpj8sk",
+      "title": "RX 6900 XT 16GB",
+      "img": "img/amd/rx-6000xt.png",
+      "price": "5598,90",
+      "id": "z3w9thi0rp",
       "rating": 4.1,
+      "brand": "amd",
       "relevance": 6.8
     }
   ]
