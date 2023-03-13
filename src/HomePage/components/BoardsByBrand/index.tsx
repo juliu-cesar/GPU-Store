@@ -45,17 +45,6 @@ export default function BoardsByBrand(){
                     <p className="small color1">à vista</p>
                     <h3 className="color1">R$ {cashPrice.replace(".", ",")}</h3>
                     <p className="small2">No pix com 10% de desconto</p>
-                    <span>
-                      <h3>R$ {e.price}</h3>
-                      <p className="small2">
-                        {" "}
-                        em até 12X de R$ {installmentPrice.replace(
-                          ".",
-                          ","
-                        )}{" "}
-                        sem juros
-                      </p>
-                    </span>
                   </div>
                 </Link>
               </div>

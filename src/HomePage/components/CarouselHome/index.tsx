@@ -10,7 +10,7 @@ export default function CarouselHome() {
       let num = SelectCard == 0 ? 1 : 0;
       toggleCard(num);
       setSelectCard(num);
-    }, 3000);
+    }, 8000);
     return () => {
       clearTimeout(time!);
       time = null;
