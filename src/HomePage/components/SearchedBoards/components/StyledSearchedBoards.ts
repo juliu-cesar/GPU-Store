@@ -18,7 +18,7 @@ export const StyledSearchedBoards = styled.div`
     grid-template-columns: auto auto auto auto;
     gap: 10px;
   }
-  .container_cardGpu {
+  .cardGpu {
     cursor: pointer;
     border: 1px solid ${({ theme }) => theme.text_color};
     border-radius: 10px;
@@ -70,5 +70,21 @@ export const StyledSearchedBoards = styled.div`
   .small2 {
     font-size: 12px;
     font-weight: 300;
+  }
+  @media (max-width: 840px) {
+    .frame_boards{
+    grid-template-columns: auto auto auto;
+    }
+    .cardGpu:nth-last-child(1){
+      display: none;      
+    }
+  }
+  @media (max-width: 640px) {
+    .frame_boards{
+    grid-template-columns: auto auto;
+    }
+    .cardGpu:nth-last-child(1){
+      display: block;      
+    }
   }
 `

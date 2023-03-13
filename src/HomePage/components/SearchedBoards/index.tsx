@@ -19,7 +19,6 @@ export default function SearchedBoards() {
       .map((e) => e)
       .sort((a, b) => b.relevance - a.relevance)
       .slice(0, 4);
-
     setFourCards(newArr);
   }, []);
 
@@ -36,7 +35,7 @@ export default function SearchedBoards() {
               e.title.replace(/[\s/]+/g, "-") + "-" + e.id
             }`;
             return (
-              <div className="container_cardGpu" key={i}>
+              <div className="cardGpu" key={i}>
                 <Link href={url}>
                   <div className="frame_img">
                     <img src={e.img} style={{ maxWidth: "300px" }} />

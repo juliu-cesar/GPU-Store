@@ -3,14 +3,12 @@ import styled from "styled-components";
 export const StyledHeader = styled.header`
   background-color: ${({ theme }) => theme.background_base};
   width: 100%;
-  height: 70px;
-  display: flex;
-  justify-content: center;
   .container_header {
     width: 100%;
     max-width: 1450px;
-    height: 100%;
+    height: 70px;
     padding: 0 15px;
+    margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -34,6 +32,11 @@ export const StyledHeader = styled.header`
     }
   }
   .right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
     h4 {
       position: relative;
       padding: 5px;
@@ -41,10 +44,30 @@ export const StyledHeader = styled.header`
       font-size: 19px;
       font-weight: 500;
     }
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
+  }
+  @media (max-width: 540px) {
+    .container_header {
+      padding: 10px;
+      height: unset;
+    }
+    .Logo {
+      a {
+      }
+      .GPU {
+        font-size: 37px;
+        font-weight: 600;
+      }
+      .Store {
+        font-size: 35px;
+        font-weight: 400;
+      }
+    }
+    .right {
+      h4 {
+        padding: 4px;
+        margin: 0px 7px;
+        font-size: 17px;
+      }
+    }
   }
 `;

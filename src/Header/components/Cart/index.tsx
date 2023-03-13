@@ -25,6 +25,11 @@ const StyledCart = styled.div<{
     font-size: 19px;
     font-weight: 500;
   }
+  @media (max-width: 540px) {
+    h3 {
+      display: none;
+    }
+  }
 `;
 
 interface Props {
