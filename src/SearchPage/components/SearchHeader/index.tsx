@@ -11,9 +11,9 @@ const order = [
 interface Props {
   search: string;
   setSearch: Dispatch<SetStateAction<string>>;
-  searchItens: ()=> void
+  searchBar: ()=> void
 }
-export default function SearchHeader({ search, setSearch, searchItens }: Props) {
+export default function SearchHeader({ search, setSearch, searchBar }: Props) {
   const [selectedOrder, setSelectedOrder] = useState(0);
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -23,8 +23,7 @@ export default function SearchHeader({ search, setSearch, searchItens }: Props) 
   return (
     <StyledSearchHeader>
       <div className="container_searchHeader flex_row">
-        <div className="order flex_row">
-          <h3>Ordenar por: </h3>
+        <div className="order">
           <div
             className="dropdown flex_row"
             onClick={() => {
@@ -72,10 +71,10 @@ export default function SearchHeader({ search, setSearch, searchItens }: Props) 
             onChange={(e)=>setSearch(e.target.value)}
             onKeyDown={(e)=>{
               if(e.key != "Enter")return
-              searchItens()
+              searchBar()
             }}
           />
-          <button>
+          <button onClick={()=>searchBar()}>
             <img
               src="img/icons/svg/search-icon.svg"
               alt="Ícone pesquisa"

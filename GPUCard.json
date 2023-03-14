@@ -46,7 +46,7 @@
       "relevance": 6
     },
     {
-      "title": "RTX 4080 16GB founders edition",
+      "title": "RTX 3070 16GB founders edition",
       "img": "img/nvidia/rtx-4080.png",
       "price": "9699,99",
       "id": "plnubpj8sk",
@@ -55,7 +55,7 @@
       "relevance": 7.5
     },
     {
-      "title": "RTX 4080 16GB founders edition",
+      "title": "RTX 1080 16GB founders edition",
       "img": "img/nvidia/rtx-4080.png",
       "price": "9699,99",
       "id": "plnubpj8sk",
@@ -64,7 +64,7 @@
       "relevance": 8
     },
     {
-      "title": "RTX 4080 16GB founders edition",
+      "title": "RTX 2080 16GB founders edition",
       "img": "img/nvidia/rtx-4080.png",
       "price": "9699,99",
       "id": "plnubpj8sk",
@@ -73,7 +73,7 @@
       "relevance": 9.2
     },
     {
-      "title": "RTX 4080 16GB founders edition",
+      "title": "RTX 3080 16GB founders edition",
       "img": "img/nvidia/rtx-4080.png",
       "price": "9699,99",
       "id": "plnubpj8sk",
@@ -95,11 +95,20 @@
     {
       "title": "GTX 1660 Super Twin Fan Zotac Gaming",
       "img": "img/nvidia/rtx-4080.png",
-      "price": "1.699,99",
+      "price": "1699,99",
       "id": "plnubpj8sk",
       "rating": 3.9,
       "brand": "nvidia",
       "relevance": 7.8
+    },
+    {
+      "title": "RTX 3060 Asus Dual O12G V2 NVIDIA GeForce, 12GB GDDR6",
+      "img": "img/nvidia/rtx-4080.png",
+      "price": "2880,39",
+      "id": "plnubpj8sk",
+      "rating": 4.6,
+      "brand": "nvidia",
+      "relevance": 8.3
     },
     {
       "title": "RTX 2060 Ventus MSI NVIDIA GeForce",
@@ -120,7 +129,7 @@
       "relevance": 7.2
     },
     {
-      "title": "G210 PCYes NVIDIA GeForce 1 GB DDR3",
+      "title": "G210 PCYes NVIDIA GeForce, 1GB DDR3",
       "img": "img/nvidia/rtx-4080.png",
       "price": "215,70",
       "id": "plnubpj8sk",

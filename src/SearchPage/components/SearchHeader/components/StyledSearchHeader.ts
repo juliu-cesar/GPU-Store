@@ -12,11 +12,6 @@ export const StyledSearchHeader = styled.div`
   .order {
     padding: 5px 15px;
     gap: 15px;
-    h3 {
-      width: 100px;
-      font-size: 15px;
-      font-weight: 500;
-    }
   }
   .dropdown {
     position: relative;

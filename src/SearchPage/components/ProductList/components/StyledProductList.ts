@@ -1,9 +1,8 @@
 import styled from "styled-components";
 
 export const StyledProductList = styled.div`
-  width: 100%;
+  width: 100%;   
   margin-top: 15px;
-  margin-right: 20px;
   .container_product section:first-child {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;

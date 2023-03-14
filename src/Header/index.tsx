@@ -17,16 +17,16 @@ export default function Header({ cartType }: Props) {
           </Link>
         </div>
         <div className="right">
-          <a href={"/produtos"} style={{ color: "#fff" }}>
+          {/* <a href={"/produtos"} style={{ color: "#fff" }}>
             <h4>
               <StyledHover>Produtos</StyledHover>
             </h4>
-          </a>
-          {/* <Link href={"/produtos"} style={{ color: "#fff" }}>
+          </a> */}
+          <Link href={"/produtos"} style={{ color: "#fff" }}>
             <h4>
               <StyledHover>Produtos</StyledHover>
             </h4>
-          </Link> */}
+          </Link>
           <Cart type={cartType} />
         </div>
       </div>
