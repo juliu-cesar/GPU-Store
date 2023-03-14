@@ -89,6 +89,53 @@
       "rating": 4.1,
       "brand": "amd",
       "relevance": 6.8
+    },
+
+
+    {
+      "title": "GTX 1660 Super Twin Fan Zotac Gaming",
+      "img": "img/nvidia/rtx-4080.png",
+      "price": "1.699,99",
+      "id": "plnubpj8sk",
+      "rating": 3.9,
+      "brand": "nvidia",
+      "relevance": 7.8
+    },
+    {
+      "title": "RTX 2060 Ventus MSI NVIDIA GeForce",
+      "img": "img/nvidia/rtx-4080.png",
+      "price": " 2505,87",
+      "id": "plnubpj8sk",
+      "rating": 4,
+      "brand": "nvidia",
+      "relevance": 8
+    },
+    {
+      "title": "RX 580 PowerColor Red Dragon",
+      "img": "img/amd/rx-6000xt.png",
+      "price": "1340,15",
+      "id": "plnubpj8sk",
+      "rating": 3.7,
+      "brand": "amd",
+      "relevance": 7.2
+    },
+    {
+      "title": "G210 PCYes NVIDIA GeForce 1 GB DDR3",
+      "img": "img/nvidia/rtx-4080.png",
+      "price": "215,70",
+      "id": "plnubpj8sk",
+      "rating": 3.8,
+      "brand": "nvidia",
+      "relevance": 7.5
+    },
+    {
+      "title": "Gigabyte AMD Radeon RX 6700 XT Eagle, 12GB GDDR6",
+      "img": "img/amd/rx-6000xt.png",
+      "price": "3640,08",
+      "id": "z3w9thi0rp",
+      "rating": 4.1,
+      "brand": "amd",
+      "relevance": 8.8
     }
   ]
 }

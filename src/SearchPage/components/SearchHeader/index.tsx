@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { StyledSearchHeader } from "./components/StyledSearchHeader";
 
 const order = [
@@ -8,7 +8,12 @@ const order = [
   { name: "Maior preço", value: 3 },
 ];
 
-export default function SearchHeader() {
+interface Props {
+  search: string;
+  setSearch: Dispatch<SetStateAction<string>>;
+  searchItens: ()=> void
+}
+export default function SearchHeader({ search, setSearch, searchItens }: Props) {
   const [selectedOrder, setSelectedOrder] = useState(0);
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -63,6 +68,12 @@ export default function SearchHeader() {
             name="in-search"
             id="in-search"
             placeholder="Pesquisar..."
+            value={search}
+            onChange={(e)=>setSearch(e.target.value)}
+            onKeyDown={(e)=>{
+              if(e.key != "Enter")return
+              searchItens()
+            }}
           />
           <button>
             <img

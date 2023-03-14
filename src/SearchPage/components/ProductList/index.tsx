@@ -1,14 +1,16 @@
 import { StyledProductList } from "./components/StyledProductList";
-import GPUCard from "@/GPUCard.json";
 import CardGpu from "@/src/components/CardGpu";
+import { TGpuCard } from "@/src/HomePage/components/TGpuCard";
 
-export default function ProductList() {
+export default function ProductList({
+  allCards,
+}: {
+  allCards: TGpuCard | undefined;
+}) {
   return (
     <StyledProductList>
       <div className="container_product">
-        {GPUCard.gpuList && (
-          <CardGpu allCards={GPUCard.gpuList} onlyCash={false} />
-        )}
+        {allCards && <CardGpu allCards={allCards} onlyCash={false} />}
       </div>
     </StyledProductList>
   );

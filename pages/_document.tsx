@@ -16,7 +16,7 @@ export default function Document() {
                 href="https://fonts.googleapis.com/css2?family=Genos:wght@300;400;500;600&display=swap"
                 rel="stylesheet"
             />
-            <body>
+            <body style={{"backgroundColor": "#000"}}>
                 <Main />
                 <NextScript />
             </body>
