@@ -1,39 +1,75 @@
 import { TGpuCard } from "@/src/HomePage/components/TGpuCard";
 
-export function SearchItens(gpuList: TGpuCard, text: string) {
+export function SearchItens(gpuList: TGpuCard, search: string): TGpuCard {
   let arr = gpuList.filter((e) => {
-    return e.title.toLowerCase().includes(text.toLowerCase());
+    return e.title.toLowerCase().includes(search.toLowerCase());
   });
 
+  if (search.split(" ").length > 1) return multipleSearchWords(gpuList, search);
+
   if (arr.length > 0) return arr;
-  let sameLength = gpuList.filter((e) => {
-    let tx = e.title
+
+  arr = [similarSearch(gpuList, search)].flat(1);
+  return arr;
+}
+
+function similarSearch(gpuList: TGpuCard, search: string): TGpuCard {
+  let sameSizeWords = gpuList.filter((e) => {
+    let titleWordsSplit = e.title
       .replace(/[^a-zA-Z0-9]+/g, " ")
       .toLowerCase()
       .split(" ");
     let bool = false;
 
-    tx.forEach((el) => {
-      if (el.length == text.length) {
-        let word = el.split("");
-        let res = text.toLowerCase().split("");
-        let num = 0;
+    titleWordsSplit.forEach((el) => {
+      if (el.length == search.length) {
+        let titleSplitLetters = el.split("");
+        let searchSplitLetters = search.toLowerCase().split("");
+        let sameNumber = 0;
 
-        if(word[0] != res[0])return
-        word.forEach((e) => {
-          res.forEach((t) => {
-            if (e == t) {
-              num++;
+        const firstLetterDifferent =
+          titleSplitLetters[0] != searchSplitLetters[0];
+        if (firstLetterDifferent) return;
+        titleSplitLetters.forEach((tLetter) => {
+          searchSplitLetters.forEach((sLetter) => {
+            if (tLetter == sLetter) {
+              sameNumber++;
             }
           });
         });
-        if (num >= res.length * 0.8) {
+        const similarLetters = sameNumber >= searchSplitLetters.length * 0.8;
+        if (similarLetters) {
           bool = true;
         }
       }
     });
     return bool;
   });
-  let newArr = [arr, sameLength].flatMap((obj) => obj);
-  return newArr;
+  return sameSizeWords;
+}
+
+function multipleSearchWords(gpuList: TGpuCard, search: string): TGpuCard {
+  let split = search.split(" ");
+  let individualSearch: TGpuCard[] = split.map((el) => {
+    return SearchItens(gpuList, el);
+  });
+
+  for (let x = 0; x < individualSearch.length - 1; x++) {
+    let arr1 = stringFy(individualSearch[x]);
+    let arr2 = stringFy(individualSearch[x + 1]);
+    individualSearch[x + 1] = [];
+    for (let i = 0; i < arr1.length; i++) {
+      let obj = arr2.find((e: any) => e.id === arr1[i].id);
+      if (obj) {
+        individualSearch[x + 1]!.push(arr1[i]);
+      }
+    }
+    individualSearch[x] = [];
+  }
+  let flat = individualSearch.flat(1).filter((e) => e != undefined);
+  return flat;
+}
+
+function stringFy(array: TGpuCard): TGpuCard {
+  return JSON.parse(JSON.stringify(array));
 }
