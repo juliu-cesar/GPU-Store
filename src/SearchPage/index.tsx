@@ -8,18 +8,26 @@ import GPUCard from "@/GPUCard.json";
 import { StyledSearch } from "./components/StyledSearch";
 import { TGpuCard } from "../components/TGpuCard";
 import { SearchItens } from "./components/SearchItens";
+import { TFilter } from "./components/TFilter";
 
 export default function SearchPage() {
   const [allCards, setAllCards] = useState<TGpuCard | undefined>(undefined);
   const [selectedOrder, setSelectedOrder] = useState("relevance");
   const [search, setSearch] = useState("");
   const [searchText, setSearchText] = useState("");
-  const [showSearchItens, setShowSearchItens] = useState(false);
+  const [showSearchContent, setShowSearchContent] = useState(false);
+
+  const [price, setPrice] = useState([0, 20000]);
+  const [filter, setFilter] = useState<TFilter>({
+    filterBrand: undefined,
+    filterMemory: undefined,
+    filterRay: undefined,
+  });
 
   useEffect(() => {
-    if (showSearchItens) return;
+    if (showSearchContent) return;
     setAllCards(sortCards(GPUCard.gpuList, selectedOrder));
-  }, [GPUCard, showSearchItens]);
+  }, [GPUCard, showSearchContent]);
 
   useEffect(() => {
     if (!allCards) return;
@@ -32,13 +40,15 @@ export default function SearchPage() {
 
     if (search.trim() == "") {
       setAllCards(GPUCard.gpuList);
-      setShowSearchItens(false);
+      setShowSearchContent(false);
     } else {
       setAllCards(newArr);
-      setShowSearchItens(true);
+      setShowSearchContent(true);
       setSearchText(search);
+      setSearch("");
     }
   }
+
   function sortCards(gpuCard: TGpuCard, order: string): TGpuCard {
     let newArr: TGpuCard = JSON.parse(JSON.stringify(gpuCard));
 
@@ -55,7 +65,6 @@ export default function SearchPage() {
     }
     return newArr;
   }
-
   return (
     <StyledSearch>
       <Header cartType={0} />
@@ -68,23 +77,19 @@ export default function SearchPage() {
           searchBar={searchBar}
         />
         <div id="filter_products">
-          <Filter />
+          <Filter
+            price={price}
+            setPrice={setPrice}
+            filter={filter}
+            setFilter={setFilter}
+          />
           <div className="product_and_search">
-            {showSearchItens && (
-              <div className="searched_itens">
-                <h4>
-                  <span className="small">Você pesquisou por:</span>{" "}
-                  {searchText}
-                </h4>
-                <button onClick={() => setShowSearchItens(false)}>
-                  <img
-                    src="img/icons/svg/close.svg"
-                    alt="ícone fechar pesquisa"
-                  />
-                </button>
-              </div>
-            )}
-            <ProductList allCards={allCards} />
+            <ProductList
+              allCards={allCards}
+              showSearchContent={showSearchContent}
+              setShowSearchContent={setShowSearchContent}
+              searchText={searchText}
+            />
           </div>
         </div>
       </div>

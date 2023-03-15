@@ -1,36 +1,51 @@
 import { Slider } from "antd";
-import { useState } from "react";
+import { ChangeEvent, Dispatch, SetStateAction, useEffect, useState } from "react";
+import { TFilter } from "../TFilter";
+import FilterSection from "./components/FilterSection";
 import { StyledFilter } from "./components/StyledFilter";
 import { StyledSlider } from "./components/StyledSlider";
 
-const filters = [
-  {
+const allFilters = {
+  filterBrand: {
     title: "Marca",
+    id: "filterBrand",
     options: [
-      { label: "AMD", id: "AMD" },
-      { label: "NVIDIA", id: "NVIDIA" },
+      { label: "AMD", id: "AMD", value: "AMD" },
+      { label: "NVIDIA", id: "NVIDIA", value: "NVIDIA" },
     ],
   },
-  {
+  filterMemory: {
     title: "Memória",
+    id: "filterMemory",
     options: [
-      { label: "Até 4 GB", id: "memory_1" },
-      { label: "4 a 8 GB", id: "memory_2" },
-      { label: "8 a 12 GB", id: "memory_3" },
-      { label: "Acima de 12 GB", id: "memory_4" },
+      { label: "Até 4 GB", id: "memory_1", value: [0, 4] },
+      { label: "4 a 8 GB", id: "memory_2", value: [4, 8] },
+      { label: "8 a 12 GB", id: "memory_3", value: [8, 12] },
+      { label: "Acima de 12 GB", id: "memory_4", value: [12, 100] },
     ],
   },
-  {
+  filterRay: {
     title: "Traçados de raio",
+    id: "filterRay",
     options: [
-      { label: "Sim", id: "ray_on" },
-      { label: "Não", id: "ray_off" },
+      { label: "Sim", id: "ray_on", value: true },
+      { label: "Não", id: "ray_off", value: false },
     ],
   },
-];
+};
 
-export default function Filter() {
-  const [price, setPrice] = useState([0, 15000]);
+interface Props {
+  price: number[];
+  setPrice: Dispatch<SetStateAction<number[]>>;
+  filter: TFilter;
+  setFilter: Dispatch<SetStateAction<TFilter>>;
+}
+export default function Filter({
+  price,
+  setPrice,
+  filter,
+  setFilter
+}: Props) {
   const [showFilterSection, setShowFilterSection] = useState(false);
 
   function setSlider(num: number[]) {
@@ -40,6 +55,30 @@ export default function Filter() {
     const section = document.querySelector(".container_filter") as HTMLElement;
     section.style.left = boo ? "5px" : "-195px";
     setShowFilterSection(boo);
+  }
+  function chooseFilter(
+    el: ChangeEvent<HTMLInputElement>,
+    id: string,
+    value: string | number[] | boolean | undefined
+  ) {
+    clearPrevAndSelect(el, id);
+    let newFilter = filter;
+    newFilter[id as keyof typeof newFilter] = value;
+    setFilter(newFilter);
+  }
+  function clearPrevAndSelect(el: ChangeEvent<HTMLInputElement>, id: string) {
+    const filters = document.querySelector(`#${id}`) as HTMLElement;
+    const children = filters.children;
+    let target = el.target.checked;
+
+    if (!target) {
+      el.target.checked = false;
+      return;
+    }
+    for (let x = 1; x < children.length; x++) {
+      (children[x].children[0].children[0] as HTMLInputElement).checked = false;
+    }
+    el.target.checked = true;
   }
   return (
     <StyledFilter>
@@ -56,28 +95,22 @@ export default function Filter() {
               step={100}
               defaultValue={[price[0], price[1]]}
               onChange={setSlider}
-              max={15000}
+              max={20000}
             />
           </StyledSlider>
         </div>
-        {filters.map((e, i) => {
-          return (
-            <div className="container_options flex_column" key={i}>
-              <h3>{e.title}</h3>
-              {e.options.map((e, index) => {
-                return (
-                  <div className="frame_options" key={index}>
-                    <label htmlFor={e.id}>
-                      <input type="checkbox" name={e.id} id={e.id} />
-                      <span className="checkbox"></span>
-                      {e.label}
-                    </label>
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
+        <FilterSection
+          Filters={allFilters.filterBrand}
+          chooseFilter={chooseFilter}
+        />
+        <FilterSection
+          Filters={allFilters.filterMemory}
+          chooseFilter={chooseFilter}
+        />
+        <FilterSection
+          Filters={allFilters.filterRay}
+          chooseFilter={chooseFilter}
+        />
         <button
           className="small_screen"
           onClick={() => openFilterSection(true)}
@@ -88,7 +121,12 @@ export default function Filter() {
           />
         </button>
       </div>
-      {showFilterSection && <span className="filterSection_cover" onClick={()=>openFilterSection(false)}></span>}
+      {showFilterSection && (
+        <span
+          className="filterSection_cover"
+          onClick={() => openFilterSection(false)}
+        ></span>
+      )}
     </StyledFilter>
   );
 }

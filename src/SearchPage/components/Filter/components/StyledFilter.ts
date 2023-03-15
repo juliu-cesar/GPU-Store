@@ -38,10 +38,10 @@ export const StyledFilter = styled.div`
       cursor: pointer;
       vertical-align: middle;
     }
-    span {
+    .checkbox {
       float: left;
-      width: 25px;
-      height: 25px;
+      width: 20px;
+      height: 20px;
       margin-right: 10px;
       border: 1.5px solid ${({ theme }) => theme.text_color};
       border-radius: 1px;
@@ -56,17 +56,17 @@ export const StyledFilter = styled.div`
     .checkbox:after {
       content: "";
       position: absolute;
-      top: 3px;
-      left: 9px;
+      top: 2px;
+      left: 7px;
       width: 5px;
-      height: 12px;
+      height: 10px;
       opacity: 0;
       border: solid ${({ theme }) => theme.text_color};
-      border-width: 0 3px 3px 0;
+      border-width: 0 2.5px 2.5px 0;
       transform: rotate(45deg);
       -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
-      transition: all 0.1s;
+      transition: all 0.15s;
     }
     input:checked ~ .checkbox:after {
       opacity: 1;
@@ -94,6 +94,11 @@ export const StyledFilter = styled.div`
     }
     .small_screen{
       display: block;
+    }
+  }
+  @media (max-width: 370px) {
+    .container_filter{
+      top: 220px;
     }
   }
 `;
