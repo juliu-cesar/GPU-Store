@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { TGpuCard } from "../TGpuCard";
+import { TGpuCard } from "../../../components/TGpuCard";
 import { StyledBoardsByBrand } from "./components/StyledBoardsByBrand";
 import GPUCard from "@/GPUCard.json";
 import Link from "next/link";

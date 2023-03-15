@@ -1,6 +1,6 @@
 import { StyledProductList } from "./components/StyledProductList";
 import CardGpu from "@/src/components/CardGpu";
-import { TGpuCard } from "@/src/HomePage/components/TGpuCard";
+import { TGpuCard } from "@/src/components/TGpuCard";
 
 export default function ProductList({
   allCards,

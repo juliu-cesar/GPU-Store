@@ -2,23 +2,30 @@ import { Dispatch, SetStateAction, useState } from "react";
 import { StyledSearchHeader } from "./components/StyledSearchHeader";
 
 const order = [
-  { name: "Mais relevantes", value: 0 },
-  { name: "Melhor avaliado", value: 1 },
-  { name: "Menor preço", value: 2 },
-  { name: "Maior preço", value: 3 },
+  { name: "Mais relevantes", value: "relevance" },
+  { name: "Melhor avaliado", value: "rating" },
+  { name: "Menor preço", value: "price-down" },
+  { name: "Maior preço", value: "price-up" },
 ];
 
 interface Props {
+  selectedOrder: string;
+  setSelectedOrder: Dispatch<SetStateAction<string>>;
   search: string;
   setSearch: Dispatch<SetStateAction<string>>;
-  searchBar: ()=> void
+  searchBar: () => void;
 }
-export default function SearchHeader({ search, setSearch, searchBar }: Props) {
-  const [selectedOrder, setSelectedOrder] = useState(0);
+export default function SearchHeader({
+  selectedOrder,
+  setSelectedOrder,
+  search,
+  setSearch,
+  searchBar,
+}: Props) {
   const [showDropdown, setShowDropdown] = useState(false);
 
-  function selectOder(num: number) {
-    setSelectedOrder(num);
+  function chooseOrder(tx: string) {
+    setSelectedOrder(tx);
   }
   return (
     <StyledSearchHeader>
@@ -30,7 +37,7 @@ export default function SearchHeader({ search, setSearch, searchBar }: Props) {
               setShowDropdown(showDropdown ? false : true);
             }}
           >
-            <h4>{order[selectedOrder].name}</h4>
+            <h4>{order.find((e) => e.value == selectedOrder)?.name}</h4>
             <img
               src="img/icons/svg/dropdown-icon.svg"
               alt="Ícone expandir"
@@ -44,7 +51,7 @@ export default function SearchHeader({ search, setSearch, searchBar }: Props) {
                       className="dropdown_item"
                       key={index}
                       onClick={() => {
-                        selectOder(el.value);
+                        chooseOrder(el.value);
                       }}
                     >
                       {el.name}
@@ -68,13 +75,13 @@ export default function SearchHeader({ search, setSearch, searchBar }: Props) {
             id="in-search"
             placeholder="Pesquisar..."
             value={search}
-            onChange={(e)=>setSearch(e.target.value)}
-            onKeyDown={(e)=>{
-              if(e.key != "Enter")return
-              searchBar()
+            onChange={(e) => setSearch(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key != "Enter") return;
+              searchBar();
             }}
           />
-          <button onClick={()=>searchBar()}>
+          <button onClick={() => searchBar()}>
             <img
               src="img/icons/svg/search-icon.svg"
               alt="Ícone pesquisa"

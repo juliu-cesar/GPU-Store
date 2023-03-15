@@ -1,4 +1,4 @@
-import { TGpuCard } from "@/src/HomePage/components/TGpuCard";
+import { TGpuCard } from "@/src/components/TGpuCard";
 
 export function SearchItens(gpuList: TGpuCard, search: string): TGpuCard {
   let arr = gpuList.filter((e) => {

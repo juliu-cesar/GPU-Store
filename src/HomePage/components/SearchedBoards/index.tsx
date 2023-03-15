@@ -2,7 +2,7 @@ import { StyledSearchedBoards } from "./components/StyledSearchedBoards";
 import GPUCard from "@/GPUCard.json";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { TGpuCard } from "../TGpuCard";
+import { TGpuCard } from "../../../components/TGpuCard";
 import CardGpu from "@/src/components/CardGpu";
 
 export default function SearchedBoards() {
