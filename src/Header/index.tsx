@@ -10,18 +10,21 @@ export default function Header({ cartType }: Props) {
   return (
     <StyledHeader>
       <div className="container_header">
-        <div className="Logo">
-          <Link href={"/"} style={{ color: "#fff" }}>
-            <h3 className="GPU">GPU</h3>
-            <h3 className="Store">Store</h3>
-          </Link>
+        <div className="Brand">
+          <div className="entire_brand">
+            <Link href={"/"} style={{ color: "#fff" }}>
+              <h3>GPU</h3>
+              <h4>Store</h4>
+            </Link>
+          </div>
+          <div className="short_brand">
+            <Link href={"/"} style={{ color: "#fff" }}>
+              <h3>G</h3>
+              <h4>S</h4>
+            </Link>
+          </div>
         </div>
         <div className="right">
-          {/* <a href={"/produtos"} style={{ color: "#fff" }}>
-            <h4>
-              <StyledHover>Produtos</StyledHover>
-            </h4>
-          </a> */}
           <Link href={"/produtos"} style={{ color: "#fff" }}>
             <h4>
               <StyledHover>Produtos</StyledHover>

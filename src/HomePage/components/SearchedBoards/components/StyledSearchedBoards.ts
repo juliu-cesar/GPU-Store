@@ -38,4 +38,11 @@ export const StyledSearchedBoards = styled.div`
       display: block;
     }
   }
+  @media (max-width: 640px) {
+    .frame_boards {
+      section:first-child {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
 `;

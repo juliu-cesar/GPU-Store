@@ -7,6 +7,8 @@ export const StyledSearchHeader = styled.div`
     height: 65px;
     margin-top: 15px;
     border-bottom: 2px solid ${({ theme }) => theme.text_color};
+    display: flex;
+    flex-direction: row;
     justify-content: space-around;
   }
   .order {
@@ -119,9 +121,31 @@ export const StyledSearchHeader = styled.div`
     padding-left: unset;
     .dropdown {
       width: 160px;
-      height: 40px;
       padding: 5px;
-      border-radius: 2px;
+    }
+  }
+  @media (max-width: 370px) {
+    .container_searchHeader{
+      height: 110px;
+      margin-top: 5px;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .order{
+      display: flex;
+      justify-content: end;
+    }
+    .search{
+      padding: 5px 10px;
+    }
+    .dropdown {
+      width: 100%;
+      padding: 5px 10px;
+    }
+    .dropdown_menu{
+      width: 100%;
+      left: unset;
+      right: 0;
     }
   }
 `;

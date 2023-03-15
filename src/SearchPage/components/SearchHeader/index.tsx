@@ -22,7 +22,7 @@ export default function SearchHeader({ search, setSearch, searchBar }: Props) {
   }
   return (
     <StyledSearchHeader>
-      <div className="container_searchHeader flex_row">
+      <div className="container_searchHeader">
         <div className="order">
           <div
             className="dropdown flex_row"

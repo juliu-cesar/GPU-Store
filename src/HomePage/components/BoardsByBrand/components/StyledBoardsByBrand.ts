@@ -7,15 +7,15 @@ export const StyledBoardsByBrand = styled.div`
     max-width: 1300px;
     padding: 20px;
     margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
     align-items: center;
     gap: 15px;
   }
   .banner_brand {
     position: relative;
-    width: 55%;
+    width: 100%;
     max-width: 500px;
     height: 300px;
     border-radius: 20px;
@@ -54,91 +54,29 @@ export const StyledBoardsByBrand = styled.div`
     }
   }
   .frame_boards {
-    width: 45%;
+    width: 100%;
     section:first-child{
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 15px;
     }
   }
-  .cardGpu {
-    cursor: pointer;
-    border: 1px solid ${({ theme }) => theme.text_color};
-    border-radius: 10px;
-    overflow: hidden;
-    :hover .frame_content h4 {
-      text-decoration: underline;
+  @media (max-width: 840px) {
+    .container_brand{
+      grid-template-columns: 1fr 1.2fr;
     }
-    a {
-      color: ${({ theme }) => theme.text_color};
-    }
-  }
-  .frame_img {
-    background-color: ${({ theme }) => theme.text_color};
-    width: 100%;
-    height: 180px;
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    img {
-      width: 100%;
-      max-height: 180px;
-    }
-  }
-  .frame_content {
-    padding: 5px 10px;
-    h4 {
-      font-size: 15px;
-      font-weight: 500;
-      margin-bottom: 10px;
-    }
-    h3 {
-      font-size: 17px;
-      font-weight: 600;
-    }
-    span {
-      color: ${({ theme }) => theme.off_white};
-      h3 {
-        margin-top: 10px;
-      }
-    }
-  }
-
-  .color1 {
-    color: ${({ theme }) => theme.color1};
-  }
-  .small {
-    font-size: 13px;
-    font-weight: 400;
-  }
-  .small2 {
-    font-size: 12px;
-    font-weight: 300;
-  }
-  @media (max-width: 970px) {
     .banner_brand {
-      width: 50%;
       height: 250px;
-    }
-    .frame_boards {
-      width: 50%;
     }
   }
   @media (max-width: 770px) {
     .banner_brand {
-      width: 40%;
       height: 200px;
-    }
-    .frame_boards {
-      width: 60%;
     }
   }
   @media (max-width: 640px) {
     .container_brand {
       width: 100%;
-      padding: 10px;
       display: flex;
       flex-direction: column;
       justify-content: space-around;
@@ -164,5 +102,16 @@ export const StyledBoardsByBrand = styled.div`
         width: 80%;
       }
     }
+  }
+  @media (max-width: 440px) {
+    .banner_brand div img {
+        width: 90%;      
+    }
+    .frame_boards section:first-child{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
+  
   }
 `;

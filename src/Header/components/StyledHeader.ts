@@ -13,7 +13,7 @@ export const StyledHeader = styled.header`
     flex-direction: row;
     justify-content: space-between;
   }
-  .Logo {
+  .Brand {
     font-family: "Genos", sans-serif;
     margin: auto 0;
     a {
@@ -22,13 +22,16 @@ export const StyledHeader = styled.header`
       align-items: center;
       gap: 10px;
     }
-    .GPU {
-      font-size: 40px;
-      font-weight: 600;
-    }
-    .Store {
-      font-size: 38px;
-      font-weight: 400;
+      h3 {
+        font-size: 40px;
+        font-weight: 600;
+      }
+      h4 {
+        font-size: 38px;
+        font-weight: 400;
+      }
+    .short_brand {
+      display: none;
     }
   }
   .right {
@@ -50,14 +53,12 @@ export const StyledHeader = styled.header`
       padding: 10px;
       height: unset;
     }
-    .Logo {
-      a {
-      }
-      .GPU {
+    .Brand {
+      h3 {
         font-size: 37px;
         font-weight: 600;
       }
-      .Store {
+      h4 {
         font-size: 35px;
         font-weight: 400;
       }
@@ -69,5 +70,26 @@ export const StyledHeader = styled.header`
         font-size: 17px;
       }
     }
+  }
+  @media (max-width: 370px) {
+    .Brand {
+    a {
+      gap: 7px;
+      h3 {
+        font-size: 45px;
+        font-weight: 600;
+      }
+      h4 {
+        font-size: 40px;
+        font-weight: 400;
+      }
+    }
+    .entire_brand{
+      display: none;
+    }
+    .short_brand {
+      display: block;
+    }
+  }
   }
 `;

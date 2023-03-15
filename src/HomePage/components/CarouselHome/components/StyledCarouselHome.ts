@@ -6,6 +6,7 @@ export const StyledCarouselHome = styled.div`
   .container_carousel {
     width: 100%;
     max-width: 1300px;
+    min-width: 300px;
     padding: 30px 0;
     margin: auto;
     box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
@@ -149,6 +150,9 @@ export const StyledCarouselHome = styled.div`
     }
   }
   @media (max-width: 420px) {
+    .container_carousel{
+      padding: 10px 0;
+    }
     .frame_img {
       img {
         right: 5px;
