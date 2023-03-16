@@ -1,5 +1,8 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { TGpuCard } from "@/src/components/TGpuCard";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { StyledSearchHeader } from "./components/StyledSearchHeader";
+import GPUCard from "@/GPUCard.json";
+import { SearchItens } from "../SearchItens";
 
 const order = [
   { name: "Mais relevantes", value: "relevance" },
@@ -11,19 +14,49 @@ const order = [
 interface Props {
   selectedOrder: string;
   setSelectedOrder: Dispatch<SetStateAction<string>>;
-  search: string;
-  setSearch: Dispatch<SetStateAction<string>>;
-  searchBar: () => void;
+  showSearchContent: boolean; 
+  setShowSearchContent: Dispatch<SetStateAction<boolean>>;
+  allCards: TGpuCard | undefined; 
+  setAllCards: Dispatch<SetStateAction<TGpuCard | undefined>>;
+  setSearchText: Dispatch<SetStateAction<string>>;
+  sortCards: (gpuCard: TGpuCard, order: string) => TGpuCard
 }
 export default function SearchHeader({
   selectedOrder,
   setSelectedOrder,
-  search,
-  setSearch,
-  searchBar,
+  showSearchContent, 
+  setShowSearchContent,
+  allCards, 
+  setAllCards,
+  setSearchText,
+  sortCards
 }: Props) {
   const [showDropdown, setShowDropdown] = useState(false);
+  const [search, setSearch] = useState("");
 
+  useEffect(() => {
+    if (showSearchContent) return;
+    setAllCards(sortCards(GPUCard.gpuList, selectedOrder));
+  }, [GPUCard, showSearchContent]);
+  useEffect(() => {
+    if (!allCards) return;
+    setAllCards(sortCards(allCards, selectedOrder));
+  }, [selectedOrder]);
+
+  function searchBar() {
+    if (!GPUCard.gpuList) return;
+    let newArr = SearchItens(GPUCard.gpuList, search);
+
+    if (search.trim() == "") {
+      setAllCards(sortCards(GPUCard.gpuList, selectedOrder));
+      setShowSearchContent(false);
+    } else {
+      setAllCards(sortCards(newArr, selectedOrder));
+      setShowSearchContent(true);
+      setSearchText(search);
+      setSearch("");
+    }
+  }
   function chooseOrder(tx: string) {
     setSelectedOrder(tx);
   }

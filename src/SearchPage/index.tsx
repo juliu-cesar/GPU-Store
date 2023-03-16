@@ -8,38 +8,13 @@ import GPUCard from "@/GPUCard.json";
 import { StyledSearch } from "./components/StyledSearch";
 import { TGpuCard } from "../components/TGpuCard";
 import { SearchItens } from "./components/SearchItens";
-import { TFilter } from "./components/TFilter";
 
 export default function SearchPage() {
   const [allCards, setAllCards] = useState<TGpuCard | undefined>(undefined);
-  const [selectedOrder, setSelectedOrder] = useState("relevance");
-  const [search, setSearch] = useState("");
+  const [selectedOrder, setSelectedOrder] = useState("relevance");  
   const [searchText, setSearchText] = useState("");
   const [showSearchContent, setShowSearchContent] = useState(false);
-
-  useEffect(() => {
-    if (showSearchContent) return;
-    setAllCards(sortCards(GPUCard.gpuList, selectedOrder));
-  }, [GPUCard, showSearchContent]);
-  useEffect(() => {
-    if (!allCards) return;
-    setAllCards(sortCards(allCards, selectedOrder));
-  }, [selectedOrder]);
-
-  function searchBar() {
-    if (!GPUCard.gpuList) return;
-    let newArr = SearchItens(GPUCard.gpuList, search);
-
-    if (search.trim() == "") {
-      setAllCards(sortCards(GPUCard.gpuList, selectedOrder));
-      setShowSearchContent(false);
-    } else {
-      setAllCards(sortCards(newArr, selectedOrder));
-      setShowSearchContent(true);
-      setSearchText(search);
-      setSearch("");
-    }
-  }
+  
   function sortCards(gpuCard: TGpuCard, order: string): TGpuCard {
     let newArr: TGpuCard = JSON.parse(JSON.stringify(gpuCard));
 
@@ -64,17 +39,19 @@ export default function SearchPage() {
   const [filterCover, setFilterCover] = useState(false);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-    setFilterCover(true)
+    if (filterBrand != null || filterMemory != null || filterRay != null || price[0] != 0 && price[1] != 20000) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setFilterCover(true);
+    }
     let timer: string | number | NodeJS.Timeout | undefined = setTimeout(() => {
       filterCards();
-      setFilterCover(false)
+      setFilterCover(false);
     }, 600);
     return () => {
       clearInterval(timer);
       timer = undefined;
     };
-  }, [filterBrand, filterMemory, filterRay]);
+  }, [filterBrand, filterMemory, filterRay, price]);
 
   function filterCards() {
     if (!GPUCard.gpuList) return;
@@ -96,6 +73,9 @@ export default function SearchPage() {
         newArr = newArr.filter((el) => el.ray == false);
       }
     }
+    newArr = newArr.filter(
+      (el) => el.price >= price[0] && el.price <= price[1]
+    );
     setAllCards(sortCards(newArr, selectedOrder));
   }
   return (
@@ -105,9 +85,12 @@ export default function SearchPage() {
         <SearchHeader
           selectedOrder={selectedOrder}
           setSelectedOrder={setSelectedOrder}
-          search={search}
-          setSearch={setSearch}
-          searchBar={searchBar}
+          allCards={allCards}
+          setAllCards={setAllCards}
+          setSearchText={setSearchText}
+          showSearchContent={showSearchContent}
+          setShowSearchContent={setShowSearchContent}
+          sortCards={sortCards}
         />
         <div id="filter_products">
           <Filter
@@ -128,7 +111,11 @@ export default function SearchPage() {
         </div>
       </div>
       <Footer />
-      {filterCover && <span className="filter_cover"><div className="spin"></div></span>}
+      {filterCover && (
+        <span className="filter_cover">
+          <div className="spin"></div>
+        </span>
+      )}
     </StyledSearch>
   );
 }

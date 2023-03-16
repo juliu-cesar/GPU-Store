@@ -1,0 +1,30 @@
+{
+  "allFilters": {
+    "filterBrand": {
+      "title": "Marca",
+      "id": "filterBrand",
+      "options": [
+        { "label": "AMD", "id": "AMD", "value": "amd" },
+        { "label": "NVIDIA", "id": "NVIDIA", "value": "nvidia" }
+      ]
+    },
+    "filterMemory": {
+      "title": "Memória",
+      "id": "filterMemory",
+      "options": [
+        { "label": "Até 4 GB", "id": "memory_1", "value": [0, 4] },
+        { "label": "4 a 8 GB", "id": "memory_2", "value": [4, 8] },
+        { "label": "8 a 12 GB", "id": "memory_3", "value": [8, 12] },
+        { "label": "Acima de 12 GB", "id": "memory_4", "value": [12, 100] }
+      ]
+    },
+    "filterRay": {
+      "title": "Traçados de raio",
+      "id": "filterRay",
+      "options": [
+        { "label": "Sim", "id": "ray_on", "value": true },
+        { "label": "Não", "id": "ray_off", "value": false }
+      ]
+    }
+  }
+}

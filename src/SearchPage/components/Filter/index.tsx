@@ -6,39 +6,10 @@ import {
   useEffect,
   useState,
 } from "react";
-import { TFilter } from "../TFilter";
 import FilterSection from "./components/FilterSection";
 import { StyledFilter } from "./components/StyledFilter";
 import { StyledSlider } from "./components/StyledSlider";
-
-const allFilters = {
-  filterBrand: {
-    title: "Marca",
-    id: "filterBrand",
-    options: [
-      { label: "AMD", id: "AMD", value: "amd" },
-      { label: "NVIDIA", id: "NVIDIA", value: "nvidia" },
-    ],
-  },
-  filterMemory: {
-    title: "Memória",
-    id: "filterMemory",
-    options: [
-      { label: "Até 4 GB", id: "memory_1", value: [0, 4] },
-      { label: "4 a 8 GB", id: "memory_2", value: [4, 8] },
-      { label: "8 a 12 GB", id: "memory_3", value: [8, 12] },
-      { label: "Acima de 12 GB", id: "memory_4", value: [12, 100] },
-    ],
-  },
-  filterRay: {
-    title: "Traçados de raio",
-    id: "filterRay",
-    options: [
-      { label: "Sim", id: "ray_on", value: true },
-      { label: "Não", id: "ray_off", value: false },
-    ],
-  },
-};
+import allFilters from "@/allFilters.json"
 
 interface Props {
   price: number[];
@@ -55,10 +26,17 @@ export default function Filter({
   setFilterRay,
 }: Props) {
   const [showFilterSection, setShowFilterSection] = useState(false);
+  const [elPrice, setElPrice] = useState([price[0], price[1]]);
 
-  function setSlider(num: number[]) {
-    setPrice([num[0], num[1]]);
-  }
+  useEffect(() => {
+    let timer: string | number | NodeJS.Timeout | undefined = setTimeout(() => {
+      setPrice([elPrice[0], elPrice[1]]);
+    }, 1000);
+    return () => {
+      clearInterval(timer);
+      timer = undefined;
+    };
+  }, [elPrice]);
   function openFilterSection(boo: boolean) {
     const section = document.querySelector(".container_filter") as HTMLElement;
     section.style.left = boo ? "5px" : "-195px";
@@ -101,29 +79,29 @@ export default function Filter({
         <div className="Price">
           <h3>Preço</h3>
           <div className="flex_row">
-            <p>{price[0]}</p>
-            <p>{price[1]}</p>
+            <p>{elPrice[0]}</p>
+            <p>{elPrice[1]}</p>
           </div>
           <StyledSlider>
             <Slider
               range
               step={100}
               defaultValue={[price[0], price[1]]}
-              onChange={setSlider}
+              onChange={(num) => setElPrice([num[0], num[1]])}
               max={20000}
             />
           </StyledSlider>
         </div>
         <FilterSection
-          Filters={allFilters.filterBrand}
+          Filters={allFilters.allFilters.filterBrand}
           chooseFilter={chooseFilter}
         />
         <FilterSection
-          Filters={allFilters.filterMemory}
+          Filters={allFilters.allFilters.filterMemory}
           chooseFilter={chooseFilter}
         />
         <FilterSection
-          Filters={allFilters.filterRay}
+          Filters={allFilters.allFilters.filterRay}
           chooseFilter={chooseFilter}
         />
         <button
