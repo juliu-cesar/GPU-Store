@@ -11,6 +11,28 @@ export const StyledFilter = styled.div`
     box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
     transition: all .25s ease-in-out;
   }
+  .clear_filter{
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    button{
+      width: 30px;
+      min-width: 30px;
+      height: 30px;
+      min-height: 30px;
+      background-color: ${({ theme }) => theme.semi_black};
+      color: ${({ theme }) => theme.text_color};
+      padding: 8px;
+      border: unset;
+      border-radius: 50%;
+    }
+    img{
+      width: 100%;
+    }
+  }
   .small_screen{
     position: absolute;
     display: none;
@@ -30,46 +52,26 @@ export const StyledFilter = styled.div`
   }
   h3 {
     margin: 10px 0;
-  }
-  .frame_options {
-    position: relative;
-    margin-bottom: 10px;
-    label {
-      cursor: pointer;
-      vertical-align: middle;
-    }
-    .checkbox {
-      float: left;
-      width: 20px;
-      height: 20px;
-      margin-right: 10px;
-      border: 1.5px solid ${({ theme }) => theme.text_color};
-      border-radius: 1px;
-    }
-    input {
-      cursor: pointer;
-      position: absolute;
-      height: 0;
-      width: 0;
-      opacity: 0;
-    }
-    .checkbox:after {
-      content: "";
-      position: absolute;
-      top: 2px;
-      left: 7px;
-      width: 5px;
-      height: 10px;
-      opacity: 0;
-      border: solid ${({ theme }) => theme.text_color};
-      border-width: 0 2.5px 2.5px 0;
-      transform: rotate(45deg);
-      -webkit-transform: rotate(45deg);
-      -ms-transform: rotate(45deg);
-      transition: all 0.15s;
-    }
-    input:checked ~ .checkbox:after {
-      opacity: 1;
+  }   
+  .filter_delay{
+    position: fixed;
+    z-index: 200;
+    background-color: rgba(0,0,0,0.4);
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: .3s normal slowOpacity;
+    .spin{
+      width: 80px;
+      height: 80px;
+      opacity: .8;
+      border: 10px inset white;
+      border-radius: 50%;
+      animation: 1.3s infinite spin;
     }
   }
   .filterSection_cover{

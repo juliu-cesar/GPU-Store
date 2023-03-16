@@ -6,103 +6,116 @@ import {
   useEffect,
   useState,
 } from "react";
-import FilterSection from "./components/FilterSection";
+import FilterSection from "./components/CheckBoxSection/components/CheckBoxOption";
 import { StyledFilter } from "./components/StyledFilter";
-import { StyledSlider } from "./components/StyledSlider";
-import allFilters from "@/allFilters.json"
+import { StyledSlider } from "./components/SliderOption/components/StyledSlider";
+import allFilters from "@/allFilters.json";
+import GPUCard from "@/GPUCard.json";
+import { TGpuCard } from "@/src/components/TGpuCard";
+import SliderOption from "./components/SliderOption";
+import CheckBoxSection from "./components/CheckBoxSection";
 
 interface Props {
-  price: number[];
-  setPrice: Dispatch<SetStateAction<number[]>>;
-  setFilterBrand: Dispatch<SetStateAction<string | null>>;
-  setFilterMemory: Dispatch<SetStateAction<number[] | null>>;
-  setFilterRay: Dispatch<SetStateAction<boolean | null>>;
+  setAllCards: Dispatch<SetStateAction<TGpuCard | undefined>>;
+  sortCards: (gpuCard: TGpuCard, order: string) => TGpuCard;
+  selectedOrder: string;
 }
 export default function Filter({
-  price,
-  setPrice,
-  setFilterBrand,
-  setFilterMemory,
-  setFilterRay,
+  setAllCards,
+  sortCards,
+  selectedOrder,
 }: Props) {
-  const [showFilterSection, setShowFilterSection] = useState(false);
-  const [elPrice, setElPrice] = useState([price[0], price[1]]);
+  const [price, setPrice] = useState([0, 20000]);
+  const [filterBrand, setFilterBrand] = useState<string | null>(null);
+  const [filterMemory, setFilterMemory] = useState<number[] | null>(null);
+  const [filterRay, setFilterRay] = useState<boolean | null>(null);
+  const [filterCover, setFilterCover] = useState(false);
+  const [showClearFilters, setShowClearFilters] = useState(false);
 
   useEffect(() => {
+    if (
+      filterBrand != null ||
+      filterMemory != null ||
+      filterRay != null ||
+      price[0] != 0 ||
+      price[1] != 20000 ||
+      showClearFilters
+    ) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setFilterCover(true);
+      setShowClearFilters(true);
+    }
     let timer: string | number | NodeJS.Timeout | undefined = setTimeout(() => {
-      setPrice([elPrice[0], elPrice[1]]);
-    }, 1000);
+      filterCards();
+      setFilterCover(false);
+    }, 600);
     return () => {
       clearInterval(timer);
       timer = undefined;
     };
-  }, [elPrice]);
+  }, [filterBrand, filterMemory, filterRay, price]);
+
+  function filterCards() {
+    if (!GPUCard.gpuList) return;
+    let newArr = GPUCard.gpuList;
+
+    if (filterBrand) {
+      newArr = newArr.filter((el) => el.brand == filterBrand);
+    }
+    if (filterMemory) {
+      newArr = newArr.filter(
+        (el) => el.memory >= filterMemory[0] && el.memory <= filterMemory[1]
+      );
+    }
+    if (filterRay != null) {
+      if (filterRay) {
+        newArr = newArr.filter((el) => el.ray == true);
+      }
+      if (!filterRay) {
+        newArr = newArr.filter((el) => el.ray == false);
+      }
+    }
+    newArr = newArr.filter(
+      (el) => el.price >= price[0] && el.price <= price[1]
+    );
+    setAllCards(sortCards(newArr, selectedOrder));
+  }
+  function clearFilters() {
+    const filters = document.querySelectorAll(`.frame_checkBoxOption`);
+
+    for (let x = 0; x < filters.length; x++) {
+      (filters[x].children[0].children[0] as HTMLInputElement).checked = false;
+    }
+    setPrice([0, 20000]);
+    setFilterBrand(null);
+    setFilterMemory(null);
+    setFilterRay(null);
+    setShowClearFilters(false);
+  }
+
+  const [showFilterSection, setShowFilterSection] = useState(false);
+
   function openFilterSection(boo: boolean) {
     const section = document.querySelector(".container_filter") as HTMLElement;
     section.style.left = boo ? "5px" : "-195px";
     setShowFilterSection(boo);
   }
-  function chooseFilter(
-    el: ChangeEvent<HTMLInputElement>,
-    id: string,
-    value: string | number[] | boolean | null
-  ) {
-    clearPrevAndSelect(el, id);
-
-    if (id == "filterBrand") {
-      setFilterBrand(value as string | null);
-    }
-    if (id == "filterMemory") {
-      setFilterMemory(value as number[] | null);
-    }
-    if (id == "filterRay") {
-      setFilterRay(value as boolean | null);
-    }
-  }
-  function clearPrevAndSelect(el: ChangeEvent<HTMLInputElement>, id: string) {
-    const filters = document.querySelector(`#${id}`) as HTMLElement;
-    const children = filters.children;
-    let target = el.target.checked;
-
-    if (!target) {
-      el.target.checked = false;
-      return;
-    }
-    for (let x = 1; x < children.length; x++) {
-      (children[x].children[0].children[0] as HTMLInputElement).checked = false;
-    }
-    el.target.checked = true;
-  }
   return (
     <StyledFilter>
       <div className="container_filter">
-        <div className="Price">
-          <h3>Preço</h3>
-          <div className="flex_row">
-            <p>{elPrice[0]}</p>
-            <p>{elPrice[1]}</p>
+        {showClearFilters && (
+          <div className="clear_filter">
+            Limpar Filtro{" "}
+            <button onClick={clearFilters}>
+              <img src="img/icons/svg/close.svg" style={{ maxWidth: "30px" }} />
+            </button>
           </div>
-          <StyledSlider>
-            <Slider
-              range
-              step={100}
-              defaultValue={[price[0], price[1]]}
-              onChange={(num) => setElPrice([num[0], num[1]])}
-              max={20000}
-            />
-          </StyledSlider>
-        </div>
-        <FilterSection
-          Filters={allFilters.allFilters.filterBrand}
-          chooseFilter={chooseFilter}
-        />
-        <FilterSection
-          Filters={allFilters.allFilters.filterMemory}
-          chooseFilter={chooseFilter}
-        />
-        <FilterSection
-          Filters={allFilters.allFilters.filterRay}
-          chooseFilter={chooseFilter}
+        )}
+        <SliderOption price={price} setPrice={setPrice} />
+        <CheckBoxSection
+          setFilterBrand={setFilterBrand}
+          setFilterMemory={setFilterMemory}
+          setFilterRay={setFilterRay}
         />
         <button
           className="small_screen"
@@ -114,6 +127,11 @@ export default function Filter({
           />
         </button>
       </div>
+      {filterCover && (
+        <span className="filter_delay">
+          <div className="spin"></div>
+        </span>
+      )}
       {showFilterSection && (
         <span
           className="filterSection_cover"
