@@ -17,38 +17,29 @@ export default function SearchPage() {
   const [searchText, setSearchText] = useState("");
   const [showSearchContent, setShowSearchContent] = useState(false);
 
-  const [price, setPrice] = useState([0, 20000]);
-  const [filter, setFilter] = useState<TFilter>({
-    filterBrand: undefined,
-    filterMemory: undefined,
-    filterRay: undefined,
-  });
-
   useEffect(() => {
     if (showSearchContent) return;
     setAllCards(sortCards(GPUCard.gpuList, selectedOrder));
   }, [GPUCard, showSearchContent]);
-
   useEffect(() => {
     if (!allCards) return;
     setAllCards(sortCards(allCards, selectedOrder));
-  }, [allCards]);
+  }, [selectedOrder]);
 
   function searchBar() {
     if (!GPUCard.gpuList) return;
     let newArr = SearchItens(GPUCard.gpuList, search);
 
     if (search.trim() == "") {
-      setAllCards(GPUCard.gpuList);
+      setAllCards(sortCards(GPUCard.gpuList, selectedOrder));
       setShowSearchContent(false);
     } else {
-      setAllCards(newArr);
+      setAllCards(sortCards(newArr, selectedOrder));
       setShowSearchContent(true);
       setSearchText(search);
       setSearch("");
     }
   }
-
   function sortCards(gpuCard: TGpuCard, order: string): TGpuCard {
     let newArr: TGpuCard = JSON.parse(JSON.stringify(gpuCard));
 
@@ -65,6 +56,35 @@ export default function SearchPage() {
     }
     return newArr;
   }
+
+  const [price, setPrice] = useState([0, 20000]);
+  const [filterBrand, setFilterBrand] = useState<string | null>(null);
+  const [filterMemory, setFilterMemory] = useState<number[] | null>(null);
+  const [filterRay, setFilterRay] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    let timer: string | number | NodeJS.Timeout | undefined = setTimeout(() => {
+      filterCards();
+    }, 1000);
+    return () => {
+      clearInterval(timer);
+      timer = undefined;
+    };
+  }, [filterBrand, filterMemory, filterRay]);
+
+  function filterCards() {
+    if (!GPUCard.gpuList) return;
+    let newArr = GPUCard.gpuList;
+
+    if (filterBrand) {
+    }
+    if (filterMemory) {
+      newArr = newArr.filter(
+        (el) => el.memory >= filterMemory[0] && el.memory <= filterMemory[1]
+      );
+    }
+    setAllCards(sortCards(newArr, selectedOrder));
+  }
   return (
     <StyledSearch>
       <Header cartType={0} />
@@ -80,8 +100,9 @@ export default function SearchPage() {
           <Filter
             price={price}
             setPrice={setPrice}
-            filter={filter}
-            setFilter={setFilter}
+            setFilterBrand={setFilterBrand}
+            setFilterMemory={setFilterMemory}
+            setFilterRay={setFilterRay}
           />
           <div className="product_and_search">
             <ProductList

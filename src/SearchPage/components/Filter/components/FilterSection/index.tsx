@@ -13,7 +13,7 @@ interface Props {
   chooseFilter: (
     el: ChangeEvent<HTMLInputElement>,
     id: string,
-    value: string | number[] | boolean | undefined
+    value: string | number[] | boolean | null
   ) => void;
 }
 export default function FilterSection({ Filters, chooseFilter }: Props) {
@@ -33,7 +33,7 @@ export default function FilterSection({ Filters, chooseFilter }: Props) {
                     chooseFilter(
                       eC,
                       Filters.id,
-                      eC.target.checked ? e.value : undefined
+                      eC.target.checked ? e.value : null
                     )
                   }
                 />

@@ -1,5 +1,11 @@
 import { Slider } from "antd";
-import { ChangeEvent, Dispatch, SetStateAction, useEffect, useState } from "react";
+import {
+  ChangeEvent,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useState,
+} from "react";
 import { TFilter } from "../TFilter";
 import FilterSection from "./components/FilterSection";
 import { StyledFilter } from "./components/StyledFilter";
@@ -37,14 +43,16 @@ const allFilters = {
 interface Props {
   price: number[];
   setPrice: Dispatch<SetStateAction<number[]>>;
-  filter: TFilter;
-  setFilter: Dispatch<SetStateAction<TFilter>>;
+  setFilterBrand: Dispatch<SetStateAction<string | null>>;
+  setFilterMemory: Dispatch<SetStateAction<number[] | null>>;
+  setFilterRay: Dispatch<SetStateAction<boolean | null>>;
 }
 export default function Filter({
   price,
   setPrice,
-  filter,
-  setFilter
+  setFilterBrand,
+  setFilterMemory,
+  setFilterRay,
 }: Props) {
   const [showFilterSection, setShowFilterSection] = useState(false);
 
@@ -59,12 +67,19 @@ export default function Filter({
   function chooseFilter(
     el: ChangeEvent<HTMLInputElement>,
     id: string,
-    value: string | number[] | boolean | undefined
+    value: string | number[] | boolean | null
   ) {
     clearPrevAndSelect(el, id);
-    let newFilter = filter;
-    newFilter[id as keyof typeof newFilter] = value;
-    setFilter(newFilter);
+
+    if (id == "filterBrand") {
+      setFilterBrand(value as string | null);
+    }
+    if (id == "filterMemory") {
+      setFilterMemory(value as number[] | null);
+    }
+    if (id == "filterRay") {
+      setFilterRay(value as boolean | null);
+    }
   }
   function clearPrevAndSelect(el: ChangeEvent<HTMLInputElement>, id: string) {
     const filters = document.querySelector(`#${id}`) as HTMLElement;
