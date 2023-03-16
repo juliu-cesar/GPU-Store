@@ -61,11 +61,15 @@ export default function SearchPage() {
   const [filterBrand, setFilterBrand] = useState<string | null>(null);
   const [filterMemory, setFilterMemory] = useState<number[] | null>(null);
   const [filterRay, setFilterRay] = useState<boolean | null>(null);
+  const [filterCover, setFilterCover] = useState(false);
 
   useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+    setFilterCover(true)
     let timer: string | number | NodeJS.Timeout | undefined = setTimeout(() => {
       filterCards();
-    }, 1000);
+      setFilterCover(false)
+    }, 600);
     return () => {
       clearInterval(timer);
       timer = undefined;
@@ -77,11 +81,20 @@ export default function SearchPage() {
     let newArr = GPUCard.gpuList;
 
     if (filterBrand) {
+      newArr = newArr.filter((el) => el.brand == filterBrand);
     }
     if (filterMemory) {
       newArr = newArr.filter(
         (el) => el.memory >= filterMemory[0] && el.memory <= filterMemory[1]
       );
+    }
+    if (filterRay != null) {
+      if (filterRay) {
+        newArr = newArr.filter((el) => el.ray == true);
+      }
+      if (!filterRay) {
+        newArr = newArr.filter((el) => el.ray == false);
+      }
     }
     setAllCards(sortCards(newArr, selectedOrder));
   }
@@ -115,6 +128,7 @@ export default function SearchPage() {
         </div>
       </div>
       <Footer />
+      {filterCover && <span className="filter_cover"><div className="spin"></div></span>}
     </StyledSearch>
   );
 }

@@ -16,8 +16,8 @@ const allFilters = {
     title: "Marca",
     id: "filterBrand",
     options: [
-      { label: "AMD", id: "AMD", value: "AMD" },
-      { label: "NVIDIA", id: "NVIDIA", value: "NVIDIA" },
+      { label: "AMD", id: "AMD", value: "amd" },
+      { label: "NVIDIA", id: "NVIDIA", value: "nvidia" },
     ],
   },
   filterMemory: {
