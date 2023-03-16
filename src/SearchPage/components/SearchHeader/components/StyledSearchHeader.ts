@@ -10,6 +10,7 @@ export const StyledSearchHeader = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
   }
   .order {
     padding: 5px 15px;
@@ -63,7 +64,7 @@ export const StyledSearchHeader = styled.div`
   }
   .search {
     position: relative;
-    padding: 5px 15px;
+    margin-right: 15px;
     width: 100%;
     max-width: 800px;
     input {
@@ -80,12 +81,13 @@ export const StyledSearchHeader = styled.div`
     }
     button {
       position: absolute;
-      background-color: unset;
+      background-color: ${({ theme }) => theme.semi_black};
       border: unset;
       top: calc(50% - 18px);
-      right: 18px;
+      right: 5px;
       width: 35px;
       height: 35px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;

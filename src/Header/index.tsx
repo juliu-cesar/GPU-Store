@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { StyledHover } from "../components/StyledHover";
-import Cart from "./components/Cart";
+import CartHeader from "./components/CartHeader";
 import { StyledHeader } from "./components/StyledHeader";
 
 interface Props {
@@ -30,7 +30,9 @@ export default function Header({ cartType }: Props) {
               <StyledHover>Produtos</StyledHover>
             </h4>
           </Link>
-          <Cart type={cartType} />
+          {cartType != 2 && <Link href={"/carrinho"} style={{ color: "#fff" }}>
+            <CartHeader type={cartType} />
+          </Link>}
         </div>
       </div>
     </StyledHeader>

@@ -1,7 +1,7 @@
 import { StyledHover } from "@/src/components/StyledHover";
 import styled from "styled-components";
 
-const StyledCart = styled.div<{
+const StyledCartHeader = styled.div<{
   type: number;
 }>`
   position: relative;
@@ -35,9 +35,9 @@ const StyledCart = styled.div<{
 interface Props {
   type: number;
 }
-export default function Cart({ type }: Props) {
+export default function CartHeader({ type }: Props) {
   return (
-    <StyledCart type={type}>
+    <StyledCartHeader type={type}>
       <StyledHover>
         {type == 1 && <h3>Carrinho</h3>}
         <div>
@@ -49,6 +49,6 @@ export default function Cart({ type }: Props) {
           0
         </div>
       </StyledHover>
-    </StyledCart>
+    </StyledCartHeader>
   );
 }
