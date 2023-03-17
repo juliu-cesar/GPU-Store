@@ -34,23 +34,30 @@ export default function Header({ cartType }: Props) {
             </h4>
           </Link>
           {cartType != 2 && (
-            <div className="cart_button">
-                <StyledHover>
-                  {cartType == 1 && <h3>Carrinho</h3>}
-                  <div>
-                    <img
-                      src="../img/icons/cart-icon.png"
-                      alt="ícone carrinho de compras"
-                      style={{ width: "18px" }}
-                    />{" "}
-                    0
-                  </div>
-                </StyledHover>
+            <div
+              className="cart_button"
+              onClick={() => setShowCartSection(true)}
+            >
+              <StyledHover>
+                {cartType == 1 && <h3>Carrinho</h3>}
+                <div>
+                  <img
+                    src="../img/icons/cart-icon.png"
+                    alt="ícone carrinho de compras"
+                    style={{ width: "18px" }}
+                  />{" "}
+                  0
+                </div>
+              </StyledHover>
             </div>
           )}
         </div>
       </div>
-      <CartSection />
+      <CartSection
+        showCart={showCartSection}
+        showCartSection={showCartSection}
+        setShowCartSection={setShowCartSection}
+      />
     </StyledHeader>
   );
 }

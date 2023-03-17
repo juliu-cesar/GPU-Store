@@ -1,9 +1,11 @@
+import { Dispatch, SetStateAction } from "react";
 import { StyledCartSection } from "./components/StyledCartSection";
 
 const Mock = [
   {
     id: "ywtlguhtgn",
-    title: "RTX 3070 MSI Ventus 3X Plus NVIDIA GeForce, 8GB GDDR6",
+    title:
+      "RTX 3070 MSI Ventus 3X Plus NVIDIANVIDIANVIDIANVIDIA GeForce, 8GB GDDR6",
     img: "img/nvidia/rtx-4080.png",
     brand: "nvidia",
     memory: 8,
@@ -14,7 +16,8 @@ const Mock = [
   },
   {
     id: "zj5u0db7qk",
-    title: "GTX 1050 Ti Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5 Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5 Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5",
+    title:
+      "GTX 1050 Ti Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5 Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5 Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5",
     img: "img/nvidia/rtx-4080.png",
     brand: "nvidia",
     memory: 4,
@@ -47,7 +50,8 @@ const Mock = [
   },
   {
     id: "zj5u0db7qk",
-    title: "GTX 1050 Ti Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5 Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5 Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5",
+    title:
+      "GTX 1050 Ti Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5 Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5 Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5",
     img: "img/nvidia/rtx-4080.png",
     brand: "nvidia",
     memory: 4,
@@ -80,7 +84,8 @@ const Mock = [
   },
   {
     id: "zj5u0db7qk",
-    title: "GTX 1050 Ti Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5 Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5 Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5",
+    title:
+      "GTX 1050 Ti Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5 Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5 Asus NVIDIA GeForce OC Cerberus, 4GB GDDR5",
     img: "img/nvidia/rtx-4080.png",
     brand: "nvidia",
     memory: 4,
@@ -103,11 +108,17 @@ const Mock = [
 ];
 
 interface Props {
-  type: number;
+  showCart: boolean;
+  showCartSection: boolean;
+  setShowCartSection: Dispatch<SetStateAction<boolean>>;
 }
-export default function CartSection() {
+export default function CartSection({
+  showCart,
+  showCartSection,
+  setShowCartSection,
+}: Props) {
   return (
-    <StyledCartSection>
+    <StyledCartSection show={showCart ? "0" : "-551px"}>
       <div className="container_cartSection">
         <div className="frame_headerCart flex_row">
           <h3>Itens</h3>
@@ -120,7 +131,7 @@ export default function CartSection() {
               currency: "BRL",
             });
             return (
-              <div className="CardItem flex_row">
+              <div className="CardItem">
                 <div className="imgIcon align_center">
                   <img src={el.img} style={{ maxWidth: "150px" }} />
                 </div>
@@ -150,8 +161,21 @@ export default function CartSection() {
             <h3>R$ 2789,65</h3>
           </div>
         </div>
-        <button>Finalizar Compra</button>
+        <button className="btn_buy">Finalizar Compra</button>
+        <button className="btn_close" onClick={() => setShowCartSection(false)}>
+          <img
+            src="img/icons/svg/arrow-bold.svg"
+            alt="ícone"
+            style={{ maxWidth: "40px" }}
+          />
+        </button>
       </div>
+      {showCartSection && (
+        <span
+          className="cart_cover"
+          onClick={() => setShowCartSection(false)}
+        ></span>
+      )}
     </StyledCartSection>
   );
 }
