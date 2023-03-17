@@ -37,7 +37,7 @@ export default function SearchHeader({
   useEffect(() => {
     if (showSearchContent) return;
     setAllCards(sortCards(GPUCard.gpuList, selectedOrder));
-  }, [GPUCard, showSearchContent]);
+  }, [showSearchContent]);
   useEffect(() => {
     if (!allCards) return;
     setAllCards(sortCards(allCards, selectedOrder));

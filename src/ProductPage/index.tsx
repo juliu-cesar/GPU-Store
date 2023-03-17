@@ -16,9 +16,11 @@ interface Props {
 }
 export default function ProductPage({ router }: Props) {
   const [Product, setProduct] = useState<IProduct | undefined>();
+  const [ID, setID] = useState("");
 
   useEffect(() => {
     let id = router.query.params?.slice(-10);
+    setID(id as string)
     setProduct(product[id as keyof typeof product]);
   }, [router.query]);
   return (
@@ -26,7 +28,7 @@ export default function ProductPage({ router }: Props) {
       <Header cartType={0} />
       <div className="container_price">
         <ProductCarousel imgList={Product?.imgList} />
-        <ProductPrice textList={Product?.textList} />
+        <ProductPrice textList={Product?.textList} ID={ID} />
       </div>
       <div className="container_description">
         <ProductDescription description={Product?.description} />

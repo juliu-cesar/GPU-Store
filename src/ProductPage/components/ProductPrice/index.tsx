@@ -1,5 +1,8 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { StyledProductPrice } from "./components/StyledProductPrice";
+import GPUCard from "@/GPUCard.json";
+import { TGpuCard } from "@/src/components/TGpuCard";
+import { CartContext } from "@/src/Header/components/CartSection/components/CartProvider";
 
 interface Props {
   textList:
@@ -9,15 +12,28 @@ interface Props {
         price: number;
       }
     | undefined;
+    ID: string;
 }
-export default function ProductPrice({ textList }: Props) {
+export default function ProductPrice({ textList, ID }: Props) {
   const [cash_price, setCash_price] = useState("");
   const [installment_price, setInstallment_price] = useState("");
+  const cartContext = useContext(CartContext)
 
   useEffect(() => {
     setCash_price(((textList?.price || 0) * 0.9).toFixed(2).replace(".", ","))
     setInstallment_price(((textList?.price || 0) / 12).toFixed(2).replace(".", ","))
   }, [textList?.price]);
+
+  function addCart() {
+    let newArr: TGpuCard = GPUCard.gpuList
+    let productList = cartContext.ProductList ? cartContext.ProductList : []
+
+    newArr.filter((el)=>{
+      return el.id == ID
+    })
+    productList.push(newArr[0])
+    cartContext.setProductList(productList)
+  }
   return (
     <StyledProductPrice>
       <div className="frame_title">
@@ -39,8 +55,8 @@ export default function ProductPrice({ textList }: Props) {
         </div>
       </div>
       <div className="buttons">
-        <button className="buy">Comprar</button>
-        <button className="add_cart">+ carrinho</button>
+        {/* <button className="buy">Comprar</button> */}
+        <button className="add_cart" onClick={addCart}>+ carrinho</button>
       </div>
     </StyledProductPrice>
   );

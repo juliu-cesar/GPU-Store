@@ -1,15 +1,5 @@
-import { Slider } from "antd";
-import {
-  ChangeEvent,
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useState,
-} from "react";
-import FilterSection from "./components/CheckBoxSection/components/CheckBoxOption";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { StyledFilter } from "./components/StyledFilter";
-import { StyledSlider } from "./components/SliderOption/components/StyledSlider";
-import allFilters from "@/allFilters.json";
 import GPUCard from "@/GPUCard.json";
 import { TGpuCard } from "@/src/components/TGpuCard";
 import SliderOption from "./components/SliderOption";
@@ -86,6 +76,7 @@ export default function Filter({
     for (let x = 0; x < filters.length; x++) {
       (filters[x].children[0].children[0] as HTMLInputElement).checked = false;
     }
+    setFilterCover(true);
     setPrice([0, 20000]);
     setFilterBrand(null);
     setFilterMemory(null);

@@ -14,7 +14,7 @@ export default function SearchPage() {
   const [searchText, setSearchText] = useState("");
 
   function sortCards(gpuCard: TGpuCard, order: string): TGpuCard {
-    let newArr: TGpuCard = JSON.parse(JSON.stringify(gpuCard));
+    let newArr: TGpuCard = gpuCard
 
     if (order == "price-up" || order == "price-down") {
       newArr.sort((a, b) =>
