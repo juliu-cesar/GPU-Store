@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const StyledHeader = styled.header`
+export const StyledHeader = styled.header<{
+  type: number
+}>`
   background-color: ${({ theme }) => theme.background_base};
   width: 100%;
   .container_header {
@@ -48,6 +50,30 @@ export const StyledHeader = styled.header`
       font-weight: 500;
     }
   }
+  .cart_button{
+
+    position: relative;
+    cursor: pointer;
+    height: 50px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: ${({ type }) => `${type}px`} solid ${({ theme }) => theme.text_color};
+  border-radius: 10px;
+  h3 {
+    font-weight: 500;
+    margin-right: 10px;
+  }
+  div {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 19px;
+    font-weight: 500;
+  }
+}
   @media (max-width: 540px) {
     .container_header {
       padding: 10px;
@@ -69,6 +95,9 @@ export const StyledHeader = styled.header`
         margin: 0px 7px;
         font-size: 17px;
       }
+    }
+    .cart_button h3{
+      display: none;
     }
   }
   @media (max-width: 370px) {

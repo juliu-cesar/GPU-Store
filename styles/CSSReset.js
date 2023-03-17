@@ -40,8 +40,11 @@ export const CSSReset = createGlobalStyle`
   .flex_column{
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
-    /* justify-content: space-between; */
+  }
+  .align_center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .ant-tooltip {
     display: none;
