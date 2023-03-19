@@ -8,4 +8,5 @@ export type TGpuCard = {
   price: number;
   rating: number;
   relevance: number;
+  amount?: number;
 }[];

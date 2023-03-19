@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useContext } from "react";
+import { Dispatch, SetStateAction, useContext, useEffect } from "react";
 import { CartContext } from "./components/CartProvider";
 import { StyledCartSection } from "./components/StyledCartSection";
 
@@ -37,7 +37,7 @@ export default function CartSection({
                     <h4>{el.title}</h4>
                     <h3>{cashPrice}</h3>
                   </div>
-                  <div className="amount align_center">1</div>
+                  <div className="amount align_center">{el.amount}</div>
                 </div>
               );
             })}
@@ -62,7 +62,7 @@ export default function CartSection({
         <button className="btn_buy">Finalizar Compra</button>
         <button className="btn_close" onClick={() => setShowCartSection(false)}>
           <img
-            src="img/icons/svg/arrow-bold.svg"
+            src="../img/icons/svg/arrow-bold.svg"
             alt="ícone"
             style={{ maxWidth: "40px" }}
           />

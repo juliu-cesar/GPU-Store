@@ -1,5 +1,5 @@
 import { TGpuCard } from "@/src/components/TGpuCard";
-import { createContext, Dispatch, SetStateAction, useState } from "react";
+import { createContext, Dispatch, SetStateAction, useEffect, useState } from "react";
 
 type cartType = {
   ProductList: TGpuCard | [];

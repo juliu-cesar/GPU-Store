@@ -37,7 +37,7 @@ export default function ProductCarousel({
           className="arrow_back"
           onClick={() => prevNextCard(cardSelect - 1)}
         >
-          <img src="../img/icons/svg/arrow-bold.svg" />
+          <img src="../../img/icons/svg/arrow-bold.svg" />
         </div>
         <div className="frame_carousel_card">
           <div className="carousel_card">
@@ -55,7 +55,7 @@ export default function ProductCarousel({
           className="arrow_front"
           onClick={() => prevNextCard(cardSelect + 1)}
         >
-          <img src="../img/icons/svg/arrow-bold.svg" />
+          <img src="../../img/icons/svg/arrow-bold.svg" />
         </div>
       </div>
       <div className="frame_carousel_img">

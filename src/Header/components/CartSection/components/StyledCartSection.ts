@@ -158,17 +158,15 @@ export const StyledCartSection = styled.section<{
   }
   .btn_close {
     position: absolute;
-    background-color: ${({ theme }) => theme.background_base};
+    background-color: ${({ theme }) => theme.text_color};
     top: 5px;
-    left: 0px;
-    width: 40px;
-    min-width: 40px;
-    height: 40px;
-    min-height: 40px;
+    left: 5px;
+    width: 35px;
+    min-width: 35px;
+    height: 35px;
+    min-height: 35px;
     padding: 8px;
     border: unset;
-    outline: 1px solid ${({ theme }) => theme.text_color};
-    outline-offset: -4px;
     border-radius: 50%;
     display: none;
     img {
