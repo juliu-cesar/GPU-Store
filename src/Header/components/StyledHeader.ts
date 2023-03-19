@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header<{
-  type: number
+  type: number;
 }>`
   background-color: ${({ theme }) => theme.background_base};
   width: 100%;
@@ -24,14 +24,14 @@ export const StyledHeader = styled.header<{
       align-items: center;
       gap: 10px;
     }
-      h3 {
-        font-size: 40px;
-        font-weight: 600;
-      }
-      h4 {
-        font-size: 38px;
-        font-weight: 400;
-      }
+    h3 {
+      font-size: 40px;
+      font-weight: 600;
+    }
+    h4 {
+      font-size: 38px;
+      font-weight: 400;
+    }
     .short_brand {
       display: none;
     }
@@ -50,30 +50,33 @@ export const StyledHeader = styled.header<{
       font-weight: 500;
     }
   }
-  .cart_button{
-
+  .cart_button {
     position: relative;
     cursor: pointer;
     height: 50px;
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border: ${({ type }) => `${type}px`} solid ${({ theme }) => theme.text_color};
-  border-radius: 10px;
-  h3 {
-    font-weight: 500;
-    margin-right: 10px;
-  }
-  div {
+    padding: 10px;
     display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    gap: 3px;
-    font-size: 19px;
-    font-weight: 500;
+    border: ${({ type }) => `${type}px`} solid
+      ${({ theme }) => theme.text_color};
+    border-radius: 10px;
+    h3 {
+      font-weight: 500;
+      margin-right: 10px;
+    }
+    div {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 21px;
+      font-weight: 500;
+      h3{
+        font-size: 19px;
+      }
+    }
   }
-}
   @media (max-width: 540px) {
     .container_header {
       padding: 10px;
@@ -96,29 +99,29 @@ export const StyledHeader = styled.header<{
         font-size: 17px;
       }
     }
-    .cart_button h3{
+    .cart_button h3 {
       display: none;
     }
   }
   @media (max-width: 370px) {
     .Brand {
-    a {
-      gap: 7px;
-      h3 {
-        font-size: 45px;
-        font-weight: 600;
+      a {
+        gap: 7px;
+        h3 {
+          font-size: 45px;
+          font-weight: 600;
+        }
+        h4 {
+          font-size: 40px;
+          font-weight: 400;
+        }
       }
-      h4 {
-        font-size: 40px;
-        font-weight: 400;
+      .entire_brand {
+        display: none;
+      }
+      .short_brand {
+        display: block;
       }
     }
-    .entire_brand{
-      display: none;
-    }
-    .short_brand {
-      display: block;
-    }
-  }
   }
 `;

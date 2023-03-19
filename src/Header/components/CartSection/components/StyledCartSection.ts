@@ -59,6 +59,7 @@ export const StyledCartSection = styled.section<{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     overflow: hidden;
     .imgIcon {
       background-color: ${({ theme }) => theme.text_color};
@@ -92,9 +93,12 @@ export const StyledCartSection = styled.section<{
       font-weight: 500;
     }
     .amount {
-      width: 40px;
-      min-width: 40px;
+      background-color: unset;
+      color: ${({ theme }) => theme.text_color};
+      width: 45px;
+      min-width: 45px;
       height: 30px;
+      padding-left: 15px;
       border: 1px solid ${({ theme }) => theme.text_color};
       border-radius: 2px;
       font-size: 19px;
@@ -244,6 +248,7 @@ export const StyledCartSection = styled.section<{
       min-height: 180px;
       flex-direction: column;
       justify-content: space-around;
+      align-items: unset;
       .imgIcon {
         margin: 0 10px;
         img {

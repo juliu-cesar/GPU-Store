@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { StyledHover } from "../components/StyledHover";
 import CartSection from "./components/CartSection";
+import { CartContext } from "./components/CartSection/components/CartProvider";
 import { StyledHeader } from "./components/StyledHeader";
 
 interface Props {
@@ -9,6 +10,7 @@ interface Props {
 }
 export default function Header({ cartType }: Props) {
   const [showCartSection, setShowCartSection] = useState(false);
+  const cartContext = useContext(CartContext);
 
   return (
     <StyledHeader type={cartType}>
@@ -33,7 +35,6 @@ export default function Header({ cartType }: Props) {
               <StyledHover>Produtos</StyledHover>
             </h4>
           </Link>
-          {cartType != 2 && (
             <div
               className="cart_button"
               onClick={() => setShowCartSection(true)}
@@ -46,11 +47,10 @@ export default function Header({ cartType }: Props) {
                     alt="ícone carrinho de compras"
                     style={{ width: "18px" }}
                   />{" "}
-                  0
+                  {cartContext.ProductList.length}
                 </div>
               </StyledHover>
             </div>
-          )}
         </div>
       </div>
       <CartSection

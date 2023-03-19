@@ -18,6 +18,8 @@ export default function ProductPrice({ textList, ID }: Props) {
   const [cash_price, setCash_price] = useState("");
   const [installment_price, setInstallment_price] = useState("");
   const cartContext = useContext(CartContext);
+  const ProductList = cartContext.ProductList;
+  const LS = "ProductList";
 
   useEffect(() => {
     if (!textList) return;
@@ -37,33 +39,37 @@ export default function ProductPrice({ textList, ID }: Props) {
 
   function addCart() {
     let newArr: TGpuCard = GPUCard.gpuList;
-    let productList = cartContext.ProductList ? cartContext.ProductList : [];
+    let newProductList: TGpuCard = JSON.parse(JSON.stringify(ProductList));
 
     newArr = newArr.filter((el) => {
       return el.id == ID;
     });
 
-    if (cartContext.ProductList.length > 0) {
-      if (cartContext.ProductList.length >= 10) return;
-      let index = productList.findIndex((e) => {
+    if (ProductList.length > 0) {
+      if (ProductList.length >= 10) return;
+      let index = newProductList.findIndex((e) => {
         return e.id == ID;
       });
       if (index != -1) {
-        if (productList[index].amount! >= 5) return;
-        newArr = productList;
+        if (newProductList[index].amount! >= 5) return;
+        newArr = newProductList;
         newArr[index].amount!++;
-        cartContext.setProductList(newArr);
+        addProductLS(newArr);
       } else {
         newArr[0].amount = 1;
-        productList.push(newArr[0]);
-        cartContext.setProductList(productList);
+        newProductList.push(newArr[0]);
+        addProductLS(newProductList);
       }
     } else {
       newArr[0].amount = 1;
 
-      productList.push(newArr[0]);
-      cartContext.setProductList(productList);
+      newProductList.push(newArr[0]);
+      addProductLS(newProductList);
     }
+  }
+  function addProductLS(pL: TGpuCard) {
+    cartContext.setProductList(pL);
+    localStorage.setItem(LS, JSON.stringify(pL));
   }
   return (
     <StyledProductPrice>

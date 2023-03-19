@@ -1,3 +1,4 @@
+import { TGpuCard } from "@/src/components/TGpuCard";
 import { Dispatch, SetStateAction, useContext, useEffect } from "react";
 import { CartContext } from "./components/CartProvider";
 import { StyledCartSection } from "./components/StyledCartSection";
@@ -13,7 +14,31 @@ export default function CartSection({
   setShowCartSection,
 }: Props) {
   const cartContext = useContext(CartContext);
+  const setProductList = cartContext.setProductList;
+  const LS = "ProductList";
 
+  useEffect(() => {
+    if (!localStorage.getItem(LS)) return;
+    setProductList(JSON.parse(localStorage.getItem(LS)!));
+  }, []);
+
+  function changeAmount(num: number, index: number) {
+    if (num > 5) return;
+    let newProductList: TGpuCard = JSON.parse(
+      JSON.stringify(cartContext.ProductList)
+    );
+    if (num == 0) {
+      newProductList = newProductList.filter((e, i) => i != index);
+      changeProductLS(newProductList);
+    } else {
+      newProductList[index].amount = num;
+      changeProductLS(newProductList);
+    }
+  }
+  function changeProductLS(pL: TGpuCard) {
+    setProductList(pL);
+    localStorage.setItem(LS, JSON.stringify(pL));
+  }
   return (
     <StyledCartSection show={showCart ? "0" : "-551px"}>
       <div className="container_cartSection">
@@ -31,13 +56,21 @@ export default function CartSection({
               return (
                 <div className="CardItem" key={index}>
                   <div className="imgIcon align_center">
-                    <img src={"../"+el.img} style={{ maxWidth: "150px" }} />
+                    <img src={"../" + el.img} style={{ maxWidth: "150px" }} />
                   </div>
                   <div className="TitleAndPrice flex_column">
                     <h4>{el.title}</h4>
                     <h3>{cashPrice}</h3>
                   </div>
-                  <div className="amount align_center">{el.amount}</div>
+                  {/* <div className="amount align_center">{el.amount}</div> */}
+                  <input
+                    type={"number"}
+                    className="amount"
+                    value={el.amount}
+                    onChange={(e) => {
+                      changeAmount(Number(e.target.value), index);
+                    }}
+                  />
                 </div>
               );
             })}
