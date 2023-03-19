@@ -1,5 +1,11 @@
 import { TGpuCard } from "@/src/components/TGpuCard";
-import { Dispatch, SetStateAction, useContext, useEffect } from "react";
+import {
+  Dispatch,
+  SetStateAction,
+  useContext,
+  useEffect,
+  useState,
+} from "react";
 import { CartContext } from "./components/CartProvider";
 import { StyledCartSection } from "./components/StyledCartSection";
 
@@ -13,7 +19,9 @@ export default function CartSection({
   showCartSection,
   setShowCartSection,
 }: Props) {
+  const [totalPrice, setTotalPrice] = useState("R$ 0,00");
   const cartContext = useContext(CartContext);
+  const productList = cartContext.ProductList;
   const setProductList = cartContext.setProductList;
   const LS = "ProductList";
 
@@ -21,12 +29,24 @@ export default function CartSection({
     if (!localStorage.getItem(LS)) return;
     setProductList(JSON.parse(localStorage.getItem(LS)!));
   }, []);
+  useEffect(() => {
+    if (!productList) return;
+    let total = 0;
+    productList.forEach((e) => {
+      let value = e.price * 0.9 * e.amount!;
+      total += value;
+    });
+    setTotalPrice(
+      total.toLocaleString("pt-br", {
+        style: "currency",
+        currency: "BRL",
+      })
+    );
+  }, [productList]);
 
   function changeAmount(num: number, index: number) {
     if (num > 5) return;
-    let newProductList: TGpuCard = JSON.parse(
-      JSON.stringify(cartContext.ProductList)
-    );
+    let newProductList: TGpuCard = JSON.parse(JSON.stringify(productList));
     if (num == 0) {
       newProductList = newProductList.filter((e, i) => i != index);
       changeProductLS(newProductList);
@@ -47,8 +67,8 @@ export default function CartSection({
           <h3>Quantidade</h3>
         </div>
         <div className="frame_itens flex_column">
-          {cartContext.ProductList.length > 0 &&
-            cartContext.ProductList.map((el, index) => {
+          {productList.length > 0 &&
+            productList.map((el, index) => {
               const cashPrice = (el.price * 0.9).toLocaleString("pt-br", {
                 style: "currency",
                 currency: "BRL",
@@ -89,7 +109,7 @@ export default function CartSection({
           </div>
           <div className="totalPrice flex_row">
             <h4>Total:</h4>
-            <h3>R$ 2789,65</h3>
+            <h3>{totalPrice}</h3>
           </div>
         </div>
         <button className="btn_buy">Finalizar Compra</button>
