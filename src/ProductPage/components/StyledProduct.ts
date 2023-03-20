@@ -13,6 +13,30 @@ export const StyledProduct = styled.div`
     align-items: center;
     gap: 15px;
   }
+  .container_404 {
+    width: 100%;
+    max-width: 1300px;
+    padding: 10px 16px;
+    margin: auto;
+    flex-direction: column;
+    img {
+      width: 80%;
+    }
+    a {
+      background-color: unset;
+      color: ${({ theme }) => theme.text_color};
+      width: 250px;
+      height: 45px;
+      border-radius: 22px;
+      border: 2px solid ${({ theme }) => theme.text_color};
+      font-size: 20px;
+      font-weight: 500;
+      :hover {
+        background-color: ${({ theme }) => theme.text_color};
+        color: ${({ theme }) => theme.background_base};
+      }
+    }
+  }
   @media (max-width: 670px) {
     .container_price {
       display: flex;

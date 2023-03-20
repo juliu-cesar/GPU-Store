@@ -33,7 +33,7 @@ export const StyledBoardsByBrand = styled.div`
         width: 100%;
       }
     }
-    .frame_amd {
+    .Amd {
       background: rgb(237, 27, 36);
       background: linear-gradient(
         35deg,
@@ -42,7 +42,7 @@ export const StyledBoardsByBrand = styled.div`
         rgba(237, 27, 36, 1) 100%
       );
     }
-    .frame_nvidia {
+    .Nvidia {
       background: rgb(118, 185, 0);
       background: linear-gradient(
         50deg,
