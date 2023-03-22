@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { StyledProductPrice } from "./components/StyledProductPrice";
 import GPUCard from "@/GPUCard.json";
-import { TGpuCard } from "@/src/components/TGpuCard";
+import { TAllCards } from "@/src/components/TAllCards";
 import { CartContext } from "@/src/Header/components/CartSection/components/CartProvider";
 
 interface Props {
@@ -38,8 +38,8 @@ export default function ProductPrice({ textList, ID }: Props) {
   }, [textList?.price]);
 
   function addCart() {
-    let newArr: TGpuCard = GPUCard.gpuList;
-    let newProductList: TGpuCard = JSON.parse(JSON.stringify(ProductList));
+    let newArr: TAllCards = GPUCard.gpuList;
+    let newProductList: TAllCards = JSON.parse(JSON.stringify(ProductList));
 
     newArr = newArr.filter((el) => {
       return el.id == ID;
@@ -67,7 +67,7 @@ export default function ProductPrice({ textList, ID }: Props) {
       addProductLS(newProductList);
     }
   }
-  function addProductLS(pL: TGpuCard) {
+  function addProductLS(pL: TAllCards) {
     cartContext.setProductList(pL);
     localStorage.setItem(LS, JSON.stringify(pL));
   }

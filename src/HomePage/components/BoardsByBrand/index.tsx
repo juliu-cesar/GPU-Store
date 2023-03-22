@@ -1,19 +1,19 @@
 import { useEffect, useState } from "react";
-import { TGpuCard } from "../../../components/TGpuCard";
+import { TAllCards } from "../../../components/TAllCards";
 import { StyledBoardsByBrand } from "./components/StyledBoardsByBrand";
 import GPUCard from "@/GPUCard.json";
 import CardGpu from "@/src/components/CardGpu";
 
 export default function BoardsByBrand() {
-  const [amdCard, setAmdCard] = useState<TGpuCard | undefined>(undefined);
-  const [nvidiaCard, setNvidiaCard] = useState<TGpuCard | undefined>(undefined);
+  const [amdCard, setAmdCard] = useState<TAllCards | undefined>(undefined);
+  const [nvidiaCard, setNvidiaCard] = useState<TAllCards | undefined>(undefined);
   const [toggleBrand, setToggleBrand] = useState(false);
 
   useEffect(() => {
     setAmdCard(filterByBrand("amd"));
     setNvidiaCard(filterByBrand("nvidia"));
   }, []);
-  function filterByBrand(brand: string): TGpuCard {
+  function filterByBrand(brand: string): TAllCards {
     let nerArr = GPUCard.gpuList
       .map((e) => e)
       .filter((e) => e.brand == brand)

@@ -1,4 +1,6 @@
-export type TGpuCard = {
+export type TAllCards = TCard[];
+
+export type TCard = {
   id: string;
   title: string;
   img: string;
@@ -9,4 +11,4 @@ export type TGpuCard = {
   rating: number;
   relevance: number;
   amount?: number;
-}[];
+};

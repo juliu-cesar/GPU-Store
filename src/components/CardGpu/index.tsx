@@ -1,9 +1,9 @@
-import { TGpuCard } from "@/src/components/TGpuCard";
+import { TAllCards } from "@/src/components/TAllCards";
 import Link from "next/link";
 import { StyledCardGpu } from "./components/StyledCardGpu";
 
 interface Props {
-  allCards: TGpuCard;
+  allCards: TAllCards;
   onlyCash?: boolean;
 }
 export default function CardGpu({ allCards, onlyCash = false }: Props) {

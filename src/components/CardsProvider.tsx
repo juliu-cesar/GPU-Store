@@ -1,4 +1,4 @@
-import { TGpuCard } from "@/src/components/TGpuCard";
+import { TAllCards } from "@/src/components/TAllCards";
 import {
   createContext,
   Dispatch,
@@ -8,8 +8,8 @@ import {
 } from "react";
 
 type cardType = {
-  allCards: TGpuCard | [];
-  setAllCards: Dispatch<SetStateAction<TGpuCard | []>>;
+  allCards: TAllCards | [];
+  setAllCards: Dispatch<SetStateAction<TAllCards | []>>;
 };
 
 export const CardsContext = createContext<cardType>({
@@ -23,10 +23,10 @@ export default function CardsProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [allCards, setAllCards] = useState<TGpuCard | []>([]);
+  const [allCards, setAllCards] = useState<TAllCards | []>([]);
 
   useEffect(() => {
-      let newArr: TGpuCard | any[] = [];
+      let newArr: TAllCards | any[] = [];
     fetch("https://gpu-store-test-default-rtdb.firebaseio.com/cards.json")
       .then((response) => response.json())
       .then((data) => {

@@ -1,6 +1,6 @@
-import { TGpuCard } from "@/src/components/TGpuCard";
+import { TAllCards } from "@/src/components/TAllCards";
 
-export function SearchItens(gpuList: TGpuCard, search: string): TGpuCard {
+export function SearchItens(gpuList: TAllCards, search: string): TAllCards {
   let arr = gpuList.filter((e) => {
     return e.title.toLowerCase().includes(search.toLowerCase());
   });
@@ -13,7 +13,7 @@ export function SearchItens(gpuList: TGpuCard, search: string): TGpuCard {
   return arr;
 }
 
-function similarSearch(gpuList: TGpuCard, search: string): TGpuCard {
+function similarSearch(gpuList: TAllCards, search: string): TAllCards {
   let sameSizeWords = gpuList.filter((e) => {
     let titleWordsSplit = e.title
       .replace(/[^a-zA-Z0-9]+/g, " ")
@@ -48,9 +48,9 @@ function similarSearch(gpuList: TGpuCard, search: string): TGpuCard {
   return sameSizeWords;
 }
 
-function multipleSearchWords(gpuList: TGpuCard, search: string): TGpuCard {
+function multipleSearchWords(gpuList: TAllCards, search: string): TAllCards {
   let split = search.split(" ");
-  let individualSearch: TGpuCard[] = split.map((el) => {
+  let individualSearch: TAllCards[] = split.map((el) => {
     return SearchItens(gpuList, el);
   });
 
@@ -70,6 +70,6 @@ function multipleSearchWords(gpuList: TGpuCard, search: string): TGpuCard {
   return flat;
 }
 
-function stringFy(array: TGpuCard): TGpuCard {
+function stringFy(array: TAllCards): TAllCards {
   return JSON.parse(JSON.stringify(array));
 }

@@ -1,9 +1,9 @@
-import { TGpuCard } from "@/src/components/TGpuCard";
+import { TAllCards } from "@/src/components/TAllCards";
 import { createContext, Dispatch, SetStateAction, useEffect, useState } from "react";
 
 type cartType = {
-  ProductList: TGpuCard | [];
-  setProductList: Dispatch<SetStateAction<TGpuCard | []>>;
+  ProductList: TAllCards | [];
+  setProductList: Dispatch<SetStateAction<TAllCards | []>>;
 };
 
 export const CartContext = createContext<cartType>({
@@ -17,7 +17,7 @@ export default function CartProvider({
 }: {
   children: React.ReactNode;
 }) {
-  const [ProductList, setProductList] = useState<TGpuCard | []>([]);
+  const [ProductList, setProductList] = useState<TAllCards | []>([]);
 
   return (
     <CartContext.Provider

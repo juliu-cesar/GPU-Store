@@ -1,10 +1,10 @@
 import { StyledProductList } from "./components/StyledProductList";
 import CardGpu from "@/src/components/CardGpu";
-import { TGpuCard } from "@/src/components/TGpuCard";
+import { TAllCards } from "@/src/components/TAllCards";
 import { Dispatch, SetStateAction } from "react";
 
 interface Props{
-  allCards: TGpuCard | undefined;
+  allCards: TAllCards | undefined;
   showSearchContent: boolean;
   setShowSearchContent: Dispatch<SetStateAction<boolean>>;
   searchText: string;

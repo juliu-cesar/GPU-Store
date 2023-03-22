@@ -1,11 +1,11 @@
 import { StyledSearchedBoards } from "./components/StyledSearchedBoards";
 import GPUCard from "@/GPUCard.json";
 import { useEffect, useState } from "react";
-import { TGpuCard } from "../../../components/TGpuCard";
+import { TAllCards } from "../../../components/TAllCards";
 import CardGpu from "@/src/components/CardGpu";
 
 export default function SearchedBoards() {
-  const [fourCards, setFourCards] = useState<TGpuCard | undefined>(undefined);
+  const [fourCards, setFourCards] = useState<TAllCards | undefined>(undefined);
 
   useEffect(() => {
     let newArr = GPUCard.gpuList

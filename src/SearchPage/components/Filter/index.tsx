@@ -1,13 +1,13 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { StyledFilter } from "./components/StyledFilter";
 import GPUCard from "@/GPUCard.json";
-import { TGpuCard } from "@/src/components/TGpuCard";
+import { TAllCards } from "@/src/components/TAllCards";
 import SliderOption from "./components/SliderOption";
 import CheckBoxSection from "./components/CheckBoxSection";
 
 interface Props {
-  setAllCards: Dispatch<SetStateAction<TGpuCard | undefined>>;
-  sortCards: (gpuCard: TGpuCard, order: string) => TGpuCard;
+  setAllCards: Dispatch<SetStateAction<TAllCards | undefined>>;
+  sortCards: (gpuCard: TAllCards, order: string) => TAllCards;
   selectedOrder: string;
 }
 export default function Filter({

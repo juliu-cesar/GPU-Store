@@ -5,16 +5,16 @@ import Filter from "./components/Filter";
 import ProductList from "./components/ProductList";
 import SearchHeader from "./components/SearchHeader";
 import { StyledSearch } from "./components/StyledSearch";
-import { TGpuCard } from "../components/TGpuCard";
+import { TAllCards } from "../components/TAllCards";
 
 export default function SearchPage() {
-  const [allCards, setAllCards] = useState<TGpuCard | undefined>(undefined);
+  const [allCards, setAllCards] = useState<TAllCards | undefined>(undefined);
   const [selectedOrder, setSelectedOrder] = useState("relevance");
   const [showSearchContent, setShowSearchContent] = useState(false);
   const [searchText, setSearchText] = useState("");
 
-  function sortCards(gpuCard: TGpuCard, order: string): TGpuCard {
-    let newArr: TGpuCard = gpuCard
+  function sortCards(gpuCard: TAllCards, order: string): TAllCards {
+    let newArr: TAllCards = gpuCard
 
     if (order == "price-up" || order == "price-down") {
       newArr.sort((a, b) =>

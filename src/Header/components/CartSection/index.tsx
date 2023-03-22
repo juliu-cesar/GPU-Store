@@ -1,4 +1,4 @@
-import { TGpuCard } from "@/src/components/TGpuCard";
+import { TAllCards } from "@/src/components/TAllCards";
 import {
   Dispatch,
   SetStateAction,
@@ -46,7 +46,7 @@ export default function CartSection({
 
   function changeAmount(num: number, index: number) {
     if (num > 5) return;
-    let newProductList: TGpuCard = JSON.parse(JSON.stringify(productList));
+    let newProductList: TAllCards = JSON.parse(JSON.stringify(productList));
     if (num == 0) {
       newProductList = newProductList.filter((e, i) => i != index);
       changeProductLS(newProductList);
@@ -55,7 +55,7 @@ export default function CartSection({
       changeProductLS(newProductList);
     }
   }
-  function changeProductLS(pL: TGpuCard) {
+  function changeProductLS(pL: TAllCards) {
     setProductList(pL);
     localStorage.setItem(LS, JSON.stringify(pL));
   }

@@ -1,4 +1,4 @@
-import { TGpuCard } from "@/src/components/TGpuCard";
+import { TAllCards } from "@/src/components/TAllCards";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { StyledSearchHeader } from "./components/StyledSearchHeader";
 import GPUCard from "@/GPUCard.json";
@@ -16,10 +16,10 @@ interface Props {
   setSelectedOrder: Dispatch<SetStateAction<string>>;
   showSearchContent: boolean; 
   setShowSearchContent: Dispatch<SetStateAction<boolean>>;
-  allCards: TGpuCard | undefined; 
-  setAllCards: Dispatch<SetStateAction<TGpuCard | undefined>>;
+  allCards: TAllCards | undefined; 
+  setAllCards: Dispatch<SetStateAction<TAllCards | undefined>>;
   setSearchText: Dispatch<SetStateAction<string>>;
-  sortCards: (gpuCard: TGpuCard, order: string) => TGpuCard
+  sortCards: (gpuCard: TAllCards, order: string) => TAllCards
 }
 export default function SearchHeader({
   selectedOrder,
