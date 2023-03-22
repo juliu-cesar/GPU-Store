@@ -2,7 +2,9 @@ import styled from "styled-components";
 
 export const StyledLoadPage = styled.div`
   width: 100%;
+  max-width: 1300px;
   padding: 10px 16px;
+  margin: auto;
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   align-items: center;
