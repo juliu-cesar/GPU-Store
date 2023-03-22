@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { StyledProduct } from "./components/StyledProduct";
 import Header from "../Header";
 import product from "@/product.json";
-import { IProduct } from "./components/IProduct";
+import { TProduct } from "./components/TProduct";
 import ProductCarousel from "./components/ProductCarousel";
 import ProductPrice from "./components/ProductPrice";
 import ProductDescription from "./components/ProductDescription";
@@ -16,13 +16,19 @@ interface Props {
   router: NextRouter;
 }
 export default function ProductPage({ router }: Props) {
-  const [Product, setProduct] = useState<IProduct | undefined>();
+  const [Product, setProduct] = useState<TProduct | undefined>();
   const [ID, setID] = useState("");
 
   useEffect(() => {
-    let id = router.query.params?.slice(-10);
+    let id = router.query.params?.slice(-20);
     setID(id as string);
-    setProduct(product[id as keyof typeof product]);
+    fetch(
+      `https://gpu-store-test-default-rtdb.firebaseio.com/produtos/${id}.json`
+    )
+      .then((response) => response.json())
+      .then((data: TProduct) => {
+        setProduct(data);
+      });
   }, [router.query]);
   return (
     <StyledProduct>
@@ -35,7 +41,9 @@ export default function ProductPage({ router }: Props) {
               alt="Pagina não encontrada"
               style={{ maxWidth: "700px" }}
             />
-          <Link className="align_center" href={"/"}>Voltar à pagina inicial</Link>
+            <Link className="align_center" href={"/"}>
+              Voltar à pagina inicial
+            </Link>
           </div>
           <Footer />
         </>

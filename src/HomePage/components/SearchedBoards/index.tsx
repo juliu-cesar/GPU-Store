@@ -1,19 +1,22 @@
 import { StyledSearchedBoards } from "./components/StyledSearchedBoards";
 import GPUCard from "@/GPUCard.json";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TAllCards } from "../../../components/TAllCards";
 import CardGpu from "@/src/components/CardGpu";
+import { CardsContext } from "@/src/components/CardsProvider";
 
 export default function SearchedBoards() {
   const [fourCards, setFourCards] = useState<TAllCards | undefined>(undefined);
+  const allCards = useContext(CardsContext)
 
   useEffect(() => {
-    let newArr = GPUCard.gpuList
+    if(!allCards)return
+    let newArr = allCards.allCards
       .map((e) => e)
       .sort((a, b) => b.relevance - a.relevance)
       .slice(0, 4);
     setFourCards(newArr);
-  }, []);
+  }, [allCards]);
 
   return (
     <StyledSearchedBoards>

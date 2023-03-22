@@ -45,7 +45,7 @@ export default function ProductCarousel({
               imgList.map((el, i) => {
                 return (
                   <button key={i} onClick={() => selectImage(i)}>
-                    <img src={el} alt="ícone produto" />
+                    <img src={"../"+el} alt="ícone produto" />
                   </button>
                 );
               })}
@@ -67,7 +67,7 @@ export default function ProductCarousel({
           <div className="carousel_img">
             {imgList &&
               imgList.map((e, i) => {
-                return <img src={e} alt="imagem produto" key={i} />;
+                return <img src={"../"+e} alt="imagem produto" key={i} />;
               })}
           </div>
         </div>

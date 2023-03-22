@@ -30,7 +30,7 @@ export default function ProductDescription({ description }: Props) {
                     {el.infoSubtitle && <h4>{el.infoSubtitle}</h4>}
                     {el.text && <p>{el.text}</p>}
                   </div>
-                  {el.imgUrl && <img src={el.imgUrl} alt="imagem descrição" />}
+                  {el.imgUrl && <img src={"../"+el.imgUrl} alt="imagem descrição" />}
                 </div>
               );
             })}

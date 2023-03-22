@@ -1,4 +1,4 @@
-import { TAllCards } from "@/src/components/TAllCards";
+import { TAllCards, TCard } from "@/src/components/TAllCards";
 import {
   createContext,
   Dispatch,
@@ -26,22 +26,16 @@ export default function CardsProvider({
   const [allCards, setAllCards] = useState<TAllCards | []>([]);
 
   useEffect(() => {
-      let newArr: TAllCards | any[] = [];
+    let newArr: TAllCards | any[] = [];
     fetch("https://gpu-store-test-default-rtdb.firebaseio.com/cards.json")
       .then((response) => response.json())
       .then((data) => {
-        let arrKey = Object.keys(data)
-        arrKey.forEach((e)=>{
-          newArr.push(data[e as keyof typeof data])
-        })
-        console.log(newArr);
-        
+        let arrKey = Object.keys(data);
+        arrKey.forEach((e) => {
+          newArr.push(data[e as keyof typeof data] as TCard);
+        });
+        setAllCards(newArr);
       });
-    // setTimeout(() => {
-    //   let newArr = allCards
-    //   newArr.push("ola")
-    //   setAllCards(newArr)
-    // }, 5000);
   }, []);
 
   return (
