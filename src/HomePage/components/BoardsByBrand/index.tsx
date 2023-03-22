@@ -26,7 +26,7 @@ export default function BoardsByBrand() {
     let time: NodeJS.Timeout | null = setTimeout(() => {
       setToggleBrand(toggleBrand ? false : true)
       toggleCard(toggleBrand);
-    }, 8000);
+    }, 6000);
     return () => {
       clearTimeout(time!);
       time = null;

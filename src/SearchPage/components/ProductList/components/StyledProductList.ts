@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledProductList = styled.div`
   width: 100%;
   margin-top: 15px;
-  .container_product section:first-child {
+  .container_product section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     gap: 10px;
@@ -50,22 +50,22 @@ export const StyledProductList = styled.div`
     }
   }
   @media (max-width: 1400px) {
-    .container_product section:first-child {
+    .container_product section {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
   @media (max-width: 1150px) {
-    .container_product section:first-child {
+    .container_product section {
       grid-template-columns: 1fr 1fr 1fr;
     }
   }
   @media (max-width: 920px) {
-    .container_product section:first-child {
+    .container_product section {
       grid-template-columns: 1fr 1fr;
     }
   }
   @media (max-width: 600px) {
-    .container_product section:first-child {
+    .container_product section {
       padding-left: 20px;
     }
     .searched_itens {
@@ -73,7 +73,7 @@ export const StyledProductList = styled.div`
     }
   }
   @media (max-width: 470px) {
-    .container_product section:first-child {
+    .container_product section {
       grid-template-columns: 1fr;
     }
   }

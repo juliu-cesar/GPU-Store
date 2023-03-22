@@ -1,9 +1,9 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
 import { StyledFilter } from "./components/StyledFilter";
-import GPUCard from "@/GPUCard.json";
 import { TAllCards } from "@/src/components/TAllCards";
 import SliderOption from "./components/SliderOption";
 import CheckBoxSection from "./components/CheckBoxSection";
+import { CardsContext } from "@/src/components/CardsProvider";
 
 interface Props {
   setAllCards: Dispatch<SetStateAction<TAllCards | undefined>>;
@@ -21,6 +21,7 @@ export default function Filter({
   const [filterRay, setFilterRay] = useState<boolean | null>(null);
   const [filterCover, setFilterCover] = useState(false);
   const [showClearFilters, setShowClearFilters] = useState(false);
+  const allCards = useContext(CardsContext)
 
   useEffect(() => {
     if (
@@ -46,8 +47,8 @@ export default function Filter({
   }, [filterBrand, filterMemory, filterRay, price]);
 
   function filterCards() {
-    if (!GPUCard.gpuList) return;
-    let newArr = GPUCard.gpuList;
+    if (!allCards.allCards) return;
+    let newArr = allCards.allCards;
 
     if (filterBrand) {
       newArr = newArr.filter((el) => el.brand == filterBrand);

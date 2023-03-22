@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Footer from "../Footer";
 import Header from "../Header";
 import Filter from "./components/Filter";
@@ -6,15 +6,22 @@ import ProductList from "./components/ProductList";
 import SearchHeader from "./components/SearchHeader";
 import { StyledSearch } from "./components/StyledSearch";
 import { TAllCards } from "../components/TAllCards";
+import { CardsContext } from "../components/CardsProvider";
 
 export default function SearchPage() {
   const [allCards, setAllCards] = useState<TAllCards | undefined>(undefined);
   const [selectedOrder, setSelectedOrder] = useState("relevance");
   const [showSearchContent, setShowSearchContent] = useState(false);
   const [searchText, setSearchText] = useState("");
+  const allGpuCards = useContext(CardsContext);
+
+  useEffect(() => {
+    if (!allGpuCards.allCards) return;
+    setAllCards(sortCards(allGpuCards.allCards, selectedOrder));
+  }, [allGpuCards.allCards]);
 
   function sortCards(gpuCard: TAllCards, order: string): TAllCards {
-    let newArr: TAllCards = gpuCard
+    let newArr: TAllCards = JSON.parse(JSON.stringify(gpuCard));
 
     if (order == "price-up" || order == "price-down") {
       newArr.sort((a, b) =>

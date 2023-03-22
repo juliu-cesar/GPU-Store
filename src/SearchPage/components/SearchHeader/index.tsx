@@ -1,8 +1,8 @@
 import { TAllCards } from "@/src/components/TAllCards";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
 import { StyledSearchHeader } from "./components/StyledSearchHeader";
-import GPUCard from "@/GPUCard.json";
 import { SearchItens } from "../SearchItens";
+import { CardsContext } from "@/src/components/CardsProvider";
 
 const order = [
   { name: "Mais relevantes", value: "relevance" },
@@ -12,31 +12,32 @@ const order = [
 ];
 
 interface Props {
+  allCards: TAllCards | undefined; 
+  setAllCards: Dispatch<SetStateAction<TAllCards | undefined>>;
   selectedOrder: string;
   setSelectedOrder: Dispatch<SetStateAction<string>>;
   showSearchContent: boolean; 
   setShowSearchContent: Dispatch<SetStateAction<boolean>>;
-  allCards: TAllCards | undefined; 
-  setAllCards: Dispatch<SetStateAction<TAllCards | undefined>>;
   setSearchText: Dispatch<SetStateAction<string>>;
   sortCards: (gpuCard: TAllCards, order: string) => TAllCards
 }
 export default function SearchHeader({
+  allCards, 
+  setAllCards,
   selectedOrder,
   setSelectedOrder,
   showSearchContent, 
   setShowSearchContent,
-  allCards, 
-  setAllCards,
   setSearchText,
   sortCards
 }: Props) {
   const [showDropdown, setShowDropdown] = useState(false);
   const [search, setSearch] = useState("");
+  const allGpuCards = useContext(CardsContext)
 
   useEffect(() => {
     if (showSearchContent) return;
-    setAllCards(sortCards(GPUCard.gpuList, selectedOrder));
+    setAllCards(sortCards(allGpuCards.allCards, selectedOrder));
   }, [showSearchContent]);
   useEffect(() => {
     if (!allCards) return;
@@ -44,11 +45,11 @@ export default function SearchHeader({
   }, [selectedOrder]);
 
   function searchBar() {
-    if (!GPUCard.gpuList) return;
-    let newArr = SearchItens(GPUCard.gpuList, search);
+    if (!allGpuCards.allCards) return;
+    let newArr = SearchItens(allGpuCards.allCards, search);
 
     if (search.trim() == "") {
-      setAllCards(sortCards(GPUCard.gpuList, selectedOrder));
+      setAllCards(sortCards(allGpuCards.allCards, selectedOrder));
       setShowSearchContent(false);
     } else {
       setAllCards(sortCards(newArr, selectedOrder));

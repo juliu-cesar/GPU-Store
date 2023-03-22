@@ -68,6 +68,7 @@ export const StyledCartSection = styled.section<{
       height: 65px;
       min-height: 65px;
       border-radius: 5px;
+      overflow: hidden;
       img {
         width: 85%;
       }

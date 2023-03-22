@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { StyledProductPrice } from "./components/StyledProductPrice";
-import GPUCard from "@/GPUCard.json";
 import { TAllCards } from "@/src/components/TAllCards";
 import { CartContext } from "@/src/Header/components/CartSection/components/CartProvider";
+import { CardsContext } from "@/src/components/CardsProvider";
 
 interface Props {
   textList:
@@ -18,6 +18,7 @@ export default function ProductPrice({ textList, ID }: Props) {
   const [cash_price, setCash_price] = useState("");
   const [installment_price, setInstallment_price] = useState("");
   const cartContext = useContext(CartContext);
+  const allCards = useContext(CardsContext)
   const ProductList = cartContext.ProductList;
   const LS = "ProductList";
 
@@ -38,7 +39,7 @@ export default function ProductPrice({ textList, ID }: Props) {
   }, [textList?.price]);
 
   function addCart() {
-    let newArr: TAllCards = GPUCard.gpuList;
+    let newArr: TAllCards = allCards.allCards;
     let newProductList: TAllCards = JSON.parse(JSON.stringify(ProductList));
 
     newArr = newArr.filter((el) => {

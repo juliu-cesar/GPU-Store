@@ -2,7 +2,6 @@ import { NextRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { StyledProduct } from "./components/StyledProduct";
 import Header from "../Header";
-import product from "@/product.json";
 import { TProduct } from "./components/TProduct";
 import ProductCarousel from "./components/ProductCarousel";
 import ProductPrice from "./components/ProductPrice";
@@ -32,9 +31,9 @@ export default function ProductPage({ router }: Props) {
   }, [router.query]);
   return (
     <StyledProduct>
+      <Header cartType={0} />
       {!Product ? (
         <>
-          <Header cartType={0} />
           <div className="container_404 align_center">
             <img
               src="../img/icons/svg/404-not-found.svg"
@@ -45,11 +44,9 @@ export default function ProductPage({ router }: Props) {
               Voltar à pagina inicial
             </Link>
           </div>
-          <Footer />
         </>
       ) : (
         <>
-          <Header cartType={0} />
           <div className="container_price">
             <ProductCarousel imgList={Product!.imgList} />
             <ProductPrice textList={Product!.textList} ID={ID} />
@@ -66,9 +63,9 @@ export default function ProductPage({ router }: Props) {
           <div className="container_rating">
             <ProductRating rate={Product!.rating} />
           </div>
-          <Footer />
         </>
       )}
+      <Footer />
     </StyledProduct>
   );
 }

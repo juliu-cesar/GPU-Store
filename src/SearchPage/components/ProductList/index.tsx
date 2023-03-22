@@ -32,7 +32,7 @@ export default function ProductList({
                 </button>
               </div>
             )}
-        {allCards && <CardGpu allCards={allCards} onlyCash={false} />}
+        {allCards && <CardGpu allCards={allCards} />}
       </div>
     </StyledProductList>
   );
