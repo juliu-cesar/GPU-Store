@@ -10,6 +10,7 @@ import ProductTable from "./components/ProductTable";
 import ProductRating from "./components/ProductRating";
 import Footer from "../Footer";
 import Link from "next/link";
+import LoadPage from "./components/LoadPage";
 
 interface Props {
   router: NextRouter;
@@ -32,7 +33,8 @@ export default function ProductPage({ router }: Props) {
   return (
     <StyledProduct>
       <Header cartType={0} />
-      {!Product ? (
+      <LoadPage />
+      {/* {!Product ? (
         <>
           <div className="container_404 align_center">
             <img
@@ -64,7 +66,7 @@ export default function ProductPage({ router }: Props) {
             <ProductRating rate={Product!.rating} />
           </div>
         </>
-      )}
+      )} */}
       <Footer />
     </StyledProduct>
   );

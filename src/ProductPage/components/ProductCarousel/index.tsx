@@ -33,48 +33,60 @@ export default function ProductCarousel({
   return (
     <StyledCrProduct imgNum={imgList?.length || 1}>
       <div className="container_cards">
-        <div
-          className="arrow_back"
-          onClick={() => prevNextCard(cardSelect - 1)}
-        >
-          <img src="../../img/icons/svg/arrow-bold.svg" />
-        </div>
-        <div className="frame_carousel_card">
-          <div className="carousel_card">
-            {imgList &&
-              imgList.map((el, i) => {
-                return (
-                  <button key={i} onClick={() => selectImage(i)}>
-                    <img src={"../"+el} alt="ícone produto" />
-                  </button>
-                );
-              })}
+        <div className="frame_icons">
+          <div
+            className="arrow_back"
+            onClick={() => prevNextCard(cardSelect - 1)}
+          >
+            <img src="../../img/icons/svg/arrow-bold.svg" />
+          </div>
+          <div className="frame_carousel_card">
+            <div className="carousel_card">
+              {imgList &&
+                imgList.map((el, i) => {
+                  return (
+                    <button key={i} onClick={() => selectImage(i)}>
+                      <img src={"../" + el} alt="ícone produto" />
+                    </button>
+                  );
+                })}
+            </div>
+          </div>
+          <div
+            className="arrow_front"
+            onClick={() => prevNextCard(cardSelect + 1)}
+          >
+            <img src="../../img/icons/svg/arrow-bold.svg" />
           </div>
         </div>
-        <div
-          className="arrow_front"
-          onClick={() => prevNextCard(cardSelect + 1)}
-        >
-          <img src="../../img/icons/svg/arrow-bold.svg" />
-        </div>
-      </div>
-      <div className="frame_carousel_img">
-        <span
-          className="prev_img"
-          onClick={() => selectImage(imageSelect - 1)}
-        ></span>
-        <div className="teste_frame">
-          <div className="carousel_img">
-            {imgList &&
-              imgList.map((e, i) => {
-                return <img src={"../"+e} alt="imagem produto" key={i} />;
-              })}
+        <div className="frame_carousel_img">
+          <span
+            className="prev_img"
+            onClick={() => selectImage(imageSelect - 1)}
+          >
+            <img
+              src="../img/icons/svg/arrow-bold.svg"
+              style={{ maxWidth: "20px" }}
+            />
+          </span>
+          <div>
+            <div className="carousel_img">
+              {imgList &&
+                imgList.map((e, i) => {
+                  return <img src={"../" + e} alt="imagem produto" key={i} />;
+                })}
+            </div>
           </div>
+          <span
+            className="next_img"
+            onClick={() => selectImage(imageSelect + 1)}
+          >
+            <img
+              src="../img/icons/svg/arrow-bold.svg"
+              style={{ maxWidth: "20px" }}
+            />
+          </span>
         </div>
-        <span
-          className="next_img"
-          onClick={() => selectImage(imageSelect + 1)}
-        ></span>
       </div>
     </StyledCrProduct>
   );

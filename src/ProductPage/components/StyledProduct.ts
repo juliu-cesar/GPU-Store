@@ -37,11 +37,16 @@ export const StyledProduct = styled.div`
       }
     }
   }
-  @media (max-width: 670px) {
+  @media (max-width: 770px) {
     .container_price {
       display: flex;
       flex-direction: column;
       padding: 10px 20px;
+    }
+  }
+  @media (max-width: 470px) {
+    .container_price {
+      padding: 10px;
     }
   }
 `;

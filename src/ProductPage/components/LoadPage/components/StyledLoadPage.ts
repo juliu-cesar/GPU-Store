@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
-export const StyledCrProduct = styled.div<{
-  imgNum: number;
-}>`
-  width: 100%;
+export const StyledLoadPage = styled.div`
+   width: 100%;
   .container_cards {
     display: flex;
     flex-direction: row;
@@ -21,7 +19,6 @@ export const StyledCrProduct = styled.div<{
     transition: all 0.35s;
     .arrow_back,
     .arrow_front {
-      cursor: pointer;
       background-color: ${({ theme }) => theme.text_color};
       width: 40px;
       min-width: 40px;
@@ -31,13 +28,6 @@ export const StyledCrProduct = styled.div<{
       border-radius: 50%;
       display: flex;
       align-items: center;
-      transform: rotate(90deg);
-      img {
-        width: 90%;
-      }
-    }
-    .arrow_back {
-      transform: rotate(-90deg);
     }
   }
   .frame_carousel_card {
@@ -56,7 +46,7 @@ export const StyledCrProduct = styled.div<{
     align-items: center;
     gap: 10px;
     transition: all 0.3s;
-    button {
+    .img_icon {
       background-color: ${({ theme }) => theme.text_color};
       width: 60px;
       height: 60px;
@@ -66,9 +56,6 @@ export const StyledCrProduct = styled.div<{
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
       display: flex;
       align-items: center;
-      img {
-        width: 100%;
-      }
     }
   }
   .frame_carousel_img {
@@ -105,14 +92,14 @@ export const StyledCrProduct = styled.div<{
     }
   }
   .carousel_img {
-    width: calc(100% * ${({ imgNum }) => imgNum});
+    width: 100%;
     margin-top: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
     transition: all 0.4s ease-in-out;
     img {
-      width: calc(100% / ${({ imgNum }) => imgNum});
+      width: 100%;
       max-height: 450px;
       object-fit: contain;
     }
