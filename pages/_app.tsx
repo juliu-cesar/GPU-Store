@@ -1,3 +1,4 @@
+import CardsProvider from "@/src/components/CardsProvider";
 import CartProvider from "@/src/Header/components/CartSection/components/CartProvider";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
@@ -26,5 +27,9 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 
 function ProviderWrapper({ children }: { children: React.ReactNode }) {
-  return <CartProvider>{children}</CartProvider>;
+  return (
+    <CardsProvider>
+      <CartProvider>{children}</CartProvider>
+    </CardsProvider>
+  );
 }

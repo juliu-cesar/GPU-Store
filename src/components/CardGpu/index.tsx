@@ -4,9 +4,9 @@ import { StyledCardGpu } from "./components/StyledCardGpu";
 
 interface Props {
   allCards: TGpuCard;
-  onlyCash: boolean;
+  onlyCash?: boolean;
 }
-export default function CardGpu({ allCards, onlyCash }: Props) {
+export default function CardGpu({ allCards, onlyCash = false }: Props) {
   return (
     <StyledCardGpu>
       {allCards.map((e, i) => {
