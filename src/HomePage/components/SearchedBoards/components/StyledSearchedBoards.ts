@@ -13,14 +13,14 @@ export const StyledSearchedBoards = styled.div`
     font-weight: 600;
     margin-bottom: 20px;
   }
-  .frame_boards section:first-child {
+  .frame_boards section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
   }
   @media (max-width: 840px) {
     .frame_boards {
-      section:first-child {
+      section {
         grid-template-columns: 1fr 1fr 1fr;
       }
     }
@@ -30,7 +30,7 @@ export const StyledSearchedBoards = styled.div`
   }
   @media (max-width: 640px) {
     .frame_boards {
-      section:first-child {
+      section {
         grid-template-columns: 1fr 1fr;
       }
     }
@@ -38,9 +38,9 @@ export const StyledSearchedBoards = styled.div`
       display: block;
     }
   }
-  @media (max-width: 640px) {
+  @media (max-width: 440px) {
     .frame_boards {
-      section:first-child {
+      section {
         grid-template-columns: 1fr;
       }
     }

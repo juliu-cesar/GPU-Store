@@ -1,6 +1,6 @@
 import CheckBoxOption from "./components/CheckBoxOption";
 import { StyledCheckBoxSection } from "./components/StyledCheckBoxSection";
-import allFilters from "@/allFilters.json";
+import allFilters from "@/mocks/allFilters.json";
 import { ChangeEvent, Dispatch, SetStateAction } from "react";
 
 interface Props {

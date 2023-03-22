@@ -134,11 +134,9 @@ export const StyledSearchHeader = styled.div`
       justify-content: center;
     }
     .order{
+      width: 100%;
       display: flex;
       justify-content: end;
-    }
-    .search{
-      padding: 5px 10px;
     }
     .dropdown {
       width: 100%;
@@ -148,6 +146,13 @@ export const StyledSearchHeader = styled.div`
       width: 100%;
       left: unset;
       right: 0;
+    }
+    .search{
+      margin: unset;
+      padding: 5px 10px;
+      button{
+        right: 10px;
+      }
     }
   }
 `;

@@ -6,6 +6,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import ApiLinks from "@/ApiLinks.json"
 
 type cardType = {
   allCards: TAllCards | [];
@@ -24,10 +25,11 @@ export default function CardsProvider({
   children: React.ReactNode;
 }) {
   const [allCards, setAllCards] = useState<TAllCards | []>([]);
+  const getCards = ApiLinks.getAllCards;
 
   useEffect(() => {
     let newArr: TAllCards | any[] = [];
-    fetch("https://gpu-store-test-default-rtdb.firebaseio.com/cards.json")
+    fetch(getCards)
       .then((response) => response.json())
       .then((data) => {
         let arrKey = Object.keys(data);

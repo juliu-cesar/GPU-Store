@@ -26,7 +26,7 @@ export const StyledCardGpu = styled.section`
     img {
       width: 90%;
       max-height: 200px;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
   .frame_content {

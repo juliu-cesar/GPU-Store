@@ -1,5 +1,5 @@
 import { StyledCarouselHome } from "./components/StyledCarouselHome";
-import carouselHome from "@/carouselHome.json";
+import carouselHome from "@/mocks/carouselHome.json";
 import { useEffect, useState } from "react";
 
 export default function CarouselHome() {

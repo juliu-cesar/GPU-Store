@@ -82,15 +82,21 @@ export default function CartSection({
                     <h4>{el.title}</h4>
                     <h3>{cashPrice}</h3>
                   </div>
-                  {/* <div className="amount align_center">{el.amount}</div> */}
-                  <input
-                    type={"number"}
-                    className="amount"
-                    value={el.amount}
-                    onChange={(e) => {
-                      changeAmount(Number(e.target.value), index);
-                    }}
-                  />
+                  <div className="frame_amount flex_column">
+                    <span className="arrowUp align_center" onClick={()=>{changeAmount(el.amount! + 1, index)}}>
+                      <img
+                        src="../img/icons/svg/arrow-bold-white.svg"
+                        style={{ maxWidth: "20px" }}
+                      />
+                    </span>
+                    <div className="amount align_center">{el.amount}</div>
+                    <span className="arrowDown align_center" onClick={()=>{changeAmount(el.amount! - 1, index)}}>
+                      <img
+                        src="../img/icons/svg/arrow-bold-white.svg"
+                        style={{ maxWidth: "20px" }}
+                      />
+                    </span>
+                  </div>
                 </div>
               );
             })}

@@ -1,5 +1,4 @@
 import { StyledSearchedBoards } from "./components/StyledSearchedBoards";
-import GPUCard from "@/GPUCard.json";
 import { useContext, useEffect, useState } from "react";
 import { TAllCards } from "../../../components/TAllCards";
 import CardGpu from "@/src/components/CardGpu";

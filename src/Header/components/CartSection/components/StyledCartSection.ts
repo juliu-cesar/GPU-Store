@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledCartSection = styled.section<{
-  show: string
+  show: string;
 }>`
   width: 100%;
   .container_cartSection {
@@ -18,7 +18,7 @@ export const StyledCartSection = styled.section<{
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    transition: all .4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
   .frame_headerCart {
     border-bottom: 2px solid ${({ theme }) => theme.text_color};
@@ -36,15 +36,15 @@ export const StyledCartSection = styled.section<{
     height: 100%;
     align-items: center;
     overflow-y: auto;
-    ::-webkit-scrollbar{
+    ::-webkit-scrollbar {
       width: 12px;
     }
-    ::-webkit-scrollbar-thumb{
+    ::-webkit-scrollbar-thumb {
       background-color: ${({ theme }) => theme.text_color};
       border-radius: 6px;
     }
-    ::-webkit-scrollbar-track{
-      background-color: rgba(70,70,70,0.35);
+    ::-webkit-scrollbar-track {
+      background-color: rgba(70, 70, 70, 0.35);
       border-radius: 6px;
     }
   }
@@ -93,18 +93,28 @@ export const StyledCartSection = styled.section<{
       font-size: 17px;
       font-weight: 500;
     }
-    .amount {
-      background-color: unset;
-      color: ${({ theme }) => theme.text_color};
-      width: 45px;
-      min-width: 45px;
-      height: 30px;
-      padding-left: 15px;
-      border: 1px solid ${({ theme }) => theme.text_color};
-      border-radius: 2px;
-      font-size: 19px;
-      font-weight: 500;
-    }    
+    .frame_amount {
+      align-items: center;
+      .arrowUp, .arrowDown{
+        width: 40px;
+        min-width: 40px;
+        height: 40px;
+        min-height: 40px;
+        transform: rotate(-90deg);
+      }
+      .arrowDown{
+        transform: rotate(90deg);
+      }
+      .amount {
+        width: 45px;
+        min-width: 45px;
+        height: 30px;
+        border: 1px solid ${({ theme }) => theme.text_color};
+        border-radius: 2px;
+        font-size: 19px;
+        font-weight: 500;
+      }
+    }
   }
   .frame_footerCart {
     background-color: ${({ theme }) => theme.semi_black};
@@ -179,10 +189,10 @@ export const StyledCartSection = styled.section<{
       margin-left: 2px;
     }
   }
-  .cart_cover{
+  .cart_cover {
     z-index: 99;
     position: fixed;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     width: 100vw;
     height: 100vh;
     top: 0;
