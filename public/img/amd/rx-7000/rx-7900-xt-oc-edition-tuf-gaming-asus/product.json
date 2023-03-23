@@ -1,0 +1,100 @@
+{
+  "imgList": [
+    "img/amd/rx-7000/rx-7900-xt-oc-edition-tuf-gaming-asus/rx-7900-xt-cr1.png",
+    "img/amd/rx-7000/rx-7900-xt-oc-edition-tuf-gaming-asus/rx-7900-xt-cr2.png",
+    "img/amd/rx-7000/rx-7900-xt-oc-edition-tuf-gaming-asus/rx-7900-xt-cr3.png",
+    "img/amd/rx-7000/rx-7900-xt-oc-edition-tuf-gaming-asus/rx-7900-xt-cr4.png",
+    "img/amd/rx-7000/rx-7900-xt-oc-edition-tuf-gaming-asus/rx-7900-xt-cr5.png",
+    "img/amd/rx-7000/rx-7900-xt-oc-edition-tuf-gaming-asus/rx-7900-xt-cr6.png",
+    "img/amd/rx-7000/rx-7900-xt-oc-edition-tuf-gaming-asus/rx-7900-xt-cr7.png",
+    "img/amd/rx-7000/rx-7900-xt-oc-edition-tuf-gaming-asus/rx-7900-xt-cr8.png"
+  ],
+  "textList": {
+    "title": "RX 7900 XT OC Edition TUF Gaming Asus AMD, 20 GB GDDR6",
+    "subtitleList": [
+      "AMD FidelityFX™ Super Resolution",
+      "AMD Radeon™ Anti-Lag",
+      "Arquitetura RDNA",
+      "ASUS GPU Tweak III"
+    ],
+    "price": 9411.75
+  },
+  "rating": 4.78,
+  "description": [
+    {
+      "class": "description_card reverse",
+      "infoTitle": "Jogue como um campeão. Jogue para ganhar.",
+      "text": "O recurso Radeon™ Anti-Lag no AMD Software: Adrenalin Edition foi projetado para ajudar a reduzir o atraso de entrada em casos com limitação de GPU. O Radeon Anti-Lag controla o ritmo do trabalho da CPU para garantir que não fique muito à frente da GPU, reduzindo a quantidade de trabalho da CPU na fila. Como resultado, o Radeon Anti-Lag pode reduzir o atraso de entrada em quase um quadro inteiro1, ajudando a restaurar a capacidade de resposta do seu jogo.",
+      "imgUrl": "img/amd/rx-7000/rx-7000-info-1.png"
+    },
+    {
+      "class": "description_card",
+      "infoTitle": "Software AMD: Tecnologia Adrenalin Edition™",
+      "text": "Criado para fornecer uma interface limpa, moderna e fácil de usar, onde você pode acessar rapidamente os recursos de software mais recentes, estatísticas de jogo, relatórios de desempenho, atualizações de driver e muito mais - tudo a partir de um local conveniente Use o atalho ATL+R para abrir o AMD Software: Tecnologia Adrenalin Edition diretamente no jogo, tornando ainda mais conveniente e fácil ajustar seus recursos favoritos e obter uma experiência fantástica de jogo.",
+      "imgUrl": "img/amd/rx-7000/rx-7000-info-2.png"
+    },
+    {
+      "class": "description_card reverse",
+      "infoTitle": "AMD Noise Suppression",
+      "infoSubtitle": "Mais nítido. Cristalino. Comunicação.",
+      "text": "O AMD Noise Suppression reduz o ruído de áudio de fundo do ambiente ao seu redor, proporcionando maior nitidez e concentração aprimorada, quer você esteja focado em uma reunião importante ou concentrado em um jogo competitivo.",
+      "imgUrl": "img/amd/rx-7000/rx-7000-info-3.png"
+    },
+    {
+      "class": "center_description center_reverse",
+      "infoTitle": "AMD FidelityFX™ Super Resolution",
+      "infoSubtitle": "Obtenha um aumento de frames para seus jogos",
+      "text": "O FSR usa tecnologias de ponta para ajudar a impulsionar suas taxas de quadros em títulos selecionados para oferecer experiências de jogos de alta qualidade e alta resolução, sem ter que atualizar para uma nova placa de vídeo.",
+      "imgUrl": "img/amd/rx-7000/rx-7000-info-4.png"
+    }
+  ],
+  "info_table": [
+    {
+      "th": ["GPU"],
+      "td": ["Radeon RX 7900 XT"]
+    },
+    {
+      "th": ["Stream Processors"],
+      "td": ["5376 Unidades"]
+    },
+    {
+      "th": ["Boost Clock (GHz)"],
+      "td": ["2,5"]
+    },
+    {
+      "th": ["Tamanho da Memória"],
+      "td": ["20 GB"]
+    },
+    {
+      "th": ["Tipo de Memória"],
+      "td": ["GDDR6"]
+    },
+    {
+      "th": ["PCI"],
+      "td": ["PCI Express 4.0"]
+    },
+    {
+      "th": ["Resolução Máxima do Monitor"],
+      "td": ["7680 x 4320"]
+    },
+    {
+      "th": ["Entradas"],
+      "td": ["3 x DisplayPort 2.1 <br> 1 x HDMI 2.1"]
+    },
+    {
+      "th": ["Fonte de alimentação"],
+      "td": ["750 watts"]
+    },
+    {
+      "th": ["Conectores de Energia"],
+      "td": ["2x de 8-pin"]
+    }
+  ],
+  "package_content": [
+    "1 X RX 7900 XT OC TUF Gaming",
+    "1 x suporte para placa gráfica",
+    "1 x TUF Velcro Hook & Loop",
+    "1 x cartão de coleção",
+    "1 x manual de configuração de velocidade"
+  ]  
+}
