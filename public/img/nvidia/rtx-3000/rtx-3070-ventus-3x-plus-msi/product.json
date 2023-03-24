@@ -1,0 +1,93 @@
+{
+  "imgList": [
+    "img/nvidia/rtx-3000/rtx-3070-ventus-3x-plus-msi/rtx-3070-cr1.png",
+    "img/nvidia/rtx-3000/rtx-3070-ventus-3x-plus-msi/rtx-3070-cr2.png",
+    "img/nvidia/rtx-3000/rtx-3070-ventus-3x-plus-msi/rtx-3070-cr3.png",
+    "img/nvidia/rtx-3000/rtx-3070-ventus-3x-plus-msi/rtx-3070-cr4.png",
+    "img/nvidia/rtx-3000/rtx-3070-ventus-3x-plus-msi/rtx-3070-cr5.png"
+  ],
+  "textList": {
+    "title": "RTX 3070 MSI Ventus 3X Plus NVIDIA GeForce, 8GB GDDR6",
+    "subtitleList": [
+      "software MSI Center",
+      "MSI TORX Fan 3.0",
+      "Ray Tracing de 2ª Geração",
+      "Arquitetura NVIDIA Ampere"
+    ],
+    "price": 4352.93
+  },
+  "rating": 4.86,
+  "description": [
+    {
+      "class": "center_description",
+      "infoTitle": "Feitas para Livestreaming",
+      "text": "Seja o centro das atenções com gráficos incríveis e um livestreaming fluido, sem travamentos. As placas de vídeo GeForce RTX Série 30 contam com recursos de streaming de última geração graças ao NVIDIA Encoder (NVENC), projetado para garantir desempenho e qualidade de imagem incomparáveis. Além disso, otimizações exclusivas para todas as mais populares aplicações de streaming permitem que você sempre proporcione seu melhor trabalho ao público.",
+      "imgUrl": "img/nvidia/rtx-3000/rtx-3000-info-1.png"
+    },
+    {
+      "class": "description_card reverse",
+      "infoTitle": "Obtenha Mais Desempenho Com O NVIDIA DLSS",
+      "text": "Obtenha um aumento no desempenho com o NVIDIA DLSS (Deep Learning Super Sampling). Os Tensor Cores especializados em AI das placas de vídeo GeForce RTX fornecem um aumento de velocidade aos games sem comprometer a qualidade da imagem. Assim, você pode maximizar as configurações e a resolução, criando uma experiência visual ainda melhor.",
+      "imgUrl": "img/nvidia/rtx-3000/rtx-3000-info-2.png"
+    },
+    {
+      "class": "description_card",
+      "infoTitle": "Vitória Medida em Milissegundos",
+      "text": "O NVIDIA Reflex oferece a vantagem competitiva definitiva, a latência mais baixa e o menor tempo de resposta. Com a potência das placas de vídeo GeForce RTX Série 30 e dos monitores NVIDIA® G-SYNC® com Reflex. Identifique alvos na hora, reaja mais rápido e aumente a precisão da mira com um pacote revolucionário de tecnologias criadas para reduzir e mensurar a latência do sistema em games competitivos.",
+      "imgUrl": "img/nvidia/rtx-3000/rtx-3000-info-3.png"
+    },
+    {
+      "class": "center_description",
+      "infoTitle": "RTX. It's On.",
+      "infoSubtitle": "Ray Tracing e AI Definitivos",
+      "text": "A NVIDIA RTX é a mais avançada plataforma de tecnologias de Ray Tracing e AI que estão revolucionando as maneiras com que jogamos e criamos. Mais de 150 dos maiores games e aplicações usam RTX para fornecer gráficos realistas com desempenho muito rápido e novos recursos de AI de ponta, como o NVIDIA DLSS e o NVIDIA Broadcast. A RTX é o novo padrão.",
+      "imgUrl": "img/nvidia/rtx-3000/rtx-3000-info-4.png"
+    }
+  ],
+  "info_table": [
+    {
+      "th": ["GPU"],
+      "td": ["NVIDIA GeForce RTX 3070"]
+    },
+    {
+      "th": ["NVIDIA CUDA Cores"],
+      "td": ["5888 Unidades"]
+    },
+    {
+      "th": ["Boost Clock (GHz)"],
+      "td": ["1.72"]
+    },
+    {
+      "th": ["Tamanho da Memória"],
+      "td": ["8 GB"]
+    },
+    {
+      "th": ["Tipo de Memória"],
+      "td": ["GDDR6"]
+    },
+    {
+      "th": ["PCI"],
+      "td": ["PCI Express 4.0"]
+    },
+    {
+      "th": ["Resolução Máxima do Monitor"],
+      "td": ["4K@120Hz"]
+    },
+    {
+      "th": ["Entradas"],
+      "td": ["DisplayPort x 3 (v1.4a) <br> HDMI x 1"]
+    },
+    {
+      "th": ["Fonte de alimentação"],
+      "td": ["650W"]
+    },
+    {
+      "th": ["Conectores de Energia"],
+      "td": ["8 pinos x 2"]
+    }
+  ],
+  "package_content": [
+    "Placa de Vídeo RTX 3070 Ventus 3X Plus",
+    "Guia do Usuário"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "imgList": [
+    "img/nvidia/gtx-1600/gtx-1660-super-twin-fan-zotac/gtx-1660-super-cr1.png",
+    "img/nvidia/gtx-1600/gtx-1660-super-twin-fan-zotac/gtx-1660-super-cr2.png",
+    "img/nvidia/gtx-1600/gtx-1660-super-twin-fan-zotac/gtx-1660-super-cr3.png",
+    "img/nvidia/gtx-1600/gtx-1660-super-twin-fan-zotac/gtx-1660-super-cr4.png",
+    "img/nvidia/gtx-1600/gtx-1660-super-twin-fan-zotac/gtx-1660-super-cr5.png"
+  ],
+  "textList": {
+    "title": "GTX 1660 Ti EVO OC Asus TUF Gaming, 6GB",
+    "subtitleList": [
+      "3 anos de garantia",
+      "GeForce Experience",
+      "Aplicativo ASUS GPU Tweak II",
+      "ARQUITETURA NVIDIA TURING"
+    ],
+    "price": 1882.34
+  },
+  "rating": 4.81,
+  "description": [
+    {
+      "class": "center_description",
+      "infoTitle": "GeForce GTX Série 16",
+      "infoSubtitle": "A Potência Definitiva para Games",
+      "text": "Experimente o desempenho poderoso de gráficos da premiada arquitetura NVIDIA Turing com as placas de vídeo e os notebooks GeForce® GTX Série 16.",
+      "imgUrl": "img/nvidia/gtx-1600/gtx-1600-info-1.jpg"
+    },
+    {
+      "class": "description_card reverse",
+      "infoTitle": "GeForce Experience",
+      "text": "Grave e compartilhe vídeos, capturas de tela e lives com seus amigos. Mantenha seus drivers GeForce atualizados e otimize as configurações dos seus games. Com o GeForce Experience™, você faz tudo isso. Ele é essencial para suas placas de vídeo e seus notebooks GeForce.",
+      "imgUrl": "img/nvidia/gtx-1600/gtx-1600-info-2.jpg"
+    },
+    {
+      "class": "description_card",
+      "infoTitle": "NVIDIA Studio",
+      "infoSubtitle": "Do Conceito À Conclusão. Mais Rápido.",
+      "text": "Crie sem comprometimento. O Studio combina as placas de vídeo NVIDIA GeForce com drivers exclusivos do NVIDIA Studio projetados para a potência definitiva de aplicativos de criação. Libere desempenho e confiabilidade significativos para que você possa criar com a velocidade da imaginação.",
+      "imgUrl": "img/nvidia/gtx-1600/gtx-1600-info-3.jpg"
+    },
+    {
+      "class": "description_card reverse",
+      "infoTitle": "Frames Win Games",
+      "infoSubtitle": "FPS Alto nos Games com Tecnologia GeForce",
+      "text": "Gráficos mais rápidos proporcionam taxas de frames mais altas. Taxas de frames mais altas permitem que você veja as coisas antes e oferecem uma chance melhor de atingir seu alvo.",
+      "imgUrl": "img/nvidia/gtx-1600/gtx-1600-info-4.jpg"
+    }
+  ],
+  "info_table": [
+    {
+      "th": ["GPU"],
+      "td": ["NVIDIA GeForce GTX 1660 Ti"]
+    },
+    {
+      "th": ["NVIDIA CUDA Cores"],
+      "td": ["1536 Unidades"]
+    },
+    {
+      "th": ["Boost Clock (GHz)"],
+      "td": ["1.81"]
+    },
+    {
+      "th": ["Tamanho da Memória"],
+      "td": ["6GB"]
+    },
+    {
+      "th": ["Tipo de Memória"],
+      "td": ["GDDR6"]
+    },
+    {
+      "th": ["PCI"],
+      "td": ["PCI Express 3.0"]
+    },
+    {
+      "th": ["Resolução Máxima do Monitor"],
+      "td": ["7680 x 4320"]
+    },
+    {
+      "th": ["Entradas"],
+      "td": ["1x DisplayPort 1.4a <br> 2x HDMI 2.0b <br> 1x DVI-D <br> HDCP Suporte 2.2"]
+    },
+    {
+      "th": ["Fonte de alimentação"],
+      "td": ["450W"]
+    },
+    {
+      "th": ["Conectores de Energia"],
+      "td": ["1x 8 pinos"]
+    }
+  ],
+  "package_content": [
+    "Placa de Vídeo Asus TUF Gaming",
+    "Manual do usuário"
+  ]
+}
