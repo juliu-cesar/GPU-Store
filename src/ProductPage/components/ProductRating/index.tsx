@@ -17,7 +17,7 @@ export default function ProductRating({ rate }: { rate: number | undefined }) {
         </HeaderProductPage>
         <div className="frame_rating">
           <div className="rating">
-            <Rate disabled allowHalf value={3.5} />
+            <Rate disabled allowHalf value={rating} />
           </div>
           <p>0 comentários</p>
         </div>

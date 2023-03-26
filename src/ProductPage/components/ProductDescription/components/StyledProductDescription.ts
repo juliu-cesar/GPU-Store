@@ -49,7 +49,13 @@ export const StyledProductDescription = styled.div`
     border-color: ${({ theme }) => theme.text_color};
     display: flex;
     flex-direction: column-reverse;
-    align-items: center;
+    justify-content: center;
+    .text_description{
+      margin: 25px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
     h3 {
       font-size: 19px;
       font-weight: 500;
@@ -61,6 +67,7 @@ export const StyledProductDescription = styled.div`
       margin-bottom: 15px;
     }
     p {
+      width: 75%;
       font-size: 14px;
       font-weight: 400;
     }

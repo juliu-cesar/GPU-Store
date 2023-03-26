@@ -39,7 +39,7 @@
       "imgUrl": "img/amd/rx-7000/rx-7000-info-3.png"
     },
     {
-      "class": "center_description center_reverse",
+      "class": "center_description",
       "infoTitle": "AMD FidelityFX™ Super Resolution",
       "infoSubtitle": "Obtenha um aumento de frames para seus jogos",
       "text": "O FSR usa tecnologias de ponta para ajudar a impulsionar suas taxas de quadros em títulos selecionados para oferecer experiências de jogos de alta qualidade e alta resolução, sem ter que atualizar para uma nova placa de vídeo.",

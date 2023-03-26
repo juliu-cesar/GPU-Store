@@ -1,4 +1,4 @@
 {
-  "getProductById": "https://gpu-store-test-default-rtdb.firebaseio.com/produtos/",
-  "getAllCards": "https://gpu-store-test-default-rtdb.firebaseio.com/cards.json"
+  "getProductById": "https://gpu-store-default-rtdb.firebaseio.com/produtos/",
+  "getAllCards": "https://gpu-store-default-rtdb.firebaseio.com/cards.json"
 }
