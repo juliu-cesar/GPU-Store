@@ -8,6 +8,7 @@ const StyledHeaderProductPage = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  text-align: center;
   h1 {
     font-size: 27px;
   }

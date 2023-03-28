@@ -32,7 +32,7 @@ export const StyledCarouselHome = styled.div`
     z-index: 10;
     color: ${({ theme }) => theme.background_base};
     top: 30px;
-    left: 40px;
+    left: 60px;
     h2 {
       font-size: 28px;
       font-weight: 700;
@@ -109,15 +109,15 @@ export const StyledCarouselHome = styled.div`
         bottom: 5px;
       }
     }
-  }
-  .frame_title {
-    top: 25px;
-    left: 30px;
-    h2 {
-      font-size: 26px;
-    }
-    h3 {
-      font-size: 17px;
+    .frame_title {
+      top: 25px;
+      left: 30px;
+      h2 {
+        font-size: 26px;
+      }
+      h3 {
+        font-size: 17px;
+      }
     }
   }
   @media (max-width: 520px) {
@@ -130,27 +130,20 @@ export const StyledCarouselHome = styled.div`
     }
     .card_carousel {
       height: 320px;
-      :nth-child(2) {
-        .frame_img img {
-          right: 20px;
-          bottom: 5px;
-          width: 80%;
-        }
+    }
+    .frame_title {
+      top: 25px;
+      left: 30px;
+      h2 {
+        font-size: 26px;
+      }
+      h3 {
+        font-size: 17px;
       }
     }
   }
-  .frame_title {
-    top: 25px;
-    left: 30px;
-    h2 {
-      font-size: 26px;
-    }
-    h3 {
-      font-size: 17px;
-    }
-  }
   @media (max-width: 420px) {
-    .container_carousel{
+    .container_carousel {
       padding: 10px 0;
     }
     .frame_img {
@@ -162,21 +155,16 @@ export const StyledCarouselHome = styled.div`
     }
     .card_carousel {
       height: 300px;
-      :nth-child(2) {
-        .frame_img img {
-          width: 85%;
-        }
+    }
+    .frame_title {
+      top: 20px;
+      left: 10px;
+      h2 {
+        font-size: 24px;
       }
-    }
-  }
-  .frame_title {
-    top: 20px;
-    left: 10px;
-    h2 {
-      font-size: 24px;
-    }
-    h3 {
-      font-size: 15px;
+      h3 {
+        font-size: 15px;
+      }
     }
   }
 `;
