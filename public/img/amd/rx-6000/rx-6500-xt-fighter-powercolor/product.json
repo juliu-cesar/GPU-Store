@@ -1,0 +1,92 @@
+{
+  "imgList": [
+    "img/amd/rx-6000/rx-6500-xt-fighter-powercolor/rx-6500-xt-cr1.png",
+    "img/amd/rx-6000/rx-6500-xt-fighter-powercolor/rx-6500-xt-cr2.png",
+    "img/amd/rx-6000/rx-6500-xt-fighter-powercolor/rx-6500-xt-cr3.png",
+    "img/amd/rx-6000/rx-6500-xt-fighter-powercolor/rx-6500-xt-cr4.png",
+    "img/amd/rx-6000/rx-6500-xt-fighter-powercolor/rx-6500-xt-cr5.png"
+  ],
+  "textList": {
+    "title": "RX 6500 XT Fighter Power Color, 4 GB GDDR6",
+    "subtitleList": [
+      "Arquitetura RDNA 2",
+      "AMD FidelityFX™ Super Resolution",
+      "Dual Cooling Fan",
+      "AMD Radeon Anti-Lag"
+    ],
+    "price": 1529.40
+  },
+  "rating": 4.75,
+  "description": [
+    {
+      "class": "center_description",
+      "infoTitle": "Porque desempenho é a regra do jogo",
+      "text": "Apresentamos as placas gráficas AMD Radeon™ RX Série 6000, com a inovadora arquitetura AMD RDNA™ 2 e projetadas para enfrentar os jogos da próxima geração com desempenho superalimentado e visuais de tirar o fôlego.",
+      "imgUrl": "img/amd/rx-6000/rx-6000-info-1.png"
+    },
+    {
+      "class": "description_card reverse",
+      "infoTitle": "AMD FidelityFX Super Resolution 2.2",
+      "infoSubtitle": "Obtenha um aumento de frames para seus jogos",
+      "text": "O AMD FidelityFX™ Super Resolution (FSR) usa tecnologias de ponta para ajudar a impulsionar suas taxas de quadros em títulos selecionados e oferecer experiências de jogos de alta qualidade e alta resolução, sem ter que atualizar para uma nova placa de vídeo.",
+      "imgUrl": "img/amd/rx-6000/rx-6000-info-2.png"
+    },
+    {
+      "class": "description_card",
+      "infoTitle": "AMD RDNA™ 2",
+      "text": "A arquitetura AMD RDNA™ 2 apresenta unidades de computação aprimoradas com aceleradores de traçado de raios de primeira geração, um novo pipeline visual e tecnologia AMD Infinity Cache™ de primeira geração, possibilitando desempenho de alta resolução com visuais vívidos em jogos.",
+      "imgUrl": "img/amd/rx-6000/rx-6000-info-3.png"
+    },
+    {
+      "class": "description_card reverse",
+      "infoTitle": "AMD Radeon™ Anti-Lag",
+      "text": "O recurso Radeon™ Anti-Lag no AMD Software: Adrenalin Edition foi projetado para ajudar a reduzir o atraso de entrada em casos com limitação de GPU. O Radeon Anti-Lag controla o ritmo do trabalho da CPU para garantir que não fique muito à frente da GPU, reduzindo a quantidade de trabalho da CPU na fila. Como resultado, o Radeon Anti-Lag pode reduzir o atraso de entrada em quase um quadro inteiro1, ajudando a restaurar a capacidade de resposta do seu jogo.",
+      "imgUrl": "img/amd/rx-6000/rx-6000-info-4.png"
+    }
+  ],
+  "info_table": [
+    {
+      "th": ["GPU"],
+      "td": ["Radeon RX 6500 XT"]
+    },
+    {
+      "th": ["Stream Processors"],
+      "td": ["1024 Unidades"]
+    },
+    {
+      "th": ["Boost Clock (GHz)"],
+      "td": ["2,82"]
+    },
+    {
+      "th": ["Tamanho da Memória"],
+      "td": ["4 GB "]
+    },
+    {
+      "th": ["Tipo de Memória"],
+      "td": ["GDDR6"]
+    },
+    {
+      "th": ["PCI"],
+      "td": ["PCI Express 4.0"]
+    },
+    {
+      "th": ["Resolução Máxima"],
+      "td": ["7680x4320"]
+    },
+    {
+      "th": ["Entradas"],
+      "td": ["1 x DisplayPort 1.4 (v1.4a) <br> 1 x HDMI 2.1"]
+    },
+    {
+      "th": ["Fonte de alimentação"],
+      "td": ["400 W"]
+    },
+    {
+      "th": ["Conectores de Energia"],
+      "td": ["1x de 6 pinos"]
+    }
+  ],
+  "package_content": [
+    "Placa de Vídeo Powercolor"
+  ]  
+}

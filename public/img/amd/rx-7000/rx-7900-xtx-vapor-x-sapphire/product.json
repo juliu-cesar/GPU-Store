@@ -1,0 +1,98 @@
+{
+  "imgList": [
+    "img/amd/rx-7000/rx-7900-xtx-vapor-x-sapphire/rx-7900-xtx-cr1.jpg",
+    "img/amd/rx-7000/rx-7900-xtx-vapor-x-sapphire/rx-7900-xtx-cr2.jpg",
+    "img/amd/rx-7000/rx-7900-xtx-vapor-x-sapphire/rx-7900-xtx-cr3.jpg",
+    "img/amd/rx-7000/rx-7900-xtx-vapor-x-sapphire/rx-7900-xtx-cr4.jpg",
+    "img/amd/rx-7000/rx-7900-xtx-vapor-x-sapphire/rx-7900-xtx-cr5.jpg",
+    "img/amd/rx-7000/rx-7900-xtx-vapor-x-sapphire/rx-7900-xtx-cr6.jpg"
+  ],
+  "textList": {
+    "title": "RX 7900 XTX Vapor-X Sapphire Nitro +, 24 GB GDDR6",
+    "subtitleList": [
+      "AMD FidelityFX™ Super Resolution",
+      "AMD Radeon™ Anti-Lag",
+      "Software TriXX Boost",
+      "Arquitetura RDNA 3",
+      "AMD Noise Suppression"
+    ],
+    "price": 10352.93
+  },
+  "rating": 4.88,
+  "description": [
+    {
+      "class": "description_card reverse",
+      "infoTitle": "Jogue como um campeão. Jogue para ganhar.",
+      "text": "O recurso Radeon™ Anti-Lag no AMD Software: Adrenalin Edition foi projetado para ajudar a reduzir o atraso de entrada em casos com limitação de GPU. O Radeon Anti-Lag controla o ritmo do trabalho da CPU para garantir que não fique muito à frente da GPU, reduzindo a quantidade de trabalho da CPU na fila. Como resultado, o Radeon Anti-Lag pode reduzir o atraso de entrada em quase um quadro inteiro1, ajudando a restaurar a capacidade de resposta do seu jogo.",
+      "imgUrl": "img/amd/rx-7000/rx-7000-info-1.png"
+    },
+    {
+      "class": "description_card",
+      "infoTitle": "Software AMD: Tecnologia Adrenalin Edition™",
+      "text": "Criado para fornecer uma interface limpa, moderna e fácil de usar, onde você pode acessar rapidamente os recursos de software mais recentes, estatísticas de jogo, relatórios de desempenho, atualizações de driver e muito mais - tudo a partir de um local conveniente Use o atalho ATL+R para abrir o AMD Software: Tecnologia Adrenalin Edition diretamente no jogo, tornando ainda mais conveniente e fácil ajustar seus recursos favoritos e obter uma experiência fantástica de jogo.",
+      "imgUrl": "img/amd/rx-7000/rx-7000-info-2.png"
+    },
+    {
+      "class": "description_card reverse",
+      "infoTitle": "AMD Noise Suppression",
+      "infoSubtitle": "Mais nítido. Cristalino. Comunicação.",
+      "text": "O AMD Noise Suppression reduz o ruído de áudio de fundo do ambiente ao seu redor, proporcionando maior nitidez e concentração aprimorada, quer você esteja focado em uma reunião importante ou concentrado em um jogo competitivo.",
+      "imgUrl": "img/amd/rx-7000/rx-7000-info-3.png"
+    },
+    {
+      "class": "center_description",
+      "infoTitle": "AMD FidelityFX™ Super Resolution",
+      "infoSubtitle": "Obtenha um aumento de frames para seus jogos",
+      "text": "O FSR usa tecnologias de ponta para ajudar a impulsionar suas taxas de quadros em títulos selecionados para oferecer experiências de jogos de alta qualidade e alta resolução, sem ter que atualizar para uma nova placa de vídeo.",
+      "imgUrl": "img/amd/rx-7000/rx-7000-info-4.png"
+    }
+  ],
+  "info_table": [
+    {
+      "th": ["GPU"],
+      "td": ["Radeon RX 7900 XTX"]
+    },
+    {
+      "th": ["Stream Processors"],
+      "td": ["6144 Unidades"]
+    },
+    {
+      "th": ["Boost Clock (GHz)"],
+      "td": ["2,68"]
+    },
+    {
+      "th": ["Tamanho da Memória"],
+      "td": ["24GB"]
+    },
+    {
+      "th": ["Tipo de Memória"],
+      "td": ["GDDR6"]
+    },
+    {
+      "th": ["PCI"],
+      "td": ["PCI Express 4.0"]
+    },
+    {
+      "th": ["Resolução Máxima do Monitor"],
+      "td": ["8K HDR 60Hz"]
+    },
+    {
+      "th": ["Entradas"],
+      "td": ["2x DisplayPort 2.1 <br> 2x HDMI™ 2.1"]
+    },
+    {
+      "th": ["Fonte de alimentação"],
+      "td": ["Mínimo 800 W"]
+    },
+    {
+      "th": ["Conectores de Energia"],
+      "td": ["3 x 8 pinos"]
+    }
+  ],
+  "package_content": [
+    "Placa de Vídeo RX 7900 XTX Sapphire",
+    "Suporte de placa gráfica",
+    "Cabo de Extensão ARGB",
+    "Guia do Usuário"
+  ]  
+}

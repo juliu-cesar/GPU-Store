@@ -7,11 +7,11 @@
     "img/amd/rx-7000/rx-7900-xtx-asrock/rx-7900-xtx-cr5.png"
   ],
   "textList": {
-    "title": "RADEON RX 7900 XTX ASROCK, 24GB, GDDR6",
+    "title": "RX 7900 XTX ASROCK, 24GB, GDDR6",
     "subtitleList": [
       "AMD FidelityFX™ Super Resolution",
       "AMD Radeon™ Anti-Lag",
-      "Arquitetura RDNA",
+      "Arquitetura RDNA 3",
       "AMD Noise Suppression",
       "AMD Software: Adrenalin Edition"
     ],
@@ -49,7 +49,7 @@
   "info_table": [
     {
       "th": ["GPU"],
-      "td": ["Radeon RX 7900 XT"]
+      "td": ["Radeon RX 7900 XTX"]
     },
     {
       "th": ["Stream Processors"],

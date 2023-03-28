@@ -1,0 +1,88 @@
+{
+  "imgList": [
+    "img/amd/rx-500/rx-580-red-dragon-powercolor/rx-580-cr1.png",
+    "img/amd/rx-500/rx-580-red-dragon-powercolor/rx-580-cr2.png",
+    "img/amd/rx-500/rx-580-red-dragon-powercolor/rx-580-cr3.png",
+    "img/amd/rx-500/rx-580-red-dragon-powercolor/rx-580-cr4.png",
+    "img/amd/rx-500/rx-580-red-dragon-powercolor/rx-580-cr5.png"
+  ],
+  "textList": {
+    "title": "RX 580 PowerColor Red Dragon AMD Radeon, 8GB GDDR5",
+    "subtitleList": [
+      "Radeon Freesync 2",
+      "Radeon™ Chill",
+      "Arquitetura Polaris"
+    ],
+    "price": 1341.16
+  },
+  "rating": 4.78,
+  "description": [
+    {
+      "class": "description_card reverse",
+      "infoTitle": "AMD CrossFire",
+      "infoSubtitle": "Aproveite a potência de várias GPUs",
+      "text": "A tecnologia AMD CrossFire™ é a mais avançada plataforma de jogos com desempenho de várias GPUs. Desvendando o poder para dominar todos os jogos, a AMD CrossFire™ utiliza a potência de duas ou mais placas de vídeo dedicadas que funcionam em paralelo para aprimorar expressivamente o desempenho dos jogos.1As placas de vídeo compatíveis a tecnologia AMD CrossFire™ cabem em praticamente qualquer orçamento. Com a flexibilidade de combinar duas, três ou quatro GPUs, a tecnologia AMD CrossFire™ é a solução perfeita para quem exige desempenho extremo.",
+      "imgUrl": "img/amd/rx-500/rx-500-info-1.jpg"
+    },
+    {
+      "class": "center_description",
+      "infoTitle": "Tecnologia FreeSync™ da AMD",
+      "infoSubtitle": "Sem cortes. Sem travamentos. Apenas jogue.",
+      "text": "A tecnologia AMD FreeSync™ põe fim à jogabilidade travada e ao corte dos quadros com um desempenho fluido e livre de artefatos com praticamente qualquer taxa de quadros. Contemple a próxima inovação na experiência de jogos para PC e console.",
+      "imgUrl": "img/amd/rx-500/rx-500-info-2.jpg"
+    },
+    {
+      "class": "description_card reverse",
+      "infoTitle": "Tecnologia Eyefinity de vários monitores",
+      "text": "Estamos levando-o para além dos limites de monitores de PC tradicionais. A tecnologia AMD Eyefinity expande os limites tradicionais de computação de desktop, multiplicando a área da tela. Com vários monitores, jogos tornam-se mais envolventes, estações de trabalho tornam-se mais úteis e você mais produtivo.",
+      "imgUrl": "img/amd/rx-500/rx-500-info-3.jpg"
+    }
+  ],
+  "info_table": [
+    {
+      "th": ["GPU"],
+      "td": ["Radeon RX580"]
+    },
+    {
+      "th": ["Stream Processors"],
+      "td": ["2304 Unidades"]
+    },
+    {
+      "th": ["Boost Clock (GHz)"],
+      "td": ["1,35"]
+    },
+    {
+      "th": ["Tamanho da Memória"],
+      "td": ["8 GB"]
+    },
+    {
+      "th": ["Tipo de Memória"],
+      "td": ["GDDR5"]
+    },
+    {
+      "th": ["PCI"],
+      "td": ["PCI Express 3.0"]
+    },
+    {
+      "th": ["Resolução Máxima"],
+      "td": ["4096 x 2160"]
+    },
+    {
+      "th": ["Entradas"],
+      "td": ["1 x DisplayPort <br> 1 x HDMI <br> 1 x DVI-D"]
+    },
+    {
+      "th": ["Fonte de alimentação"],
+      "td": ["500 watts"]
+    },
+    {
+      "th": ["Conectores de Energia"],
+      "td": ["8-Pin"]
+    }
+  ],
+  "package_content": [
+    "Placa de Vídeo PowerColor Red Dragon AMD Radeon RX 580",
+    "Manual",
+    "Driver (PCI-E)"
+  ]  
+}
