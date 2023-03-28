@@ -4,9 +4,7 @@ export const StyledCardGpu = styled.section`
   width: 100%;
   .cardGpu {
     cursor: pointer;
-    /* border: 1px solid ${({ theme }) => theme.text_color}; */
-    /* border-radius: 10px; */
-    border-radius: 2px;
+    border-radius: 4px;
     background-color: ${({ theme }) => theme.semi_black};
     overflow: hidden;
     :hover .frame_content h4 {

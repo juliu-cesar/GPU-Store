@@ -41,7 +41,7 @@ export const StyledProductDescription = styled.div`
   }
   .center_description {
     width: 100%;
-    padding: 10px;
+    padding: 20px 10px;
     margin: auto;
     margin-top: 30px;
     border-top: 2px solid;
@@ -72,7 +72,8 @@ export const StyledProductDescription = styled.div`
       font-weight: 400;
     }
     img {
-      width: 100%;
+      width: 80%;
+      margin: auto;
       border-radius: 10px;
     }
   }

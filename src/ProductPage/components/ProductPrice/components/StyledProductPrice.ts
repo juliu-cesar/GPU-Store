@@ -45,15 +45,15 @@ export const StyledProductPrice = styled.div`
       width: 250px;
       height: 55px;
       border-radius: 27px;
+      border: unset;
       transition: all .2s ease-out;
     }
     .add_cart {
       background-color: ${({ theme }) => theme.color1};
-      /* color: ${({ theme }) => theme.text_color}; */
       font-size: 19px;
       font-weight: 600;
       :hover {
-        border-color: ${({ theme }) => theme.color1};
+        box-shadow: 1px 1px 5px ${({ theme }) => theme.color1};
       }
     }
   }

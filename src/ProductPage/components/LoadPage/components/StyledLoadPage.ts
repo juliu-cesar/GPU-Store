@@ -141,9 +141,9 @@ export const StyledLoadPage = styled.div`
     justify-content: center;
     .add_cart {
       background-color: ${({ theme }) => theme.text_color};
-      width: 150px;
-      height: 44px;
-      border-radius: 22px;
+      width: 250px;
+      height: 55px;
+      border-radius: 27px;
       animation: 0.6s bg_color infinite alternate;
     }
   }
