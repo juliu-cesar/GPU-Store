@@ -4,8 +4,10 @@ export const StyledCardGpu = styled.section`
   width: 100%;
   .cardGpu {
     cursor: pointer;
-    border: 1px solid ${({ theme }) => theme.text_color};
-    border-radius: 10px;
+    /* border: 1px solid ${({ theme }) => theme.text_color}; */
+    /* border-radius: 10px; */
+    border-radius: 2px;
+    background-color: ${({ theme }) => theme.semi_black};
     overflow: hidden;
     :hover .frame_content h4 {
       text-decoration: underline;
@@ -31,6 +33,7 @@ export const StyledCardGpu = styled.section`
   }
   .frame_content {
     padding: 5px 10px;
+    color: ${({ theme }) => theme.text_color_y};
     h4 {
       font-size: 15px;
       font-weight: 500;
@@ -41,7 +44,7 @@ export const StyledCardGpu = styled.section`
       font-weight: 600;
     }
     span {
-      color: ${({ theme }) => theme.off_white};
+      color: ${({ theme }) => theme.text_color_y};
       h3 {
         margin-top: 10px;
       }

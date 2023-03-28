@@ -27,9 +27,8 @@ export default function CardGpu({ allCards, onlyCash = false }: Props) {
               </div>
               <div className="frame_content">
                 <h4>{e.title}</h4>
-                <p className="small color1">à vista</p>
                 <h3 className="color1">R$ {cashPrice}</h3>
-                <p className="small2">No pix com 10% de desconto</p>
+                <p className="small2">no PIX com 10% desconto</p>
                 {!onlyCash && (
                   <span>
                     <h3>

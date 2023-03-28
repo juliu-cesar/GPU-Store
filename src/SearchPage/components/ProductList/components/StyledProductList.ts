@@ -6,7 +6,7 @@ export const StyledProductList = styled.div`
   .container_product section {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    gap: 10px;
+    gap: 20px;
   }
   .searched_itens {
     width: 100%;

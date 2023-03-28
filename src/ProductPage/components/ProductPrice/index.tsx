@@ -100,7 +100,7 @@ export default function ProductPrice({ textList, ID }: Props) {
       <div className="buttons">
         {/* <button className="buy">Comprar</button> */}
         <button className="add_cart" onClick={addCart}>
-          + carrinho
+        Adicionar ao carrinho
         </button>
       </div>
     </StyledProductPrice>
