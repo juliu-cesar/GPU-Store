@@ -48,6 +48,18 @@ Com o **Next** é possível criar paginas estáticas, garantindo maior velocidad
 
 O principal fator para utilizar o **Styled Components**, é poder estilizar um elemento no próprio escopo, ou seja, o css utilizado nesse elemento, sera aplicado somente a ele e seus elementos filhos. Isso evita colisão de CSS, conflito de classes, CSS vazando para outros elementos, etc.
 
+## Pagina de pesquisa
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/121033909/228820890-2030dc14-ffe7-4100-bf0c-c1b34e595ed6.png" height="500" />
+</div>
+
+## Pagina do produto
+
+<div align="center">
+<img src="https://user-images.githubusercontent.com/121033909/228821243-03494c2c-1d9d-42c6-b60c-a419932dfde6.png" height="500" />
+</div>
+
 ### Comandos utilizados para criar o projeto
 
 Na documentação do Next na parte do TypeScript, podemos encontrar o comando para criar uma projeto com React, Next e TypeScript disponibilizado pela Vercel.
