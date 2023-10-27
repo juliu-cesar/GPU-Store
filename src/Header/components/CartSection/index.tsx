@@ -42,7 +42,7 @@ export default function CartSection({
 
   function ga4_viewCartEvent() {
     if (!localStorage.getItem(LS)) return;
-    gtag("event", "view_item", {
+    gtag("event", "view_cart", {
       currency: "BRL",
       value: totalPrice,
       items: productList.map(item => {
