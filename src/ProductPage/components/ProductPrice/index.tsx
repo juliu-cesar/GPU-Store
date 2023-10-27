@@ -3,6 +3,7 @@ import { StyledProductPrice } from "./components/StyledProductPrice";
 import { TAllCards } from "@/src/components/TAllCards";
 import { CartContext } from "@/src/Header/components/CartSection/components/CartProvider";
 import { CardsContext } from "@/src/components/CardsProvider";
+import ReactGA from 'react-ga';
 
 interface Props {
   textList:
@@ -39,6 +40,11 @@ export default function ProductPrice({ textList, ID }: Props) {
   }, [textList?.price]);
 
   function addCart() {
+    ReactGA.event({
+      category: 'User',
+      action: 'add_cart'
+    });
+    
     let newArr: TAllCards = allCards.allCards;
     let newProductList: TAllCards = JSON.parse(JSON.stringify(ProductList));
 

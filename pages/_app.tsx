@@ -4,6 +4,7 @@ import type { AppProps } from "next/app";
 import Script from "next/script";
 import { ThemeProvider } from "styled-components";
 import { CSSReset } from "../styles/CSSReset";
+import ReactGA from 'react-ga';
 
 const theme = {
   color1: "#49d907",
@@ -29,6 +30,7 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 
 function ProviderWrapper({ children }: { children: React.ReactNode }) {
+  ReactGA.initialize('UA-359636224');
   return (
     <CardsProvider>
       <Script
