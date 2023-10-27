@@ -25,15 +25,16 @@ export default function ProductPage({ router }: Props) {
 
   useEffect(() => {
     let id = router.query.params?.slice(-20);
-    if(!id)return
+    if (!id) return
     setID(id as string);
     fetch(`${URLGetById + id}.json`)
-    .then((response) => response.json())
-    .then((data: TProduct) => {
+      .then((response) => response.json())
+      .then((data: TProduct) => {
         if (data != null) {
           if (data.textList) {
             setProduct(data);
             setLoadPage(false);
+            ga4_viewItemEvent(data);
           } else {
             setNotFound(true);
           }
@@ -42,6 +43,22 @@ export default function ProductPage({ router }: Props) {
         }
       });
   }, [router.query]);
+
+  function ga4_viewItemEvent(data: TProduct) {
+    gtag("event", "view_item", {
+      currency: "BRL",
+      value: data.textList!.price,
+      items: [
+        {
+          item_id: `GPS_${Math.random() * 10000}`,
+          item_name: data.textList!.title,
+          affiliation: "GU Store",
+          item_category: "board",
+          price: data.textList!.price,
+        }
+      ]
+    });
+  }
   return (
     <StyledProduct>
       <Header cartType={0} />

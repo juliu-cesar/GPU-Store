@@ -3,7 +3,6 @@ import { StyledProductPrice } from "./components/StyledProductPrice";
 import { TAllCards } from "@/src/components/TAllCards";
 import { CartContext } from "@/src/Header/components/CartSection/components/CartProvider";
 import { CardsContext } from "@/src/components/CardsProvider";
-import ReactGA4 from "react-ga4";
 
 interface Props {
   textList:
@@ -40,8 +39,6 @@ export default function ProductPrice({ textList, ID }: Props) {
   }, [textList?.price]);
 
   function addCart() {
-    // ReactGA4.send({hitType: "pageview", page: "/my-path", title: "Custom Title"});
-
     let newArr: TAllCards = allCards.allCards;
     let newProductList: TAllCards = JSON.parse(JSON.stringify(ProductList));
 
@@ -63,39 +60,30 @@ export default function ProductPrice({ textList, ID }: Props) {
         newArr[0].amount = 1;
         newProductList.push(newArr[0]);
         addProductLS(newProductList);
+        ga4_addToCartEvent()
       }
     } else {
       newArr[0].amount = 1;
 
       newProductList.push(newArr[0]);
       addProductLS(newProductList);
+      ga4_addToCartEvent()
     }
-
-
-
+  }
+  function ga4_addToCartEvent() {
     gtag("event", "add_to_cart", {
       currency: "BRL",
       value: textList!.price,
       items: [
         {
-          item_id: `GPS_${Math.random() * 10000}`,
+          item_id: `GPS_${ID}`,
           item_name: textList!.title,
           affiliation: "GU Store",
-          coupon: "SUMMER_FUN",
-          discount: 2.22,
-          index: 0,
-          item_brand: "Google",
           item_category: "board",
-          item_list_id: "related_products",
-          item_list_name: "Related Products",
           price: textList!.price,
-          quantity: newArr[newProductList.findIndex((e) => {
-            return e.id == ID;
-          })].amount
         }
       ]
     });
-
   }
   function addProductLS(pL: TAllCards) {
     cartContext.setProductList(pL);
