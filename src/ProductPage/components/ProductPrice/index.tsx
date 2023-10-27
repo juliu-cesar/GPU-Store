@@ -3,16 +3,16 @@ import { StyledProductPrice } from "./components/StyledProductPrice";
 import { TAllCards } from "@/src/components/TAllCards";
 import { CartContext } from "@/src/Header/components/CartSection/components/CartProvider";
 import { CardsContext } from "@/src/components/CardsProvider";
-import ReactGA from 'react-ga';
+import ReactGA4 from "react-ga4";
 
 interface Props {
   textList:
-    | {
-        title: string;
-        subtitleList: string[];
-        price: number;
-      }
-    | undefined;
+  | {
+    title: string;
+    subtitleList: string[];
+    price: number;
+  }
+  | undefined;
   ID: string;
 }
 export default function ProductPrice({ textList, ID }: Props) {
@@ -40,11 +40,8 @@ export default function ProductPrice({ textList, ID }: Props) {
   }, [textList?.price]);
 
   function addCart() {
-    ReactGA.event({
-      category: 'User',
-      action: 'add_cart'
-    });
-    
+    // ReactGA4.send({hitType: "pageview", page: "/my-path", title: "Custom Title"});
+
     let newArr: TAllCards = allCards.allCards;
     let newProductList: TAllCards = JSON.parse(JSON.stringify(ProductList));
 
@@ -73,6 +70,32 @@ export default function ProductPrice({ textList, ID }: Props) {
       newProductList.push(newArr[0]);
       addProductLS(newProductList);
     }
+
+
+
+    gtag("event", "add_to_cart", {
+      currency: "BRL",
+      value: textList!.price,
+      items: [
+        {
+          item_id: `GPS_${Math.random() * 10000}`,
+          item_name: textList!.title,
+          affiliation: "GU Store",
+          coupon: "SUMMER_FUN",
+          discount: 2.22,
+          index: 0,
+          item_brand: "Google",
+          item_category: "board",
+          item_list_id: "related_products",
+          item_list_name: "Related Products",
+          price: textList!.price,
+          quantity: newArr[newProductList.findIndex((e) => {
+            return e.id == ID;
+          })].amount
+        }
+      ]
+    });
+
   }
   function addProductLS(pL: TAllCards) {
     cartContext.setProductList(pL);
@@ -106,7 +129,7 @@ export default function ProductPrice({ textList, ID }: Props) {
       <div className="buttons">
         {/* <button className="buy">Comprar</button> */}
         <button className="add_cart" onClick={addCart}>
-        Adicionar ao carrinho
+          Adicionar ao carrinho
         </button>
       </div>
     </StyledProductPrice>

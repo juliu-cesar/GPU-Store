@@ -4,7 +4,7 @@ import type { AppProps } from "next/app";
 import Script from "next/script";
 import { ThemeProvider } from "styled-components";
 import { CSSReset } from "../styles/CSSReset";
-import ReactGA from 'react-ga';
+import ReactGA4 from "react-ga4";
 
 const theme = {
   color1: "#49d907",
@@ -30,10 +30,10 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 
 function ProviderWrapper({ children }: { children: React.ReactNode }) {
-  ReactGA.initialize('UA-359636224');
+  ReactGA4.initialize(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS!);
   return (
     <CardsProvider>
-      <Script
+      {/* <Script
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
@@ -47,7 +47,7 @@ function ProviderWrapper({ children }: { children: React.ReactNode }) {
                     page_path: window.location.pathname,
                     });
                 `}
-      </Script>
+      </Script> */}
       <CartProvider>{children}</CartProvider>
     </CardsProvider>
   );
