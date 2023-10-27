@@ -37,14 +37,16 @@ export default function CartSection({
     setTotalPrice(total);
   }, [productList]);
   useEffect(() => {
-    if (showCart) ga4_viewCartEvent()
+    if (showCart){
+      ga4_viewCartEvent()
+    }      
   }, [showCart]);
 
   function ga4_viewCartEvent() {
     if (!localStorage.getItem(LS)) return;
     gtag("event", "view_cart", {
       currency: "BRL",
-      value: totalPrice,
+      value: totalPrice.toFixed(2),
       items: productList.map(item => {
         return {
           item_id: item.id,
