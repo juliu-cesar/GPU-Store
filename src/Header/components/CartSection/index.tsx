@@ -11,15 +11,13 @@ import { StyledCartSection } from "./components/StyledCartSection";
 
 interface Props {
   showCart: boolean;
-  showCartSection: boolean;
   setShowCartSection: Dispatch<SetStateAction<boolean>>;
 }
 export default function CartSection({
   showCart,
-  showCartSection,
   setShowCartSection,
 }: Props) {
-  const [totalPrice, setTotalPrice] = useState("R$ 0,00");
+  const [totalPrice, setTotalPrice] = useState(0);
   const cartContext = useContext(CartContext);
   const productList = cartContext.ProductList;
   const setProductList = cartContext.setProductList;
@@ -36,13 +34,28 @@ export default function CartSection({
       let value = e.price * 0.9 * e.amount!;
       total += value;
     });
-    setTotalPrice(
-      total.toLocaleString("pt-br", {
-        style: "currency",
-        currency: "BRL",
-      })
-    );
+    setTotalPrice(total);
   }, [productList]);
+  useEffect(() => {
+    if (showCart) ga4_viewCartEvent()
+  }, [showCart]);
+
+  function ga4_viewCartEvent() {
+    if (!localStorage.getItem(LS)) return;
+    gtag("event", "view_item", {
+      currency: "BRL",
+      value: totalPrice,
+      items: productList.map(item => {
+        return {
+          item_id: item.id,
+          item_name: item.title,
+          affiliation: "GU Store",
+          item_category: "board",
+          price: item.price,
+        }
+      })
+    });
+  }
 
   function changeAmount(num: number, index: number) {
     if (num > 5) return;
@@ -83,14 +96,14 @@ export default function CartSection({
                     <h3>{cashPrice}</h3>
                   </div>
                   <div className="frame_amount flex_column">
-                    <span className="arrowUp align_center" onClick={()=>{changeAmount(el.amount! + 1, index)}}>
+                    <span className="arrowUp align_center" onClick={() => { changeAmount(el.amount! + 1, index) }}>
                       <img
                         src="../img/icons/svg/arrow-bold-white.svg"
                         style={{ maxWidth: "20px" }}
                       />
                     </span>
                     <div className="amount align_center">{el.amount}</div>
-                    <span className="arrowDown align_center" onClick={()=>{changeAmount(el.amount! - 1, index)}}>
+                    <span className="arrowDown align_center" onClick={() => { changeAmount(el.amount! - 1, index) }}>
                       <img
                         src="../img/icons/svg/arrow-bold-white.svg"
                         style={{ maxWidth: "20px" }}
@@ -115,7 +128,10 @@ export default function CartSection({
           </div>
           <div className="totalPrice flex_row">
             <h4>Total:</h4>
-            <h3>{totalPrice}</h3>
+            <h3>{totalPrice.toLocaleString("pt-br", {
+              style: "currency",
+              currency: "BRL",
+            })}</h3>
           </div>
         </div>
         <button className="btn_buy">Finalizar Compra</button>
@@ -127,7 +143,7 @@ export default function CartSection({
           />
         </button>
       </div>
-      {showCartSection && (
+      {showCart && (
         <span
           className="cart_cover"
           onClick={() => setShowCartSection(false)}

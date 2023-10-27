@@ -55,7 +55,6 @@ export default function Header({ cartType }: Props) {
       </div>
       <CartSection
         showCart={showCartSection}
-        showCartSection={showCartSection}
         setShowCartSection={setShowCartSection}
       />
     </StyledHeader>
