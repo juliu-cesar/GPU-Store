@@ -1,8 +1,6 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { StyledProductPrice } from "./components/StyledProductPrice";
-import { TAllCards } from "@/src/components/TAllCards";
-import { CartContext } from "@/src/Header/components/CartSection/components/CartProvider";
-import { CardsContext } from "@/src/components/CardsProvider";
+import ButtonAddToCart from "@/src/components/ButtonAddToCart";
 
 interface Props {
   textList:
@@ -17,10 +15,6 @@ interface Props {
 export default function ProductPrice({ textList, ID }: Props) {
   const [cash_price, setCash_price] = useState("");
   const [installment_price, setInstallment_price] = useState("");
-  const cartContext = useContext(CartContext);
-  const allCards = useContext(CardsContext)
-  const ProductList = cartContext.ProductList;
-  const LS = "ProductList";
 
   useEffect(() => {
     if (!textList) return;
@@ -38,57 +32,6 @@ export default function ProductPrice({ textList, ID }: Props) {
     );
   }, [textList?.price]);
 
-  function addCart() {
-    let newArr: TAllCards = allCards.allCards;
-    let newProductList: TAllCards = JSON.parse(JSON.stringify(ProductList));
-
-    newArr = newArr.filter((el) => {
-      return el.id == ID;
-    });
-
-    if (ProductList.length > 0) {
-      if (ProductList.length >= 10) return;
-      let index = newProductList.findIndex((e) => {
-        return e.id == ID;
-      });
-      if (index != -1) {
-        if (newProductList[index].amount! >= 5) return;
-        newArr = newProductList;
-        newArr[index].amount!++;
-        addProductLS(newArr);
-      } else {
-        newArr[0].amount = 1;
-        newProductList.push(newArr[0]);
-        addProductLS(newProductList);
-        ga4_addToCartEvent()
-      }
-    } else {
-      newArr[0].amount = 1;
-
-      newProductList.push(newArr[0]);
-      addProductLS(newProductList);
-      ga4_addToCartEvent()
-    }
-  }
-  function ga4_addToCartEvent() {
-    gtag("event", "add_to_cart", {
-      currency: "BRL",
-      value: textList!.price,
-      items: [
-        {
-          item_id: `GPS_${ID}`,
-          item_name: textList!.title,
-          affiliation: "GU Store",
-          item_category: "board",
-          price: textList!.price,
-        }
-      ]
-    });
-  }
-  function addProductLS(pL: TAllCards) {
-    cartContext.setProductList(pL);
-    localStorage.setItem(LS, JSON.stringify(pL));
-  }
   return (
     <StyledProductPrice>
       <div className="frame_title">
@@ -115,10 +58,7 @@ export default function ProductPrice({ textList, ID }: Props) {
         </div>
       </div>
       <div className="buttons">
-        {/* <button className="buy">Comprar</button> */}
-        <button className="add_cart" onClick={addCart}>
-          Adicionar ao carrinho
-        </button>
+        <ButtonAddToCart title={textList?.title} price={textList?.price} productId={ID} />
       </div>
     </StyledProductPrice>
   );

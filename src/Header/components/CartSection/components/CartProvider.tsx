@@ -1,7 +1,7 @@
 import { TAllCards } from "@/src/components/TAllCards";
 import { createContext, Dispatch, SetStateAction, useEffect, useState } from "react";
 
-type cartType = {
+export type cartType = {
   ProductList: TAllCards | [];
   setProductList: Dispatch<SetStateAction<TAllCards | []>>;
 };

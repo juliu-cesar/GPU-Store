@@ -1,6 +1,7 @@
 import { TAllCards } from "@/src/components/TAllCards";
 import Link from "next/link";
 import { StyledCardGpu } from "./components/StyledCardGpu";
+import ButtonAddToCart from "../ButtonAddToCart";
 
 interface Props {
   allCards: TAllCards;
@@ -46,6 +47,7 @@ export default function CardGpu({ allCards, onlyCash = false }: Props) {
                 )}
               </div>
             </Link>
+            <ButtonAddToCart title={e.title} price={e.price} productId={e.id} buttonId="card-add_to_cart" />
           </div>
         );
       })}

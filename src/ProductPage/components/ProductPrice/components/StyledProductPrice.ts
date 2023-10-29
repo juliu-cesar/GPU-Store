@@ -50,10 +50,12 @@ export const StyledProductPrice = styled.div`
     }
     .add_cart {
       background-color: ${({ theme }) => theme.color1};
+      color: white;
       font-size: 19px;
       font-weight: 600;
       :hover {
         box-shadow: 1px 1px 5px ${({ theme }) => theme.color1};
+        opacity: 0.9;
       }
     }
   }
