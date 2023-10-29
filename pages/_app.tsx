@@ -1,10 +1,8 @@
 import CartProvider from "@/src/Header/components/CartSection/components/CartProvider";
 import CardsProvider from "@/src/components/CardsProvider";
 import type { AppProps } from "next/app";
-import Script from "next/script";
 import { ThemeProvider } from "styled-components";
 import { CSSReset } from "../styles/CSSReset";
-import ReactGA4 from "react-ga4";
 
 const theme = {
   color1: "#49d907",
@@ -30,24 +28,8 @@ export default function App({ Component, pageProps }: AppProps) {
 }
 
 function ProviderWrapper({ children }: { children: React.ReactNode }) {
-  ReactGA4.initialize(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS!);
   return (
     <CardsProvider>
-      {/* <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
-      />
-
-      <Script strategy="lazyOnload">
-        {`
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-                    gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}', {
-                    page_path: window.location.pathname,
-                    });
-                `}
-      </Script> */}
       <CartProvider>{children}</CartProvider>
     </CardsProvider>
   );
