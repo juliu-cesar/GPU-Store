@@ -30,7 +30,7 @@ export default function Header({ cartType }: Props) {
           </div>
         </div>
         <div className="right">
-          <Link href={"/produtos"} style={{ color: "#fff" }}>
+          <Link href={"/buscar"} style={{ color: "#fff" }}>
             <h4>
               <StyledHover>Produtos</StyledHover>
             </h4>

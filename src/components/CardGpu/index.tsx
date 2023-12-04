@@ -19,7 +19,7 @@ export default function CardGpu({ allCards, onlyCash = false }: Props) {
           style: "currency",
           currency: "BRL",
         });
-        const url = `/produtos/${e.title.replace(/[\s/]+/g, "-") + e.id}`;
+        const url = `/produto/${e.title.replace(/[\s/]+/g, "-") + e.id}`;
         return (
           <div className="cardGpu" key={i}>
             <Link href={url}>
