@@ -34,7 +34,6 @@ export default function ProductPage({ router }: Props) {
           if (data.textList) {
             setProduct(data);
             setLoadPage(false);
-            ga4_viewItemEvent(data);
           } else {
             setNotFound(true);
           }
@@ -44,21 +43,6 @@ export default function ProductPage({ router }: Props) {
       });
   }, [router.query]);
 
-  function ga4_viewItemEvent(data: TProduct) {
-    gtag("event", "view_item", {
-      currency: "BRL",
-      value: data.textList!.price,
-      items: [
-        {
-          item_id: `GPS_${Math.random() * 10000}`,
-          item_name: data.textList!.title,
-          affiliation: "GU Store",
-          item_category: "board",
-          price: data.textList!.price,
-        }
-      ]
-    });
-  }
   return (
     <StyledProduct>
       <Header cartType={0} />

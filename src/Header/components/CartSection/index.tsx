@@ -36,28 +36,6 @@ export default function CartSection({
     });
     setTotalPrice(total);
   }, [productList]);
-  useEffect(() => {
-    if (showCart){
-      ga4_viewCartEvent()
-    }      
-  }, [showCart]);
-
-  function ga4_viewCartEvent() {
-    if (!localStorage.getItem(LS)) return;
-    gtag("event", "view_cart", {
-      currency: "BRL",
-      value: totalPrice.toFixed(2),
-      items: productList.map(item => {
-        return {
-          item_id: item.id,
-          item_name: item.title,
-          affiliation: "GU Store",
-          item_category: "board",
-          price: item.price,
-        }
-      })
-    });
-  }
 
   function changeAmount(num: number, index: number) {
     if (num > 5) return;

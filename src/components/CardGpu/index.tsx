@@ -47,7 +47,7 @@ export default function CardGpu({ allCards, onlyCash = false }: Props) {
                 )}
               </div>
             </Link>
-            <ButtonAddToCart title={e.title} price={e.price} productId={e.id} buttonId="card-add_to_cart" />
+            <ButtonAddToCart productId={e.id} buttonId="card-add_to_cart" />
           </div>
         );
       })}

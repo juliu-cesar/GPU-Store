@@ -58,7 +58,7 @@ export default function ProductPrice({ textList, ID }: Props) {
         </div>
       </div>
       <div className="buttons">
-        <ButtonAddToCart title={textList?.title} price={textList?.price} productId={ID} />
+        <ButtonAddToCart productId={ID} />
       </div>
     </StyledProductPrice>
   );
