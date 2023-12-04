@@ -35,22 +35,24 @@ export default function Header({ cartType }: Props) {
               <StyledHover>Produtos</StyledHover>
             </h4>
           </Link>
-            <div
+            <button
+              id="cart_button_id"
               className="cart_button"
               onClick={() => setShowCartSection(true)}
             >
-              <StyledHover>
-                {cartType == 1 && <h3>Carrinho</h3>}
-                <div>
-                  <img
-                    src="../img/icons/cart-icon.png"
-                    alt="ícone carrinho de compras"
-                    style={{ width: "18px" }}
-                  />{" "}
-                  {cartContext.ProductList.length}
-                </div>
+              <StyledHover className="cart_button">
+                {cartType == 1 && "Carrinho"}                
+                  <div className="cart_button count_items">
+                    <img
+                      src="../img/icons/cart-icon.png"
+                      alt="ícone carrinho de compras"
+                      style={{ width: "18px" }}
+                      className="cart_button"
+                    />{" "}
+                    {cartContext.ProductList.length}
+                  </div>                
               </StyledHover>
-            </div>
+            </button>
         </div>
       </div>
       <CartSection

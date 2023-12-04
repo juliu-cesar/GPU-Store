@@ -50,31 +50,33 @@ export const StyledHeader = styled.header<{
       font-weight: 500;
     }
   }
-  .cart_button {
+  #cart_button_id {
     position: relative;
     cursor: pointer;
+
     height: 50px;
     padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+
+    div{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    background-color: unset;
+    color: ${({ theme }) => theme.text_color};
     border: ${({ type }) => `${type}px`} solid
       ${({ theme }) => theme.text_color};
     border-radius: 10px;
-    h3 {
-      font-weight: 500;
-      margin-right: 10px;
-    }
-    div {
-      display: flex;
-      align-items: center;
-      gap: 3px;
-      font-size: 21px;
-      font-weight: 500;
-      h3{
-        font-size: 19px;
-      }
+
+    font-size: 19px;
+    font-weight: 500;
+    margin-right: 10px;
+
+    .count_items{
+      gap: 4px;
     }
   }
   @media (max-width: 540px) {
