@@ -1,9 +1,9 @@
 import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
 import { StyledFilter } from "./components/StyledFilter";
-import { TAllCards } from "@/src/utils/TAllCards";
 import SliderOption from "./components/SliderOption";
 import CheckBoxSection from "./components/CheckBoxSection";
 import { CardsContext } from "@/src/provider/CardsProvider";
+import { TAllCards } from "@/src/provider/TAllCards";
 
 interface Props {
   setAllCards: Dispatch<SetStateAction<TAllCards | undefined>>;

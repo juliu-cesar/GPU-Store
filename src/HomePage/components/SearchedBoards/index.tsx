@@ -1,8 +1,8 @@
 import { StyledSearchedBoards } from "./components/StyledSearchedBoards";
 import { useContext, useEffect, useState } from "react";
-import { TAllCards } from "../../../provider/TAllCards";
 import CardGpu from "@/src/components/CardGpu";
 import { CardsContext } from "@/src/provider/CardsProvider";
+import { TAllCards } from "@/src/provider/TAllCards";
 
 export default function SearchedBoards() {
   const [fourCards, setFourCards] = useState<TAllCards | undefined>(undefined);
