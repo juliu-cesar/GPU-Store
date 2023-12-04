@@ -1,7 +1,7 @@
 import { CartContext } from "@/src/Header/components/CartSection/components/CartProvider";
 import { useContext } from "react";
-import { CardsContext } from "../CardsProvider";
-import { TAllCards } from "../TAllCards";
+import { CardsContext } from "../../provider/CardsProvider";
+import { TAllCards } from "../../provider/TAllCards";
 
 interface BtnAddToCartProps {
   productId: string;

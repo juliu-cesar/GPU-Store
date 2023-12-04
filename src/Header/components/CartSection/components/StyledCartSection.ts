@@ -81,12 +81,16 @@ export const StyledCartSection = styled.section<{
       justify-content: space-around;
       gap: 2px;
     }
-    h4 {
+    a {
+      color: ${({ theme }) => theme.text_color};
       max-height: 60px;
       font-size: 15px;
       font-weight: 400;
       overflow-wrap: anywhere;
       overflow: hidden;
+      :hover {
+        text-decoration: underline;
+      }
     }
     h3 {
       margin-left: 10px;

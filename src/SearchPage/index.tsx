@@ -5,8 +5,8 @@ import Filter from "./components/Filter";
 import ProductList from "./components/ProductList";
 import SearchHeader from "./components/SearchHeader";
 import { StyledSearch } from "./components/StyledSearch";
-import { TAllCards } from "../components/TAllCards";
-import { CardsContext } from "../components/CardsProvider";
+import { TAllCards } from "../provider/TAllCards";
+import { CardsContext } from "../provider/CardsProvider";
 
 export default function SearchPage() {
   const [allCards, setAllCards] = useState<TAllCards | undefined>(undefined);

@@ -1,8 +1,8 @@
-import { TAllCards } from "@/src/components/TAllCards";
 import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react";
 import { StyledSearchHeader } from "./components/StyledSearchHeader";
 import { SearchItens } from "../SearchItens";
-import { CardsContext } from "@/src/components/CardsProvider";
+import { CardsContext } from "@/src/provider/CardsProvider";
+import { TAllCards } from "@/src/provider/TAllCards";
 
 const order = [
   { name: "Mais relevantes", value: "relevance" },

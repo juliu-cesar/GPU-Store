@@ -1,4 +1,4 @@
-import { TAllCards, TCard } from "@/src/components/TAllCards";
+
 import {
   createContext,
   Dispatch,
@@ -7,6 +7,7 @@ import {
   useState,
 } from "react";
 import ApiLinks from "@/ApiLinks.json"
+import { TAllCards, TCard } from "./TAllCards";
 
 type cardType = {
   allCards: TAllCards | [];

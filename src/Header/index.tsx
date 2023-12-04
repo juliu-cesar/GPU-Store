@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useContext, useState } from "react";
-import { StyledHover } from "../components/StyledHover";
+import { StyledHover } from "../utils/StyledHover";
 import CartSection from "./components/CartSection";
 import { CartContext } from "./components/CartSection/components/CartProvider";
 import { StyledHeader } from "./components/StyledHeader";

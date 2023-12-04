@@ -1,6 +1,6 @@
 import { StyledProductList } from "./components/StyledProductList";
 import CardGpu from "@/src/components/CardGpu";
-import { TAllCards } from "@/src/components/TAllCards";
+import { TAllCards } from "@/src/provider/TAllCards";
 import { Dispatch, SetStateAction } from "react";
 
 interface Props{

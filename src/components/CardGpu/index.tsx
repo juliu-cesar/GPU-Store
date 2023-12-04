@@ -1,7 +1,8 @@
-import { TAllCards } from "@/src/components/TAllCards";
 import Link from "next/link";
 import { StyledCardGpu } from "./components/StyledCardGpu";
 import ButtonAddToCart from "../ButtonAddToCart";
+import { TAllCards } from "@/src/provider/TAllCards";
+import { GetProductUrl } from "@/src/utils/GetProductUrl";
 
 interface Props {
   allCards: TAllCards;
@@ -19,7 +20,7 @@ export default function CardGpu({ allCards, onlyCash = false }: Props) {
           style: "currency",
           currency: "BRL",
         });
-        const url = `/produto/${e.title.replace(/[\s/]+/g, "-") + e.id}`;
+        const url = GetProductUrl(e.title, e.id);
         return (
           <div className="cardGpu" key={i}>
             <Link href={url}>

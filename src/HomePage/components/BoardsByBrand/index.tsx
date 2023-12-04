@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from "react";
-import { TAllCards } from "../../../components/TAllCards";
 import { StyledBoardsByBrand } from "./components/StyledBoardsByBrand";
 import CardGpu from "@/src/components/CardGpu";
-import { CardsContext } from "@/src/components/CardsProvider";
+import { CardsContext } from "@/src/provider/CardsProvider";
+import { TAllCards } from "@/src/provider/TAllCards";
 
 export default function BoardsByBrand() {
   const [amdCard, setAmdCard] = useState<TAllCards | undefined>(undefined);

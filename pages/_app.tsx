@@ -1,5 +1,5 @@
 import CartProvider from "@/src/Header/components/CartSection/components/CartProvider";
-import CardsProvider from "@/src/components/CardsProvider";
+import CardsProvider from "@/src/provider/CardsProvider";
 import type { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import { CSSReset } from "../styles/CSSReset";

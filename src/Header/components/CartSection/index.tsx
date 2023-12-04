@@ -1,4 +1,3 @@
-import { TAllCards } from "@/src/components/TAllCards";
 import {
   Dispatch,
   SetStateAction,
@@ -8,6 +7,9 @@ import {
 } from "react";
 import { CartContext } from "./components/CartProvider";
 import { StyledCartSection } from "./components/StyledCartSection";
+import { TAllCards } from "@/src/provider/TAllCards";
+import { GetProductUrl } from "@/src/utils/GetProductUrl";
+import Link from "next/link";
 
 interface Props {
   showCart: boolean;
@@ -61,29 +63,30 @@ export default function CartSection({
         </div>
         <div className="frame_itens flex_column">
           {productList.length > 0 &&
-            productList.map((el, index) => {
-              const cashPrice = (el.price * 0.9).toLocaleString("pt-br", {
+            productList.map((e, index) => {
+              const url = GetProductUrl(e.title, e.id);
+              const cashPrice = (e.price * 0.9).toLocaleString("pt-br", {
                 style: "currency",
                 currency: "BRL",
               });
               return (
                 <div className="CardItem" key={index}>
                   <div className="imgIcon align_center">
-                    <img src={"../" + el.img} style={{ maxWidth: "150px" }} />
+                    <img src={"../" + e.img} style={{ maxWidth: "150px" }} />
                   </div>
                   <div className="TitleAndPrice flex_column">
-                    <h4>{el.title}</h4>
+                    <Link href={url}>{e.title}</Link>
                     <h3>{cashPrice}</h3>
                   </div>
                   <div className="frame_amount flex_column">
-                    <span className="arrowUp align_center" onClick={() => { changeAmount(el.amount! + 1, index) }}>
+                    <span className="arrowUp align_center" onClick={() => { changeAmount(e.amount! + 1, index) }}>
                       <img
                         src="../img/icons/svg/arrow-bold-white.svg"
                         style={{ maxWidth: "20px" }}
                       />
                     </span>
-                    <div className="amount align_center">{el.amount}</div>
-                    <span className="arrowDown align_center" onClick={() => { changeAmount(el.amount! - 1, index) }}>
+                    <div className="amount align_center">{e.amount}</div>
+                    <span className="arrowDown align_center" onClick={() => { changeAmount(e.amount! - 1, index) }}>
                       <img
                         src="../img/icons/svg/arrow-bold-white.svg"
                         style={{ maxWidth: "20px" }}

@@ -1,4 +1,4 @@
-import { TAllCards } from "@/src/components/TAllCards";
+import { TAllCards } from "@/src/provider/TAllCards";
 import { createContext, Dispatch, SetStateAction, useEffect, useState } from "react";
 
 export type cartType = {

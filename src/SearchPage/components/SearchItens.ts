@@ -1,4 +1,4 @@
-import { TAllCards } from "@/src/components/TAllCards";
+import { TAllCards } from "@/src/provider/TAllCards";
 
 export function SearchItens(gpuList: TAllCards, search: string): TAllCards {
   let arr = gpuList.filter((e) => {
